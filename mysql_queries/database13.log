@@ -1,0 +1,62 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT SQL_NO_CACHE STRAIGHT_JOIN SQL_SMALL_RESULT SQL_BIG_RESULT t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE (NOT (((NOT ((t0.c0) OR (-2111720162)))) > (t1.c0))) GROUP BY t0.c0, t1.c0 ORDER BY CAST((IFNULL(t0.c0, '')) = ( EXISTS (SELECT 1 wHERE FALSE)) AS SIGNED) LIMIT 2147483647) as result WHERE result.ref0 = 0 AND result.ref1 = 1845519565;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/01 13:48:01
+-- Database: database13
+-- Database version: 8.0.33
+-- seed value: 1685617329542
+DROP DATABASE IF EXISTS database13;
+CREATE DATABASE database13;
+USE database13;
+CREATE TABLE IF NOT EXISTS t0(c0 INT ) ;
+CREATE TABLE t1 LIKE t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database13';
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(NULL), (''), (1845519565);
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+ANALYZE  TABLE t1 DROP HISTOGRAM ON c0;
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+ALTER TABLE t0 DELAY_KEY_WRITE 0, STATS_PERSISTENT DEFAULT, FORCE, INSERT_METHOD LAST, CHECKSUM 1, STATS_AUTO_RECALC DEFAULT, RENAME t0, ROW_FORMAT COMPRESSED;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+CHECKSUM TABLE t1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database13';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database13';
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(""), (NULL), (NULL);
+REPLACE INTO t0(c0) VALUES(129651459);
+SET SESSION myisam_stats_method = nulls_unequal;
+CREATE INDEX i0 USING BTREE ON t1((GREATEST((+ (t1.c0)), 804196932)));
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES('m6');
+DELETE QUICK FROM t1 WHERE CAST(CAST((t1.c0) IN (NULL) AS SIGNED) AS SIGNED);
+SET SESSION range_alloc_block_size = 6296400386696614573;
+SET SESSION show_old_temporals = OFF;
+REPLACE INTO t0(c0) VALUES(NULL);
+CREATE UNIQUE INDEX i1 USING BTREE ON t0(c0 ASC) INVISIBLE ALGORITHM= DEFAULT;
+DROP INDEX i0 ON t1 LOCK=DEFAULT;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t1(c0) VALUES(1356806931);
+CREATE UNIQUE INDEX i2 USING BTREE ON t1(c0 ASC) VISIBLE;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database13';
+CHECK TABLE t1 CHANGED;
+REPLACE DELAYED INTO t0(c0) VALUES("");
+INSERT INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database13';
+ALTER TABLE t1 STATS_PERSISTENT 0, INSERT_METHOD FIRST, COMPRESSION 'LZ4', PACK_KEYS 0, FORCE, CHECKSUM 0;
+DELETE IGNORE FROM t0 WHERE NULL;
+SELECT * FROM (SELECT SQL_NO_CACHE STRAIGHT_JOIN SQL_SMALL_RESULT SQL_BIG_RESULT t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE (NOT (((NOT ((t0.c0) OR (-2111720162)))) > (t1.c0))) GROUP BY t0.c0, t1.c0 ORDER BY CAST((IFNULL(t0.c0, '')) = ( EXISTS (SELECT 1 wHERE FALSE)) AS SIGNED) LIMIT 2147483647) as result WHERE result.ref0 = 0 AND result.ref1 = 1845519565;

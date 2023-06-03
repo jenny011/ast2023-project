@@ -1,0 +1,73 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCT t0.c1 AS ref0, t1.c0 AS ref1, t1.c1 AS ref2 FROM t0, t1 WHERE (! (((+ ((t0.c1) IS NULL))) < (t1.c1))) ORDER BY CAST("" AS SIGNED) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = -1018209795 AND result.ref1 IS NULL AND result.ref2 = -1519327341;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/01 13:20:23
+-- Database: database9
+-- Database version: 8.0.33
+-- seed value: 1685617329535
+DROP DATABASE IF EXISTS database9;
+CREATE DATABASE database9;
+USE database9;
+CREATE TABLE IF NOT EXISTS t0(c0 VARCHAR(500) , c1 BIGINT(95)  COLUMN_FORMAT DYNAMIC  COMMENT 'asdf' ) ;
+CREATE TABLE t1 LIKE t0;
+CHECKSUM TABLE t0;
+REPLACE INTO t1(c0) VALUES("-649147115");
+INSERT DELAYED INTO t0(c0, c1) VALUES("", 596363557);
+ALTER TABLE t0 RENAME TO t0, STATS_PERSISTENT 0, DROP COLUMN c0, STATS_AUTO_RECALC 1, COMPRESSION 'NONE', ROW_FORMAT DYNAMIC, CHECKSUM 1;
+REPLACE DELAYED INTO t1(c1) VALUES(-889891839);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(NULL);
+DELETE LOW_PRIORITY FROM t1;
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0, c1) VALUES('If', -1735077142);
+ANALYZE  TABLE t0, t1;
+ALTER TABLE t0 DISABLE KEYS, INSERT_METHOD LAST, FORCE, PACK_KEYS DEFAULT;
+CREATE INDEX i0 ON t1(c1 ASC) ALGORITHM COPY;
+SET SESSION range_alloc_block_size = 4746623614304259724;
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES("jg2P?");
+INSERT IGNORE INTO t1(c0, c1) VALUES(-649397007, 182649912);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+INSERT IGNORE INTO t1(c0) VALUES(-296349533);
+INSERT LOW_PRIORITY INTO t1(c1, c0) VALUES(NULL, 1226894795);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+REPLACE DELAYED INTO t0(c1) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(-1018209795);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+CREATE UNIQUE INDEX i1 USING HASH ON t0(c1) VISIBLE;
+REPLACE INTO t0(c1) VALUES(-2136965768);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(NULL), (NULL), (773043742);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(NULL);
+INSERT IGNORE INTO t1(c1) VALUES('6]*0	0}'), (NULL), (NULL);
+REPLACE DELAYED INTO t1(c1, c0) VALUES("?|", "-1326959951");
+INSERT DELAYED INTO t0(c1) VALUES(NULL), (NULL), ("?^");
+REPLACE DELAYED INTO t1(c1) VALUES(']q'), (1182522505), ('');
+REPLACE INTO t1(c0) VALUES(1291185405);
+REPLACE DELAYED INTO t1(c1) VALUES(-1519327341);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+INSERT LOW_PRIORITY IGNORE INTO t0(c1) VALUES(746010934);
+INSERT LOW_PRIORITY IGNORE INTO t0(c1) VALUES("]mWc,V");
+INSERT IGNORE INTO t1(c0) VALUES(-1052244477);
+SET SESSION autocommit = 1;
+ALTER TABLE t0 FORCE, ALGORITHM DEFAULT, CHECKSUM 1, RENAME AS t0, ROW_FORMAT COMPACT;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database9';
+ALTER TABLE t0 FORCE, RENAME t0, DISABLE KEYS, INSERT_METHOD LAST, STATS_PERSISTENT DEFAULT, PACK_KEYS DEFAULT, ROW_FORMAT FIXED, COMPRESSION 'ZLIB', CHECKSUM 0, STATS_AUTO_RECALC 1, DELAY_KEY_WRITE 0;
+ALTER TABLE t0 FORCE, COMPRESSION 'LZ4', ENABLE KEYS, RENAME t0, ROW_FORMAT REDUNDANT, PACK_KEYS DEFAULT, DELAY_KEY_WRITE 1, CHECKSUM 1;
+REPLACE DELAYED INTO t1(c1, c0) VALUES(NULL, NULL), (NULL, ""), (1472986686, NULL);
+SELECT * FROM (SELECT DISTINCT t0.c1 AS ref0, t1.c0 AS ref1, t1.c1 AS ref2 FROM t0, t1 WHERE (! (((+ ((t0.c1) IS NULL))) < (t1.c1))) ORDER BY CAST("" AS SIGNED) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = -1018209795 AND result.ref1 IS NULL AND result.ref2 = -1519327341;

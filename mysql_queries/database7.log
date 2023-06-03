@@ -1,0 +1,82 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW t1.c0 AS ref0, t1.c1 AS ref1, t1.c2 AS ref2, t0.c0 AS ref3 FROM t1, t0 WHERE (t1.c0) >= (( EXISTS (SELECT 1 wHERE FALSE)) AND (LEAST(NULL, t0.c0))) ORDER BY -1887030377 ASC,  EXISTS (SELECT 1) ASC,  EXISTS (SELECT 1) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = 0 AND result.ref1 = -8388608 AND result.ref2 = '_k' AND result.ref3 IS NULL;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/01 15:47:41
+-- Database: database7
+-- Database version: 8.0.33
+-- seed value: 1685617329532
+DROP DATABASE IF EXISTS database7;
+CREATE DATABASE database7;
+USE database7;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYTEXT  STORAGE MEMORY COMMENT 'asdf'  COLUMN_FORMAT DYNAMIC) ;
+CREATE TABLE IF NOT EXISTS t1(c0 SMALLINT  UNIQUE COMMENT 'asdf'  STORAGE MEMORY, c1 MEDIUMINT  UNIQUE KEY, c2 MEDIUMTEXT  COLUMN_FORMAT DEFAULT STORAGE DISK ) ;
+DROP INDEX c0 ON t1 ALGORITHM=INPLACE;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7';
+REPLACE DELAYED INTO t0(c0) VALUES('795203692'), (NULL), (NULL);
+CHECK TABLE t1, t0 CHANGED QUICK MEDIUM EXTENDED;
+INSERT INTO t0(c0) VALUES(NULL);
+DELETE LOW_PRIORITY QUICK IGNORE FROM t1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7';
+INSERT INTO t1(c2, c0) VALUES(NULL, '');
+INSERT INTO t0(c0) VALUES("?e} "), (NULL), (1858903214);
+REPLACE INTO t0(c0) VALUES("?y");
+ALTER TABLE t1 CHECKSUM 1, STATS_AUTO_RECALC 1, RENAME TO t0, DROP c0, ALGORITHM INPLACE, INSERT_METHOD FIRST, DELAY_KEY_WRITE 0, PACK_KEYS 1, DISABLE KEYS, STATS_PERSISTENT DEFAULT, FORCE;
+ALTER TABLE t0 ;
+REPLACE INTO t1(c2, c0, c1) VALUES(221063989, 1780520986, -128129880), (-1220736393, NULL, ")L)?Q>Bv"), ('F?b	.?Hm', "Jmt_", "i[");
+REPLACE INTO t1(c2, c0) VALUES(NULL, 1012122751);
+INSERT LOW_PRIORITY IGNORE INTO t1(c0, c2, c1) VALUES('TRUE', NULL, '_tb'), (-838757283, NULL, NULL), ('Zb', "_k", -142380719);
+INSERT INTO t0(c0) VALUES(1053517268);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7';
+INSERT INTO t1(c1, c2, c0) VALUES(-1123482512, NULL, NULL);
+REPLACE INTO t1(c2, c0) VALUES(1928884424, "e^a|");
+REPLACE DELAYED INTO t1(c2, c1, c0) VALUES('', '+-Z?Xi8', "");
+REPLACE INTO t0(c0) VALUES(NULL);
+SET SESSION max_length_for_sort_data = 3954517;
+INSERT INTO t0(c0) VALUES(-711850686), (NULL), (NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE INTO t1(c2, c1) VALUES("", NULL);
+ALTER TABLE t0 CHECKSUM 1;
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+INSERT LOW_PRIORITY INTO t1(c0, c1) VALUES(454303501, NULL);
+INSERT LOW_PRIORITY IGNORE INTO t1(c0, c2) VALUES('2127631947', -144507339);
+DELETE IGNORE FROM t0;
+DELETE FROM t1 WHERE ((t1.c0) NOT IN ( EXISTS (SELECT 1))) && (GREATEST(t1.c0, t1.c1));
+INSERT INTO t0(c0) VALUES(NULL);
+CREATE UNIQUE INDEX i0 ON t1(c0, c2(1) DESC, c1 ASC) VISIBLE ALGORITHM= COPY;
+INSERT HIGH_PRIORITY IGNORE INTO t1(c2, c0) VALUES('vo(', "m");
+CHECKSUM TABLE t1 EXTENDED;
+INSERT INTO t1(c0, c2) VALUES(424062778, 240004212);
+REPLACE INTO t1(c0, c2, c1) VALUES(1866058512, 'NZB\r>#L?', NULL);
+REPLACE DELAYED INTO t0(c0) VALUES("id");
+ALTER TABLE t0 DELAY_KEY_WRITE 0, FORCE;
+REPLACE INTO t0(c0) VALUES("\r\r");
+SET SESSION show_create_table_verbosity = OFF;
+CREATE UNIQUE INDEX i1 ON t0(c0(1) ASC);
+DELETE FROM t0;
+INSERT DELAYED INTO t1(c0, c1, c2) VALUES(2038810982, NULL, NULL);
+REPLACE INTO t1(c0, c1, c2) VALUES('5D	', NULL, 'HMTfS{');
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES('');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7';
+DELETE LOW_PRIORITY IGNORE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7';
+REPLACE INTO t0(c0) VALUES(NULL);
+SET SESSION range_alloc_block_size = 3285905449106842517;
+SELECT * FROM (SELECT DISTINCTROW t1.c0 AS ref0, t1.c1 AS ref1, t1.c2 AS ref2, t0.c0 AS ref3 FROM t1, t0 WHERE (t1.c0) >= (( EXISTS (SELECT 1 wHERE FALSE)) AND (LEAST(NULL, t0.c0))) ORDER BY -1887030377 ASC,  EXISTS (SELECT 1) ASC,  EXISTS (SELECT 1) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = 0 AND result.ref1 = -8388608 AND result.ref2 = '_k' AND result.ref3 IS NULL;

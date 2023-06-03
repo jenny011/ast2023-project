@@ -1,0 +1,84 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW STRAIGHT_JOIN SQL_BIG_RESULT SQL_SMALL_RESULT t2.c0 AS ref0, t1.c0 AS ref1, t0.c0 AS ref2 FROM t2, t1, t0 WHERE (t0.c0) < (IFNULL(t1.c0, 1634178256)) GROUP BY t2.c0, t1.c0, t0.c0 ORDER BY (+ ((IF(861159896, "", -1087968141)) XOR ( EXISTS (SELECT 1)))) DESC,  EXISTS (SELECT 1 wHERE FALSE) ASC, t0.c0 LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 IS NULL AND result.ref2 = 0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/01 16:09:00
+-- Database: database12
+-- Database version: 8.0.33
+-- seed value: 1685617329541
+DROP DATABASE IF EXISTS database12;
+CREATE DATABASE database12;
+USE database12;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMINT(231)  COMMENT 'asdf'  PRIMARY KEY NOT NULL UNIQUE) ;
+CREATE TABLE t1(c0 MEDIUMINT ) ;
+CREATE TABLE IF NOT EXISTS t2 LIKE t1;
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-958084683);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+INSERT DELAYED INTO t1(c0) VALUES("51?*");
+INSERT HIGH_PRIORITY INTO t2(c0) VALUES(321527343);
+INSERT DELAYED INTO t0(c0) VALUES('');
+REPLACE INTO t1(c0) VALUES(-1387190948);
+INSERT DELAYED INTO t1(c0) VALUES(NULL);
+DELETE LOW_PRIORITY QUICK IGNORE FROM t2;
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(-1012693835);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(NULL);
+TRUNCATE TABLE t2;
+ALTER TABLE t0 FORCE, ROW_FORMAT COMPRESSED;
+ALTER TABLE t2 STATS_AUTO_RECALC 1, ROW_FORMAT COMPACT;
+CREATE INDEX i0 ON t2(c0) INVISIBLE ALGORITHM INPLACE;
+DELETE LOW_PRIORITY FROM t0 WHERE (t0.c0) IS FALSE;
+ALTER TABLE t1 RENAME t0, STATS_AUTO_RECALC 1, ALGORITHM DEFAULT, FORCE, CHECKSUM 0, INSERT_METHOD FIRST, STATS_PERSISTENT 0, ROW_FORMAT COMPRESSED, ENABLE KEYS;
+ALTER TABLE t1 PACK_KEYS 0, RENAME AS t0, INSERT_METHOD LAST, STATS_AUTO_RECALC 1, CHECKSUM 0, FORCE;
+ALTER TABLE t1 ROW_FORMAT DYNAMIC, COMPRESSION 'NONE', DISABLE KEYS, STATS_AUTO_RECALC 0, INSERT_METHOD NO, ALGORITHM INPLACE;
+ALTER TABLE t2 STATS_PERSISTENT DEFAULT, ROW_FORMAT DEFAULT, RENAME AS t2, DELAY_KEY_WRITE 0, COMPRESSION 'NONE', PACK_KEYS DEFAULT, ALGORITHM INPLACE, CHECKSUM 1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database12';
+INSERT DELAYED IGNORE INTO t2(c0) VALUES(1654947165);
+REPLACE DELAYED INTO t2(c0) VALUES('');
+INSERT LOW_PRIORITY IGNORE INTO t2(c0) VALUES(722994130);
+CREATE UNIQUE INDEX i1 ON t2(c0) VISIBLE;
+SET SESSION range_alloc_block_size = 3594228860776343210;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database12';
+DELETE QUICK FROM t2;
+SET SESSION optimizer_search_depth = 24;
+SET SESSION query_alloc_block_size = 63837590;
+INSERT IGNORE INTO t2(c0) VALUES("V*"), (-29276894), (132264754);
+REPLACE INTO t2(c0) VALUES(1985446697);
+REPLACE INTO t0(c0) VALUES('');
+INSERT IGNORE INTO t2(c0) VALUES(']*J1');
+REPLACE DELAYED INTO t2(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database12';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database12';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database12';
+INSERT LOW_PRIORITY INTO t1(c0) VALUES('?d');
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(""), ('hL'), (NULL);
+CREATE INDEX i1 ON t1(c0 ASC) ALGORITHM DEFAULT;
+SET SESSION histogram_generation_max_mem_size = 3771310703313203423;
+REPLACE INTO t0(c0) VALUES('^Wd~]U-XJ');
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t2(c0) VALUES(NULL);
+REPLACE INTO t1(c0) VALUES("-51732664");
+INSERT INTO t1(c0) VALUES(NULL);
+DELETE IGNORE FROM t2;
+DELETE IGNORE FROM t2;
+REPLACE INTO t2(c0) VALUES("1898661299");
+REPLACE INTO t1(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES('g3S?');
+INSERT INTO t2(c0) VALUES(NULL);
+SELECT * FROM (SELECT DISTINCTROW STRAIGHT_JOIN SQL_BIG_RESULT SQL_SMALL_RESULT t2.c0 AS ref0, t1.c0 AS ref1, t0.c0 AS ref2 FROM t2, t1, t0 WHERE (t0.c0) < (IFNULL(t1.c0, 1634178256)) GROUP BY t2.c0, t1.c0, t0.c0 ORDER BY (+ ((IF(861159896, "", -1087968141)) XOR ( EXISTS (SELECT 1)))) DESC,  EXISTS (SELECT 1 wHERE FALSE) ASC, t0.c0 LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 IS NULL AND result.ref2 = 0;
