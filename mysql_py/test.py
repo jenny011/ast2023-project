@@ -44,18 +44,25 @@ def setup_db(dbname):
 
     return True
     
-def execute_dml(conn, cur, dmls):
+def execute_ddl(dmls):
     for dml in dmls:
         print("+", dml)
-        try:
-            cur.execute(dml)
-            cur.fetchall()
-        except:
-            if "DATABASE" in dml:
-                raise(Exception)
-            else:
-                print("Failed")
-        conn.commit()
+        errs = [False, False]
+        for i, db in enumerate(dbs):
+            try:
+                curs[db].execute(dml)
+                curs[db].fetchall()
+            except:
+                if "DATABASE" in dml:
+                    raise(Exception)
+                else:
+                    errs[i] = True
+                    print(f"Failed {db}")
+
+        if errs[0] != errs[1]:
+            raise(Exception)
+        for conn in conns.values():
+            conn.commit()
         print("DONE")
 
 def execute_and_compare(cur1, cur2, query):
@@ -91,8 +98,13 @@ def execute_and_compare(cur1, cur2, query):
             if len(ret1) != len(ret2):
                 return DIFF.LEN, build_msg(len(ret1), len(ret2))
 
-            # sorted(ret1, key=lambda l: ((x is not None, '' if isinstance(x, Number) else type(x).__name__, x) for x in l))
-            # sorted(ret2, key=lambda l: ((x is not None, '' if isinstance(x, Number) else type(x).__name__, x) for x in l))
+            for i in range(len(ret1)):
+                ret1[i] = tuple(str(x) if x else "0" for x in ret1[i])
+                ret2[i] = tuple(str(x) if x else "0" for x in ret2[i])
+
+            ret1.sort()
+            ret2.sort()
+
             for i in range(len(ret1)):
                 if ret1[i] != ret2[i]:
                     return DIFF.CONTENT, build_msg(ret1[i], ret2[i])
@@ -127,8 +139,7 @@ def main():
 
     # setup test db
     print("[MSG] setup test db")
-    for db in dbs:
-        execute_dml(conns[db], curs[db], dmls)
+    execute_ddl(dmls)
 
     # execute queries and compare results
     print(f"[MSG] Test starts: {len(queries)} in total")

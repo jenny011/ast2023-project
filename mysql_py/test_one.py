@@ -89,13 +89,17 @@ def execute_and_compare(cur1, cur2, query):
         
         if not err1 and not err2:
             if len(ret1) != len(ret2):
-                return DIFF.LEN, build_msg(len(ret1), len(ret2))
+                return DIFF.LEN, build_msg(ret1, ret2)
+            
+            for i in range(len(ret1)):
+                ret1[i] = tuple(str(x) if x else "0" for x in ret1[i])
+                ret2[i] = tuple(str(x) if x else "0" for x in ret2[i])
 
-            # sorted(ret1, key=lambda l: ((x is not None, '' if isinstance(x, Number) else type(x).__name__, x) for x in l))
-            # sorted(ret2, key=lambda l: ((x is not None, '' if isinstance(x, Number) else type(x).__name__, x) for x in l))
+            ret1.sort()
+            ret2.sort()
             for i in range(len(ret1)):
                 if ret1[i] != ret2[i]:
-                    return DIFF.CONTENT, build_msg(ret1[i], ret2[i])
+                    return DIFF.CONTENT, build_msg(ret1, ret2)
 
             return DIFF.SAME, "Same ret value"
 
