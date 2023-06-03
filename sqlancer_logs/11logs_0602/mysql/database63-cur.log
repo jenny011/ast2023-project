@@ -1,0 +1,14 @@
+-- Time: 2023/06/01 18:39:20
+-- Database: database63
+-- Database version: 8.0.11
+-- seed value: 1685637011053
+DROP DATABASE IF EXISTS database63;
+CREATE DATABASE database63;
+USE database63;
+CREATE TABLE t0(c0 SMALLINT(218)  UNIQUE KEY STORAGE DISK NULL  COLUMN_FORMAT DYNAMIC COMMENT 'asdf' ) ; -- 28ms;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0; -- 40ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database63'; -- 1ms;
+TRUNCATE TABLE t0; -- 46ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database63'; -- 2ms;
+CHECKSUM TABLE t0 QUICK; -- 2ms;
+CREATE INDEX i0 ON t0((( EXISTS (SELECT 1 wHERE FALSE)) IS NOT TRUE)) VISIBLE;

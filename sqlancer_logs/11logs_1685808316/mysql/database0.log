@@ -1,0 +1,57 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i92 USING BTREE ON t0(c2, c1);
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Index column size too large. The maximum column size is 767 bytes.
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:21
+-- Database: database0
+-- Database version: 8.0.11
+-- seed value: 1685807359534
+DROP DATABASE IF EXISTS database0;
+CREATE DATABASE database0;
+USE database0;
+CREATE TABLE IF NOT EXISTS t0(c0 TEXT  COLUMN_FORMAT DYNAMIC, c1 TINYINT(22)  NULL, c2 VARCHAR(500)  COLUMN_FORMAT FIXED COMMENT 'asdf' ) ;
+INSERT DELAYED INTO t0(c0, c1, c2) VALUES('', NULL, NULL);
+INSERT HIGH_PRIORITY INTO t0(c0, c2, c1) VALUES(NULL, -503683260, -503683260);
+REPLACE INTO t0(c2, c0, c1) VALUES('81', 'B&2j', NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+INSERT DELAYED INTO t0(c0, c1) VALUES(NULL, ''), ("81", NULL), (NULL, NULL);
+REPLACE DELAYED INTO t0(c0, c2, c1) VALUES(NULL, NULL, 1550170842);
+REPLACE LOW_PRIORITY INTO t0(c0, c2) VALUES(NULL, NULL);
+INSERT DELAYED INTO t0(c0) VALUES(2053958463);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(530574189), ("530574189"), (1550170842);
+INSERT INTO t0(c0) VALUES(-503683260), (NULL), ("q*iR\r");
+INSERT LOW_PRIORITY INTO t0(c1) VALUES(2053958463), ("W6mH#"), (NULL);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c1, c2) VALUES('530574189', 2053958463);
+REPLACE INTO t0(c0) VALUES(2053958463);
+DELETE FROM t0;
+REPLACE LOW_PRIORITY INTO t0(c2) VALUES('');
+REPLACE INTO t0(c1, c0, c2) VALUES(NULL, 1125464652, NULL);
+DELETE IGNORE FROM t0;
+DELETE LOW_PRIORITY QUICK FROM t0;
+ALTER TABLE t0 RENAME AS t0, COMPRESSION 'NONE', STATS_PERSISTENT 1, CHECKSUM 1, DISABLE KEYS, FORCE, DELAY_KEY_WRITE 1, ROW_FORMAT REDUNDANT;
+DELETE LOW_PRIORITY FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+REPLACE LOW_PRIORITY INTO t0(c0, c1) VALUES(NULL, 530574189);
+REPLACE LOW_PRIORITY INTO t0(c2, c0) VALUES("8|?", 127416713);
+SET SESSION join_buffer_size = 1707807837948083713;
+ALTER TABLE t0 ALGORITHM DEFAULT, DISABLE KEYS, INSERT_METHOD FIRST, CHECKSUM 1;

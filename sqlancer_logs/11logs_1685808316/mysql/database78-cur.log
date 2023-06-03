@@ -1,0 +1,54 @@
+-- Time: 2023/06/03 17:50:55
+-- Database: database78
+-- Database version: 8.0.11
+-- seed value: 1685807359625
+DROP DATABASE IF EXISTS database78;
+CREATE DATABASE database78;
+USE database78;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT ) ; -- 31ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("9(CRki\r*"); -- 2ms;
+INSERT IGNORE INTO t0(c0) VALUES('[]'); -- 5ms;
+DELETE FROM t0 WHERE (+ (((t0.c0) XOR (t0.c0)) IS NOT TRUE)); -- 8ms;
+DELETE IGNORE FROM t0 WHERE (BIT_COUNT(NULL)) IS NOT FALSE; -- 1ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78'; -- 1ms;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL); -- 6ms;
+CHECKSUM TABLE t0; -- 0ms;
+INSERT INTO t0(c0) VALUES('HECUV!n'); -- 0ms;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL); -- 5ms;
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE (+ (IFNULL(NULL, t0.c0))); -- 1ms;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES('HECUV!n'); -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78'; -- 2ms;
+SET SESSION myisam_sort_buffer_size = 8303131774586544489; -- 0ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78'; -- 2ms;
+REPLACE INTO t0(c0) VALUES('6?/U'); -- 0ms;
+INSERT IGNORE INTO t0(c0) VALUES(NULL), (NULL), (NULL); -- 4ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL); -- 5ms;
+REPLACE INTO t0(c0) VALUES(436476676); -- 0ms;
+INSERT IGNORE INTO t0(c0) VALUES(-1676302931); -- 5ms;
+DELETE LOW_PRIORITY QUICK FROM t0; -- 5ms;
+REPLACE INTO t0(c0) VALUES(1745498051); -- 0ms;
+INSERT INTO t0(c0) VALUES(NULL), (NULL), (-1676302931), ("[]J*<n]!~y?"), ('!Rq?/6?}'); -- 2ms;
+REPLACE INTO t0(c0) VALUES(""); -- 1ms;
+INSERT IGNORE INTO t0(c0) VALUES('?!MYHz'); -- 4ms;
+REPLACE INTO t0(c0) VALUES('-1676302931'); -- 0ms;
+INSERT IGNORE INTO t0(c0) VALUES(546384966); -- 4ms;
+CREATE INDEX i0 ON t0(c0 ASC) ALGORITHM= COPY; -- 116ms;
+DELETE LOW_PRIORITY IGNORE FROM t0; -- 10ms;
+SET SESSION optimizer_search_depth = 12; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78'; -- 2ms;
+INSERT INTO t0(c0) VALUES(190262605), (NULL), (NULL), ("[]"), (NULL); -- 0ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78'; -- 2ms;
+INSERT DELAYED INTO t0(c0) VALUES(""); -- 0ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL), (546384966), (2073343123); -- 6ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 5ms;
+ANALYZE NO_WRITE_TO_BINLOG TABLE t0 UPDATE HISTOGRAM ON c0; -- 5ms;
+SET SESSION query_prealloc_size = 6886455031575058825; -- 1ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 8ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(""); -- 5ms;
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL), ("~x9lGA}"), (''); -- 3ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(-472855116); -- 6ms;
+CHECK TABLE t0 ; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78'; -- 2ms;
+CREATE UNIQUE INDEX i1 ON t0((GREATEST(GREATEST(t0.c0, -2077810398), IF(t0.c0, 243745176, t0.c0)))) VISIBLE ALGORITHM= INPLACE;

@@ -1,0 +1,44 @@
+--java.lang.AssertionError: CREATE INDEX i1 ON t0(( EXISTS (SELECT 1 wHERE FALSE))) INVISIBLE ALGORITHM DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( EXISTS (SELECT 1 wHERE FALSE))) INVISIBLE ALGORITHM DEFAULT' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:12
+-- Database: database21
+-- Database version: 8.0.11
+-- seed value: 1685637011011
+DROP DATABASE IF EXISTS database21;
+CREATE DATABASE database21;
+USE database21;
+CREATE TABLE t0(c0 MEDIUMINT(244) , c1 LONGTEXT  COMMENT 'asdf'  COLUMN_FORMAT DYNAMIC STORAGE MEMORY, c2 LONGTEXT   COLUMN_FORMAT DEFAULT) ;
+SET SESSION foreign_key_checks = 0;
+DELETE LOW_PRIORITY FROM t0;
+SET SESSION sql_buffer_result = OFF;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0;
+INSERT DELAYED IGNORE INTO t0(c1) VALUES('w5A~W,^7'), (NULL), (-1183660036);
+INSERT INTO t0(c2) VALUES(807793537);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0, c1, c2) VALUES(807793537, NULL, 'w5A~W,^7');
+CREATE UNIQUE INDEX i0 USING BTREE ON t0(c2 DESC, c1, c0) ALGORITHM INPLACE;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0, c2(3));
+ALTER TABLE t0 FORCE, INSERT_METHOD FIRST, COMPRESSION 'NONE', DISABLE KEYS, CHECKSUM 0, DROP COLUMN c1;
+DELETE FROM t0;
+REPLACE INTO t0(c2) VALUES('-1183660036');
+DELETE QUICK IGNORE FROM t0;

@@ -1,0 +1,24 @@
+-- Time: 2023/06/01 18:40:43
+-- Database: database3
+-- Database version: 8.0.11
+-- seed value: 1685637010977
+DROP DATABASE IF EXISTS database3;
+CREATE DATABASE database3;
+USE database3;
+CREATE TABLE t0(c0 VARCHAR(500)  COMMENT 'asdf'  STORAGE MEMORY) ; -- 25ms;
+CREATE TABLE IF NOT EXISTS t1(c0 TINYTEXT  COLUMN_FORMAT DEFAULT COMMENT 'asdf' , c1 MEDIUMTEXT  COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE MEMORY) ; -- 23ms;
+REPLACE DELAYED INTO t1(c1, c0) VALUES(-2055861787, 341306679), ('', NULL), ("-839293088", NULL), ('po*v7', NULL), (1504896041, ""); -- 5ms;
+INSERT DELAYED IGNORE INTO t1(c1, c0) VALUES(NULL, NULL); -- 3ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3'; -- 2ms;
+REPLACE DELAYED INTO t1(c0) VALUES(-410753316); -- 3ms;
+CHECKSUM TABLE t0, t1 EXTENDED; -- 1ms;
+SET SESSION query_prealloc_size = 7103117274381031862; -- 1ms;
+REPLACE LOW_PRIORITY INTO t1(c1) VALUES(-2018380469); -- 3ms;
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0, c1) VALUES(NULL, NULL); -- 3ms;
+INSERT IGNORE INTO t0(c0) VALUES(500876023); -- 4ms;
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-839293088); -- 4ms;
+INSERT INTO t1(c1) VALUES(NULL); -- 3ms;
+SET SESSION show_old_temporals = OFF; -- 1ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 3ms;
+SET SESSION sql_auto_is_null = OFF; -- 0ms;
+SET SESSION optimizer_switch = 'index_condition_pushdown=off,mrr=off,block_nested_loop=off,firstmatch=off,index_merge_union=off,use_index_extensions=off,engine_condition_pushdown=off,condition_fanout_filter=off,skip_scan=on,semijoin=off,index_merge=off,subquery_materialization_cost_based=on';

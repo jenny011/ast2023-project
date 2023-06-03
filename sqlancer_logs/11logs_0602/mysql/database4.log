@@ -1,0 +1,62 @@
+--java.lang.AssertionError: CREATE INDEX i0 ON t2((CAST(CAST((t2.c0) IS TRUE AS SIGNED) AS SIGNED))) VISIBLE ALGORITHM COPY;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(CAST(CAST((t2.c0) IS TRUE AS SIGNED) AS SIGNED))) VISIBLE ALGORITHM COPY' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:12
+-- Database: database4
+-- Database version: 8.0.11
+-- seed value: 1685637010978
+DROP DATABASE IF EXISTS database4;
+CREATE DATABASE database4;
+USE database4;
+CREATE TABLE t0(c0 TINYTEXT  STORAGE MEMORY) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+DELETE LOW_PRIORITY QUICK FROM t1;
+ALTER TABLE t1 ROW_FORMAT COMPACT, ALGORITHM INPLACE, PACK_KEYS 1, FORCE, COMPRESSION 'ZLIB', INSERT_METHOD NO, RENAME AS t2, DELAY_KEY_WRITE 1;
+SET SESSION foreign_key_checks = 1;
+SET SESSION sql_quote_show_create = OFF;
+INSERT LOW_PRIORITY IGNORE INTO t2(c0) VALUES(-1244015373);
+REPLACE INTO t2(c0) VALUES('-1244015373'), (NULL), (NULL), (-1244015373), ("3!4#O"), ('-1244015373'), (NULL);
+CHECK TABLE t0, t2 CHANGED MEDIUM EXTENDED QUICK FAST;
+INSERT INTO t2(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';
+INSERT INTO t2(c0) VALUES(926363269);
+CREATE INDEX i0 USING HASH ON t0(c0(4) DESC);
+CREATE INDEX i0 ON t2(c0) VISIBLE ALGORITHM= COPY;
+CREATE UNIQUE INDEX i0 USING BTREE ON t2(c0(2) DESC);
+CREATE INDEX i0 ON t2(c0) VISIBLE ALGORITHM= COPY;
+DELETE LOW_PRIORITY FROM t2;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';
+DELETE LOW_PRIORITY FROM t0;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t2;
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES("4");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';
+REPLACE DELAYED INTO t2(c0) VALUES(NULL);
+DELETE IGNORE FROM t0;
+INSERT DELAYED INTO t0(c0) VALUES(''), (''), (NULL);
+DELETE QUICK IGNORE FROM t0 WHERE (+ ((NULL) != (IF(t0.c0, 'o', NULL))));
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';
+ALTER TABLE t0 DELAY_KEY_WRITE 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4';

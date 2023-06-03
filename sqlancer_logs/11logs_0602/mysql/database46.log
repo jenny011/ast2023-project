@@ -1,0 +1,36 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i0 USING BTREE ON t0(c0) VISIBLE ALGORITHM= COPY;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Index column size too large. The maximum column size is 767 bytes.
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:16
+-- Database: database46
+-- Database version: 8.0.11
+-- seed value: 1685637011036
+DROP DATABASE IF EXISTS database46;
+CREATE DATABASE database46;
+USE database46;
+CREATE TABLE t0(c0 VARCHAR(500)  ) ;
+DELETE FROM t0 WHERE ((NULL) IS NOT FALSE) OR ((t0.c0) IS UNKNOWN);
+SET SESSION max_seeks_for_key = 6880553465156528719;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database46';
+ALTER TABLE t0 COMPRESSION 'NONE', INSERT_METHOD FIRST, ALGORITHM INPLACE, CHECKSUM 0;
+ALTER TABLE t0 STATS_AUTO_RECALC 1, ROW_FORMAT COMPACT, CHECKSUM 0, ALGORITHM COPY, ENABLE KEYS, FORCE, COMPRESSION 'NONE';

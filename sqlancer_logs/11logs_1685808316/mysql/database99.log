@@ -1,0 +1,54 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i0 USING HASH ON t0((t0.c1)) INVISIBLE ALGORITHM COPY;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(t0.c1)) INVISIBLE ALGORITHM COPY' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:54:11
+-- Database: database99
+-- Database version: 8.0.11
+-- seed value: 1685807359646
+DROP DATABASE IF EXISTS database99;
+CREATE DATABASE database99;
+USE database99;
+CREATE TABLE IF NOT EXISTS t0(c0 INT(40)  STORAGE DISK, c1 SMALLINT(15)  UNIQUE NULL  STORAGE MEMORY COLUMN_FORMAT FIXED) ;
+ALTER TABLE t0 FORCE, DELAY_KEY_WRITE 0;
+DELETE QUICK IGNORE FROM t0;
+DELETE LOW_PRIORITY QUICK FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database99';
+REPLACE LOW_PRIORITY INTO t0(c0, c1) VALUES("w?", NULL);
+INSERT IGNORE INTO t0(c0, c1) VALUES(-293255323, NULL), (-293255323, NULL), (-293255323, -293255323);
+CHECKSUM TABLE t0;
+SET SESSION myisam_sort_buffer_size = 8002248227533834083;
+DELETE LOW_PRIORITY IGNORE FROM t0;
+INSERT DELAYED INTO t0(c1, c0) VALUES(NULL, 'TRUE'), (856674376, 'nD'), (NULL, NULL);
+INSERT DELAYED IGNORE INTO t0(c1) VALUES("w%-za8"), (''), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database99';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database99';
+REPLACE INTO t0(c0) VALUES(NULL);
+DELETE LOW_PRIORITY QUICK FROM t0;
+DROP INDEX c1 ON t0 ALGORITHM=INPLACE;
+ALTER TABLE t0 ROW_FORMAT DYNAMIC, DELAY_KEY_WRITE 0, CHECKSUM 0, DROP c0, RENAME AS t0, PACK_KEYS 1, INSERT_METHOD LAST, FORCE, ENABLE KEYS;
+INSERT INTO t0(c1) VALUES(-1126398287);
+INSERT INTO t0(c1) VALUES(NULL);
+REPLACE INTO t0(c1) VALUES("-293255323");
+REPLACE INTO t0(c1) VALUES(-1102854417);
+REPLACE DELAYED INTO t0(c1) VALUES(NULL);
+SET SESSION show_old_temporals = OFF;

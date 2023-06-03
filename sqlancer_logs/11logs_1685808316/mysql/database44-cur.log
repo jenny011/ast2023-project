@@ -1,0 +1,10 @@
+-- Time: 2023/06/03 17:49:23
+-- Database: database44
+-- Database version: 8.0.11
+-- seed value: 1685807359591
+DROP DATABASE IF EXISTS database44;
+CREATE DATABASE database44;
+USE database44;
+CREATE TABLE t0(c0 SMALLINT  STORAGE DISK) ; -- 168ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 14ms;
+CREATE INDEX i0 USING HASH ON t0((t0.c0)) ALGORITHM= DEFAULT;

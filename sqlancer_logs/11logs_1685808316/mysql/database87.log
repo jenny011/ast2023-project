@@ -1,0 +1,56 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i1 ON t0((CAST((GREATEST(1620899032, -2001139329, t0.c0, t0.c0)) <= ( EXISTS (SELECT 1 wHERE FALSE)) AS SIGNED))) ALGORITHM= COPY;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(CAST((GREATEST(1620899032, -2001139329, t0.c0, t0.c0)) <= ( EXISTS (SELECT 1 wH' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:53:06
+-- Database: database87
+-- Database version: 8.0.11
+-- seed value: 1685807359634
+DROP DATABASE IF EXISTS database87;
+CREATE DATABASE database87;
+USE database87;
+CREATE TABLE t0(c0 SMALLINT  COMMENT 'asdf' ) ;
+SET SESSION query_alloc_block_size = 3256415774;
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE ((CAST(t0.c0 AS SIGNED)) IN ((NULL) NOT IN (-2001139329), (t0.c0) IN (t0.c0))) XOR (t0.c0);
+DELETE IGNORE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87';
+INSERT LOW_PRIORITY INTO t0(c0) VALUES('');
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES(110414930), (NULL), (-2052379211);
+INSERT IGNORE INTO t0(c0) VALUES(''), (1620899032), ("");
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(1620899032);
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE 1008797542;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("");
+INSERT IGNORE INTO t0(c0) VALUES(-1263148086), ("?>"), (NULL);
+DELETE IGNORE FROM t0;
+ANALYZE  TABLE t0 DROP HISTOGRAM ON c0;
+ALTER TABLE t0 COMPRESSION 'ZLIB', INSERT_METHOD LAST, FORCE, ALGORITHM INPLACE, DELAY_KEY_WRITE 1;
+DELETE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87';
+TRUNCATE TABLE t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87';
+REPLACE DELAYED INTO t0(c0) VALUES('-1953689359');
+REPLACE INTO t0(c0) VALUES(-2001139329);
+REPLACE INTO t0(c0) VALUES('	j57C');
+REPLACE INTO t0(c0) VALUES(NULL);
+CREATE UNIQUE INDEX i0 ON t0(c0);

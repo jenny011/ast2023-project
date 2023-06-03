@@ -1,0 +1,59 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i0 ON t0((('bX(lkr') <= (CAST((NULL) IS TRUE AS SIGNED)))) INVISIBLE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(('bX(lkr') <= (CAST((NULL) IS TRUE AS SIGNED)))) INVISIBLE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:21
+-- Database: database27
+-- Database version: 8.0.11
+-- seed value: 1685807359573
+DROP DATABASE IF EXISTS database27;
+CREATE DATABASE database27;
+USE database27;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYTEXT  COMMENT 'asdf'  COLUMN_FORMAT DYNAMIC) ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(709423517);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+INSERT IGNORE INTO t0(c0) VALUES("");
+SET SESSION max_points_in_geometry = 855761;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+INSERT DELAYED INTO t0(c0) VALUES('709423517');
+REPLACE INTO t0(c0) VALUES('6S9B?S');
+CHECK TABLE t0 ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(2051181142);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL), (709423517), ("2051181142");
+ALTER TABLE t0 INSERT_METHOD NO, ALGORITHM COPY, FORCE, ROW_FORMAT FIXED, CHECKSUM 1, PACK_KEYS 1, STATS_PERSISTENT 1, RENAME t0, STATS_AUTO_RECALC DEFAULT, DELAY_KEY_WRITE 1, ENABLE KEYS;
+ALTER TABLE t0 INSERT_METHOD FIRST, RENAME AS t0, ENABLE KEYS, STATS_AUTO_RECALC DEFAULT, COMPRESSION 'ZLIB', PACK_KEYS 1, FORCE, DELAY_KEY_WRITE 0, CHECKSUM 0, ROW_FORMAT REDUNDANT;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(1193684430), ("6S9B?S"), ('7/hC');
+REPLACE INTO t0(c0) VALUES("r*2O/!!{F");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+SET SESSION optimizer_switch = 'materialization=off,subquery_materialization_cost_based=off,derived_merge=on,index_merge=off,mrr_cost_based=off,duplicateweedout=on,loosescan=off,index_merge_sort_union=off,mrr=on,block_nested_loop=off,index_condition_pushdown=off,batched_key_access=off,condition_fanout_filter=on';
+REPLACE INTO t0(c0) VALUES("6S9B?S");
+INSERT INTO t0(c0) VALUES("1193684430");
+INSERT INTO t0(c0) VALUES("");
+TRUNCATE TABLE t0;
+INSERT INTO t0(c0) VALUES("!.p\rQVEC");
+SET SESSION sql_auto_is_null = ON;

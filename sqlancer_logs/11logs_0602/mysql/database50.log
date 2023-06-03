@@ -1,0 +1,62 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i1 ON t0((CAST(((NULL) IN (-76556733)) NOT IN ((t0.c0) XOR (NULL)) AS SIGNED))) VISIBLE ALGORITHM DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(CAST(((NULL) IN (-76556733)) NOT IN ((t0.c0) XOR (NULL)) AS SIGNED))) VISIBLE A' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:32:59
+-- Database: database50
+-- Database version: 8.0.11
+-- seed value: 1685637011040
+DROP DATABASE IF EXISTS database50;
+CREATE DATABASE database50;
+USE database50;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT  UNIQUE STORAGE MEMORY COMMENT 'asdf'  ) ;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL), (964889437), (1720590663);
+REPLACE INTO t0(c0) VALUES(1622999659);
+REPLACE INTO t0(c0) VALUES(-1500099323);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES('}OC?<es?(');
+REPLACE INTO t0(c0) VALUES('');
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-890240364);
+REPLACE INTO t0(c0) VALUES(NULL);
+SET SESSION optimizer_prune_level = 0;
+REPLACE DELAYED INTO t0(c0) VALUES('1836829047');
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(1489594617);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database50';
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES(-2145677211);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(78582038);
+REPLACE INTO t0(c0) VALUES(NULL);
+TRUNCATE TABLE t0;
+DELETE LOW_PRIORITY FROM t0;
+CREATE UNIQUE INDEX i0 ON t0(c0) INVISIBLE ALGORITHM COPY;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database50';
+DELETE QUICK FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database50';
+INSERT INTO t0(c0) VALUES(-95852371);
+REPLACE DELAYED INTO t0(c0) VALUES("I	G<r");
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database50';
+DELETE LOW_PRIORITY FROM t0 WHERE CAST('oc{e' AS SIGNED);
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE (COALESCE(t0.c0, '}WE/rH')) <= ( EXISTS (SELECT 1));
+REPLACE INTO t0(c0) VALUES(-181890529);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES('');

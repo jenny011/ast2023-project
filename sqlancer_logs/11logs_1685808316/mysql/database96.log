@@ -1,0 +1,48 @@
+--java.lang.AssertionError: CREATE INDEX i0 USING BTREE ON t0(((+ (CAST(('ZDPgp^Hx') NOT IN (t0.c0) AS SIGNED)))), (t0.c0));
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((+ (CAST(('ZDPgp^Hx') NOT IN (t0.c0) AS SIGNED)))), (t0.c0))' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:54:09
+-- Database: database96
+-- Database version: 8.0.11
+-- seed value: 1685807359643
+DROP DATABASE IF EXISTS database96;
+CREATE DATABASE database96;
+USE database96;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT   COLUMN_FORMAT FIXED STORAGE MEMORY) ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database96';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database96';
+ALTER TABLE t0 STATS_AUTO_RECALC 1;
+ALTER TABLE t0  ORDER BY c0;
+TRUNCATE TABLE t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database96';
+ALTER TABLE t0 ALGORITHM COPY, DELAY_KEY_WRITE 0, STATS_PERSISTENT 0, INSERT_METHOD FIRST, RENAME t0, PACK_KEYS DEFAULT, DISABLE KEYS, ROW_FORMAT REDUNDANT, FORCE, CHECKSUM 1;
+INSERT INTO t0(c0) VALUES(NULL);
+ALTER TABLE t0 DELAY_KEY_WRITE 0, STATS_AUTO_RECALC DEFAULT, CHECKSUM 1, FORCE, ENABLE KEYS, STATS_PERSISTENT DEFAULT, INSERT_METHOD NO, RENAME AS t0, ALGORITHM DEFAULT, ROW_FORMAT DYNAMIC, PACK_KEYS DEFAULT;
+DELETE LOW_PRIORITY FROM t0;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0 ASC) INVISIBLE ALGORITHM= INPLACE;
+DELETE LOW_PRIORITY FROM t0;
+REPLACE DELAYED INTO t0(c0) VALUES(""), (NULL), ('ZDPgp\r^Hx'), ('ZDPgp\r^Hx'), (NULL);
+CHECK TABLE t0 FOR UPGRADE FAST MEDIUM QUICK CHANGED;
+CREATE UNIQUE INDEX i0 ON t0(c0(4) ASC) ALGORITHM= DEFAULT;
+DELETE LOW_PRIORITY QUICK FROM t0;
+INSERT INTO t0(c0) VALUES(NULL);

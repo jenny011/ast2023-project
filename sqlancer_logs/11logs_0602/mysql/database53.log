@@ -1,0 +1,43 @@
+--java.lang.AssertionError: ALTER TABLE t1 STATS_AUTO_RECALC 1, DISABLE KEYS, CHECKSUM 0, INSERT_METHOD LAST, RENAME TO t0, ALGORITHM INSTANT, FORCE, PACK_KEYS 1, COMPRESSION 'LZ4', DELAY_KEY_WRITE 0, STATS_PERSISTENT 0, ROW_FORMAT FIXED;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:17
+-- Database: database53
+-- Database version: 8.0.11
+-- seed value: 1685637011043
+DROP DATABASE IF EXISTS database53;
+CREATE DATABASE database53;
+USE database53;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT  NULL) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+DELETE QUICK FROM t1 WHERE t1.c0;
+INSERT INTO t0(c0) VALUES(38290873);
+DELETE QUICK IGNORE FROM t0;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("");
+DELETE QUICK FROM t1;
+ANALYZE NO_WRITE_TO_BINLOG TABLE t1 DROP HISTOGRAM ON c0;
+ALTER TABLE t1 PACK_KEYS 1, STATS_PERSISTENT 0, STATS_AUTO_RECALC 1, COMPRESSION 'LZ4', ALGORITHM DEFAULT;
+SET SESSION join_buffer_size = 6681186210970258349;
+DELETE QUICK IGNORE FROM t1;
+ALTER TABLE t1 FORCE, ROW_FORMAT REDUNDANT, STATS_PERSISTENT 1, PACK_KEYS 0, INSERT_METHOD LAST, STATS_AUTO_RECALC 1, ALGORITHM COPY, RENAME AS t0, COMPRESSION 'LZ4', CHECKSUM 1, DELAY_KEY_WRITE 1, DISABLE KEYS;

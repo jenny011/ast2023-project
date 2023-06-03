@@ -1,0 +1,14 @@
+-- Time: 2023/06/03 17:49:25
+-- Database: database51
+-- Database version: 8.0.11
+-- seed value: 1685807359598
+DROP DATABASE IF EXISTS database51;
+CREATE DATABASE database51;
+USE database51;
+CREATE TABLE t0(c0 MEDIUMTEXT  STORAGE MEMORY) ; -- 39ms;
+DELETE IGNORE FROM t0 WHERE ( EXISTS (SELECT 1)) OR ("s+N "); -- 1ms;
+CHECK TABLE t0 QUICK FAST CHANGED; -- 3ms;
+DELETE LOW_PRIORITY IGNORE FROM t0; -- 0ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES("s+N "); -- 7ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database51'; -- 3ms;
+CREATE UNIQUE INDEX i0 ON t0(((((NULL) AND (t0.c0)) || ((t0.c0) IS NOT TRUE)) AND (t0.c0))) ALGORITHM= DEFAULT;

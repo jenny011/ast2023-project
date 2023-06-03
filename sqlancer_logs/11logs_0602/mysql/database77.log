@@ -1,0 +1,61 @@
+--java.lang.AssertionError: CREATE INDEX i0 ON t0(( EXISTS (SELECT 1 wHERE FALSE))) INVISIBLE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( EXISTS (SELECT 1 wHERE FALSE))) INVISIBLE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:31:30
+-- Database: database77
+-- Database version: 8.0.11
+-- seed value: 1685637011067
+DROP DATABASE IF EXISTS database77;
+CREATE DATABASE database77;
+USE database77;
+CREATE TABLE IF NOT EXISTS t0(c0 INT   , c1 MEDIUMINT  STORAGE DISK) ;
+CHECKSUM TABLE t0 QUICK;
+REPLACE INTO t0(c0) VALUES("");
+REPLACE INTO t0(c1, c0) VALUES(NULL, NULL);
+INSERT DELAYED INTO t0(c0) VALUES(-1607362445);
+REPLACE INTO t0(c0) VALUES(-1607362445);
+DELETE LOW_PRIORITY QUICK FROM t0;
+REPLACE INTO t0(c0) VALUES(NULL), ('b7j7f#fA'), (NULL), (NULL), (-1607362445);
+REPLACE DELAYED INTO t0(c1) VALUES(908564386);
+REPLACE INTO t0(c0) VALUES(908564386);
+DELETE QUICK FROM t0 WHERE BIT_COUNT( EXISTS (SELECT 1 wHERE FALSE));
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, NULL);
+INSERT INTO t0(c1, c0) VALUES("-1607362445", "E]OB~h");
+INSERT DELAYED INTO t0(c0, c1) VALUES(NULL, '-1607362445'), (908564386, NULL), (-1480212069, NULL);
+INSERT DELAYED INTO t0(c0, c1) VALUES('', -2096314401);
+INSERT INTO t0(c1) VALUES(1983677454);
+REPLACE INTO t0(c1, c0) VALUES("-1607362445", "");
+REPLACE INTO t0(c0, c1) VALUES(-1367029680, 'U&?xz*');
+INSERT INTO t0(c0) VALUES("");
+REPLACE INTO t0(c1, c0) VALUES(NULL, -1718673680);
+REPLACE INTO t0(c0) VALUES(-2015815931);
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0 WHERE (((t0.c0) NOT IN (t0.c1)) > (NULL)) IS UNKNOWN;
+SET SESSION optimizer_prune_level = 0;
+REPLACE INTO t0(c0) VALUES(NULL), (1284441433), ('1284441433');
+INSERT IGNORE INTO t0(c1, c0) VALUES(-37411368, 1716722662), (1761248725, -1722264699), (-1085541712, ''), ("", ""), (NULL, 82793105);
+REPLACE DELAYED INTO t0(c1, c0) VALUES(NULL, "3k");
+REPLACE DELAYED INTO t0(c0, c1) VALUES(NULL, 1377991133), (NULL, 82793105), (NULL, "-1718673680");
+INSERT IGNORE INTO t0(c0, c1) VALUES(-953083652, -1873434258);
+REPLACE INTO t0(c1) VALUES(37031250);
+INSERT IGNORE INTO t0(c1) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(728327441);

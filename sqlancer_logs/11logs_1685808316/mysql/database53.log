@@ -1,0 +1,39 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i13 ON t0(((( EXISTS (SELECT 1)) OR (CAST(t0.c0 AS SIGNED))) IS UNKNOWN));
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((( EXISTS (SELECT 1)) OR (CAST(t0.c0 AS SIGNED))) IS UNKNOWN))' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:55
+-- Database: database53
+-- Database version: 8.0.11
+-- seed value: 1685807359600
+DROP DATABASE IF EXISTS database53;
+CREATE DATABASE database53;
+USE database53;
+CREATE TABLE IF NOT EXISTS t0(c0 BIGINT  UNIQUE STORAGE DISK COMMENT 'asdf'  PRIMARY KEY COLUMN_FORMAT DEFAULT NOT NULL) AVG_ROW_LENGTH = 532898969, MIN_ROWS = 3398099180031216197, AUTO_INCREMENT = 8500100048022835226, KEY_BLOCK_SIZE = 29408, DELAY_KEY_WRITE = 0, CHECKSUM = 1, STATS_SAMPLE_PAGES = 2071, PACK_KEYS = 1;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYTEXT  STORAGE DISK COLUMN_FORMAT FIXED COMMENT 'asdf'  NULL, c1 TINYTEXT  COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE DISK) ;
+REPLACE DELAYED INTO t0(c1) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT DELAYED INTO t0(c0) VALUES("");
+ALTER TABLE t0 ALGORITHM DEFAULT, RENAME TO t0, DROP COLUMN c1, STATS_AUTO_RECALC 0, DELAY_KEY_WRITE 1, INSERT_METHOD NO, COMPRESSION 'NONE', STATS_PERSISTENT 1, ENABLE KEYS;
+REPLACE INTO t0(c0) VALUES(NULL);
+SET SESSION max_sort_length = 4838149;
+REPLACE INTO t0(c0) VALUES(1433400829);

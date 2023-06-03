@@ -1,0 +1,40 @@
+--java.lang.AssertionError: CREATE INDEX i0 USING HASH ON t0(((((t0.c0) != (t0.c2)) OR (2035703977)) XOR (CAST((t0.c1) && (-1512704208) AS SIGNED))), (CAST( EXISTS (SELECT 1 wHERE FALSE) AS SIGNED)));
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((((t0.c0) != (t0.c2)) OR (2035703977)) XOR (CAST((t0.c1) && (-1512704208) AS SI' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:30
+-- Database: database57
+-- Database version: 8.0.11
+-- seed value: 1685807359604
+DROP DATABASE IF EXISTS database57;
+CREATE DATABASE database57;
+USE database57;
+CREATE TABLE t0(c0 SMALLINT(32)  STORAGE MEMORY UNIQUE NULL COLUMN_FORMAT FIXED , c1 SMALLINT(249) , c2 VARCHAR(500)  STORAGE DISK COLUMN_FORMAT DYNAMIC) ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57';
+DELETE QUICK FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57';
+CHECK TABLE t0 FOR UPGRADE FAST MEDIUM;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57';
+ANALYZE LOCAL TABLE t0 DROP HISTOGRAM ON c2;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c2 DESC, c0, c1 ASC);

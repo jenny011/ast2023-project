@@ -1,0 +1,56 @@
+--java.lang.AssertionError: CREATE INDEX i0 USING BTREE ON t1(( EXISTS (SELECT 1 wHERE FALSE)), (((IF(-1699104014, 117417552, t1.c0)) = ((t1.c0) <= (t1.c0))) XOR (IF(t1.c0, 'E b??q', NULL)))) INVISIBLE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( EXISTS (SELECT 1 wHERE FALSE)), (((IF(-1699104014, 117417552, t1.c0)) = ((t1.c' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:20
+-- Database: database3
+-- Database version: 8.0.11
+-- seed value: 1685807359538
+DROP DATABASE IF EXISTS database3;
+CREATE DATABASE database3;
+USE database3;
+CREATE TABLE t0(c0 TINYINT(60)  COLUMN_FORMAT DYNAMIC PRIMARY KEY COMMENT 'asdf'  STORAGE DISK UNIQUE KEY, c1 SMALLINT(100)  COMMENT 'asdf'   UNIQUE KEY STORAGE MEMORY COLUMN_FORMAT FIXED NULL) ;
+CREATE TABLE t1(c0 LONGTEXT   COLUMN_FORMAT DEFAULT STORAGE DISK) ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3';
+INSERT DELAYED IGNORE INTO t0(c1) VALUES(781234992), (NULL), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3';
+DELETE QUICK FROM t1 WHERE "[96X?O";
+DELETE QUICK FROM t1;
+DELETE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3';
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(-1607439759);
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES('-1607439759', "[96X?O");
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0, c1) VALUES(-635760021, NULL);
+INSERT DELAYED INTO t1(c0) VALUES("[96X?O");
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(-1607439759);
+ALTER TABLE t0 ;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(-1729413367);
+REPLACE DELAYED INTO t0(c0, c1) VALUES("", NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-635760021), ('[96X?O'), (1390393520), (NULL), ("j3");
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+REPLACE INTO t1(c0) VALUES(-1699104014);
+SET SESSION optimizer_switch = 'engine_condition_pushdown=off,firstmatch=off';
+INSERT INTO t0(c0, c1) VALUES("x", -1699104014);
+INSERT INTO t1(c0) VALUES('17H');
+DELETE LOW_PRIORITY IGNORE FROM t0;

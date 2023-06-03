@@ -1,0 +1,54 @@
+--java.lang.AssertionError: ALTER TABLE t0 INSERT_METHOD FIRST, CHECKSUM 0, STATS_PERSISTENT 0, PACK_KEYS DEFAULT, ROW_FORMAT DYNAMIC, STATS_AUTO_RECALC 0, ENABLE KEYS, ALGORITHM INSTANT, COMPRESSION 'ZLIB', DELAY_KEY_WRITE 0, DROP c0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:13
+-- Database: database27
+-- Database version: 8.0.11
+-- seed value: 1685637011017
+DROP DATABASE IF EXISTS database27;
+CREATE DATABASE database27;
+USE database27;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT , c1 MEDIUMTEXT  COMMENT 'asdf' ) ;
+INSERT INTO t0(c1) VALUES('');
+SET SESSION myisam_sort_buffer_size = 8148097337428156668;
+INSERT DELAYED INTO t0(c0) VALUES(-294367952);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+INSERT IGNORE INTO t0(c0, c1) VALUES(-294367952, NULL);
+DELETE QUICK IGNORE FROM t0 WHERE ( EXISTS (SELECT 1)) IS FALSE;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+TRUNCATE TABLE t0;
+DELETE QUICK IGNORE FROM t0 WHERE NULL;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+DELETE FROM t0;
+DELETE QUICK FROM t0 WHERE CAST( EXISTS (SELECT 1 wHERE FALSE) AS SIGNED);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+INSERT HIGH_PRIORITY INTO t0(c1, c0) VALUES(NULL, NULL);
+SET SESSION autocommit = 1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database27';
+REPLACE DELAYED INTO t0(c0, c1) VALUES('p', 'p');
+DELETE QUICK FROM t0 WHERE t0.c0;
+INSERT INTO t0(c0) VALUES('41?'), ('K~??V0'), ('C[wU');
+DELETE FROM t0;
+INSERT IGNORE INTO t0(c1) VALUES("c[wu");
+REPLACE INTO t0(c0, c1) VALUES('	?wM#NQd', 1538372881);

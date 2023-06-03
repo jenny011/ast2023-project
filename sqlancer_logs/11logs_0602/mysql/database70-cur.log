@@ -1,0 +1,31 @@
+-- Time: 2023/06/01 18:31:21
+-- Database: database70
+-- Database version: 8.0.11
+-- seed value: 1685637011060
+DROP DATABASE IF EXISTS database70;
+CREATE DATABASE database70;
+USE database70;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT , c1 TEXT  COLUMN_FORMAT DYNAMIC NULL COMMENT 'asdf' , c2 VARCHAR(500)  COMMENT 'asdf'  NULL STORAGE MEMORY COLUMN_FORMAT FIXED) ; -- 42ms;
+DELETE FROM t0; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database70'; -- 2ms;
+ALTER TABLE t0 DELAY_KEY_WRITE 0, RENAME AS t0, ALGORITHM INPLACE, ROW_FORMAT DYNAMIC; -- 72ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database70'; -- 4ms;
+DELETE LOW_PRIORITY IGNORE FROM t0; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database70'; -- 2ms;
+SET SESSION max_length_for_sort_data = 6059392; -- 3ms;
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE  EXISTS (SELECT 1); -- 0ms;
+ALTER TABLE t0 DELAY_KEY_WRITE 1, PACK_KEYS 1, RENAME TO t2, DROP COLUMN c2, ALGORITHM DEFAULT, CHECKSUM 1, ENABLE KEYS; -- 152ms;
+CREATE INDEX i0 USING HASH ON t2(c1, c0(2)) ALGORITHM= DEFAULT; -- 2ms;
+CREATE UNIQUE INDEX i0 USING HASH ON t2(c0 DESC, c1 ASC) INVISIBLE; -- 1ms;
+CREATE INDEX i0 USING BTREE ON t2(c1(3) DESC, c0(2)); -- 65ms;
+ALTER TABLE t2 STATS_AUTO_RECALC DEFAULT, CHECKSUM 0, RENAME t0, DELAY_KEY_WRITE 1; -- 70ms;
+ALTER TABLE t0 PACK_KEYS 1, FORCE, INSERT_METHOD NO; -- 98ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database70'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database70'; -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database70'; -- 9ms;
+ANALYZE  TABLE t0; -- 22ms;
+CREATE INDEX i1 USING HASH ON t0(c1(2) ASC) ALGORITHM INPLACE; -- 0ms;
+CREATE INDEX i1 ON t0(c1(1)); -- 51ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database70'; -- 4ms;
+DELETE LOW_PRIORITY FROM t0; -- 2ms;
+CREATE UNIQUE INDEX i2 USING HASH ON t0(( EXISTS (SELECT 1 wHERE FALSE)));

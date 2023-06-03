@@ -1,0 +1,18 @@
+-- Time: 2023/06/03 17:50:32
+-- Database: database67
+-- Database version: 8.0.11
+-- seed value: 1685807359614
+DROP DATABASE IF EXISTS database67;
+CREATE DATABASE database67;
+USE database67;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT ) ; -- 35ms;
+SET SESSION internal_tmp_mem_storage_engine = MEMORY; -- 3ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database67'; -- 3ms;
+SET SESSION read_buffer_size = 94684478; -- 1ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(2085899760); -- 2ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL); -- 20ms;
+DELETE LOW_PRIORITY IGNORE FROM t0; -- 13ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(360295866), (NULL), (NULL); -- 0ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 19ms;
+SET SESSION myisam_sort_buffer_size = 5860737026091477977; -- 0ms;
+CREATE UNIQUE INDEX i0 ON t0((NULL));

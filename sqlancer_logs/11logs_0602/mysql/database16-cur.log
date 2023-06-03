@@ -1,0 +1,19 @@
+-- Time: 2023/06/01 18:30:11
+-- Database: database16
+-- Database version: 8.0.11
+-- seed value: 1685637011005
+DROP DATABASE IF EXISTS database16;
+CREATE DATABASE database16;
+USE database16;
+CREATE TABLE IF NOT EXISTS t0(c0 LONGTEXT  COLUMN_FORMAT DYNAMIC) ; -- 176ms;
+DELETE FROM t0; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16'; -- 2ms;
+CHECKSUM TABLE t0 EXTENDED; -- 0ms;
+ANALYZE LOCAL TABLE t0; -- 76ms;
+ALTER TABLE t0 RENAME t0, PACK_KEYS 0, COMPRESSION 'NONE', CHECKSUM 1; -- 43ms;
+REPLACE INTO t0(c0) VALUES(1359623044); -- 10ms;
+SET SESSION optimizer_search_depth = 39; -- 0ms;
+ALTER TABLE t0 INSERT_METHOD NO, DISABLE KEYS, CHECKSUM 0; -- 419ms;
+CREATE INDEX i0 USING HASH ON t0(c0 DESC) ALGORITHM= DEFAULT; -- 2ms;
+CREATE INDEX i0 USING HASH ON t0((CAST(NULL AS SIGNED)));

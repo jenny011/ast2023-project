@@ -1,0 +1,78 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i2 USING BTREE ON t0((LEAST('U', t0.c0)), (NULL)) ALGORITHM COPY;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(LEAST('U', t0.c0)), (NULL)) ALGORITHM COPY' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:23
+-- Database: database32
+-- Database version: 8.0.11
+-- seed value: 1685807359579
+DROP DATABASE IF EXISTS database32;
+CREATE DATABASE database32;
+USE database32;
+CREATE TABLE t0(c0 MEDIUMINT(239)  COLUMN_FORMAT FIXED) ;
+CREATE TABLE t1(c0 SMALLINT(160)  STORAGE MEMORY) ;
+DELETE FROM t1 WHERE 'gR';
+DELETE IGNORE FROM t1;
+REPLACE DELAYED INTO t1(c0) VALUES(-1491071042);
+REPLACE DELAYED INTO t1(c0) VALUES(",HGHk%"), (NULL), ('gr');
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(NULL);
+INSERT DELAYED INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t1(c0) VALUES(-1491071042);
+INSERT IGNORE INTO t0(c0) VALUES(-1491071042);
+REPLACE DELAYED INTO t1(c0) VALUES('qcId');
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+INSERT DELAYED INTO t0(c0) VALUES(1959832169);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0 ASC) INVISIBLE;
+CREATE INDEX i0 ON t0(c0 DESC) INVISIBLE ALGORITHM INPLACE;
+SET SESSION rbr_exec_mode = IDEMPOTENT;
+REPLACE INTO t1(c0) VALUES(1959832169);
+INSERT INTO t0(c0) VALUES(NULL), ('gr'), ('VHp]AQ\r?');
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(1959832169);
+REPLACE INTO t1(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES('');
+CREATE INDEX i38 USING HASH ON t1(c0 ASC) INVISIBLE ALGORITHM= INPLACE;
+CREATE UNIQUE INDEX i1 ON t0(c0) ALGORITHM= COPY;
+REPLACE INTO t1(c0) VALUES(1959832169);
+INSERT IGNORE INTO t1(c0) VALUES(1402430766);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(1959832169);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t1(c0) VALUES(1);
+REPLACE DELAYED INTO t1(c0) VALUES("GR");
+INSERT INTO t0(c0) VALUES(NULL);
+DELETE QUICK IGNORE FROM t0;
+REPLACE INTO t0(c0) VALUES("");
+INSERT IGNORE INTO t0(c0) VALUES(NULL), (NULL), (-1491071042), ('1959832169'), (NULL);
+INSERT IGNORE INTO t0(c0) VALUES(1959832169);
+ALTER TABLE t1 ALGORITHM COPY, DISABLE KEYS, CHECKSUM 1;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(667620437);
+INSERT INTO t1(c0) VALUES(NULL);
+REPLACE INTO t1(c0) VALUES("ndX?XB.~");
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-1491071042);
+REPLACE INTO t0(c0) VALUES(667620437);
+REPLACE INTO t0(c0) VALUES(-1710517009);
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+INSERT INTO t1(c0) VALUES('667620437');
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(-389547501);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);

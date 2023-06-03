@@ -1,0 +1,71 @@
+--java.lang.AssertionError: CREATE INDEX i0 ON t0(((((NULL) XOR (t0.c0)) NOT IN (CAST(1536493841 AS SIGNED))) XOR (-1206046766))) VISIBLE ALGORITHM= INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((((NULL) XOR (t0.c0)) NOT IN (CAST(1536493841 AS SIGNED))) XOR (-1206046766))) ' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:13
+-- Database: database26
+-- Database version: 8.0.11
+-- seed value: 1685637011016
+DROP DATABASE IF EXISTS database26;
+CREATE DATABASE database26;
+USE database26;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT(16)  COMMENT 'asdf'  ) ;
+DELETE QUICK FROM t0;
+REPLACE INTO t0(c0) VALUES("?T2?&");
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+ALTER TABLE t0 INSERT_METHOD FIRST, ROW_FORMAT COMPACT;
+REPLACE DELAYED INTO t0(c0) VALUES("jAS)");
+REPLACE DELAYED INTO t0(c0) VALUES(-1031194648);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-341159855);
+REPLACE DELAYED INTO t0(c0) VALUES(564138351);
+REPLACE DELAYED INTO t0(c0) VALUES(-341159855);
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES("-341159855");
+ALTER TABLE t0 INSERT_METHOD NO, DELAY_KEY_WRITE 0, STATS_AUTO_RECALC DEFAULT, RENAME AS t0, CHECKSUM 1, ROW_FORMAT REDUNDANT, STATS_PERSISTENT 0, PACK_KEYS 0, ENABLE KEYS, ALGORITHM COPY, COMPRESSION 'NONE';
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE t0.c0;
+ALTER TABLE t0 ;
+DELETE QUICK FROM t0;
+REPLACE INTO t0(c0) VALUES(-1448930444);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-519944176);
+REPLACE INTO t0(c0) VALUES(564138351);
+REPLACE INTO t0(c0) VALUES("");
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('h1WU');
+INSERT IGNORE INTO t0(c0) VALUES(621530117);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database26';
+REPLACE INTO t0(c0) VALUES("-519944176");
+INSERT IGNORE INTO t0(c0) VALUES(-519944176);
+REPLACE INTO t0(c0) VALUES("BP");
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("Ih");
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(-245625939);
+REPLACE DELAYED INTO t0(c0) VALUES(-1555768518), (194250416), (NULL);
+INSERT INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES(621530117);
+DELETE IGNORE FROM t0;
+ANALYZE LOCAL TABLE t0;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL), (NULL), (-632132197), (-1931634034), ("");
+REPLACE DELAYED INTO t0(c0) VALUES(-135401336);
+REPLACE INTO t0(c0) VALUES(564138351);
+INSERT IGNORE INTO t0(c0) VALUES(343715014);
+INSERT INTO t0(c0) VALUES(-912972244);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES(NULL);
+TRUNCATE TABLE t0;

@@ -1,0 +1,46 @@
+--java.lang.AssertionError: SET SESSION optimizer_switch = 'index_condition_pushdown=off,mrr=off,block_nested_loop=off,firstmatch=off,index_merge_union=off,use_index_extensions=off,engine_condition_pushdown=off,condition_fanout_filter=off,skip_scan=on,semijoin=off,index_merge=off,subquery_materialization_cost_based=on';
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: Variable 'optimizer_switch' can't be set to the value of 'skip_scan=on,semijoin=off,index_merge=off,subquery_materialization_cost_based=on'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:40:43
+-- Database: database3
+-- Database version: 8.0.11
+-- seed value: 1685637010977
+DROP DATABASE IF EXISTS database3;
+CREATE DATABASE database3;
+USE database3;
+CREATE TABLE t0(c0 VARCHAR(500)  COMMENT 'asdf'  STORAGE MEMORY) ;
+CREATE TABLE IF NOT EXISTS t1(c0 TINYTEXT  COLUMN_FORMAT DEFAULT COMMENT 'asdf' , c1 MEDIUMTEXT  COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE MEMORY) ;
+REPLACE DELAYED INTO t1(c1, c0) VALUES(-2055861787, 341306679), ('', NULL), ("-839293088", NULL), ('po*v7', NULL), (1504896041, "");
+INSERT DELAYED IGNORE INTO t1(c1, c0) VALUES(NULL, NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3';
+REPLACE DELAYED INTO t1(c0) VALUES(-410753316);
+CHECKSUM TABLE t0, t1 EXTENDED;
+SET SESSION query_prealloc_size = 7103117274381031862;
+REPLACE LOW_PRIORITY INTO t1(c1) VALUES(-2018380469);
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0, c1) VALUES(NULL, NULL);
+INSERT IGNORE INTO t0(c0) VALUES(500876023);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-839293088);
+INSERT INTO t1(c1) VALUES(NULL);
+SET SESSION show_old_temporals = OFF;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+SET SESSION sql_auto_is_null = OFF;

@@ -1,0 +1,52 @@
+--java.lang.AssertionError: CREATE INDEX i0 ON t0(( EXISTS (SELECT 1))) VISIBLE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( EXISTS (SELECT 1))) VISIBLE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:13
+-- Database: database25
+-- Database version: 8.0.11
+-- seed value: 1685637011015
+DROP DATABASE IF EXISTS database25;
+CREATE DATABASE database25;
+USE database25;
+CREATE TABLE t0(c0 TINYINT  NULL STORAGE MEMORY COLUMN_FORMAT DEFAULT UNIQUE, c1 TINYTEXT   COLUMN_FORMAT FIXED COMMENT 'asdf'  STORAGE MEMORY) ;
+CREATE TABLE t1(c0 LONGTEXT , c1 BIGINT  COMMENT 'asdf'  COLUMN_FORMAT FIXED, c2 VARCHAR(500) ) ;
+CREATE TABLE IF NOT EXISTS t2(c0 MEDIUMINT  UNIQUE KEY PRIMARY KEY NOT NULL) ;
+DELETE QUICK IGNORE FROM t1;
+DELETE QUICK FROM t1;
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES('');
+INSERT INTO t1(c1, c0, c2) VALUES(NULL, NULL, NULL);
+SET SESSION old_alter_table = OFF;
+DELETE IGNORE FROM t1;
+TRUNCATE TABLE t1;
+SET SESSION max_seeks_for_key = 8460264682504177763;
+CHECK TABLE t1, t2 QUICK FOR UPGRADE MEDIUM EXTENDED CHANGED FAST;
+DELETE FROM t1;
+SET SESSION optimizer_prune_level = 1;
+CHECKSUM TABLE t2 EXTENDED;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t2 WHERE '';
+ANALYZE LOCAL TABLE t2 DROP HISTOGRAM ON c0;
+INSERT IGNORE INTO t0(c0, c1) VALUES("ll", NULL);
+DELETE LOW_PRIORITY QUICK IGNORE FROM t2;
+DROP INDEX c0 ON t2 ALGORITHM=INPLACE LOCK=EXCLUSIVE;
+ALTER TABLE t2 COMPRESSION 'LZ4', FORCE;
+DELETE FROM t1;

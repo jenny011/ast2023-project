@@ -1,0 +1,48 @@
+--java.lang.AssertionError: ALTER TABLE t0 INSERT_METHOD LAST, STATS_AUTO_RECALC 1, STATS_PERSISTENT 0, ALGORITHM INSTANT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:54:11
+-- Database: database98
+-- Database version: 8.0.11
+-- seed value: 1685807359645
+DROP DATABASE IF EXISTS database98;
+CREATE DATABASE database98;
+USE database98;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT   COMMENT 'asdf' , c1 LONGTEXT  COLUMN_FORMAT DEFAULT COMMENT 'asdf'  NULL STORAGE DISK) COMPRESSION = 'ZLIB', ENGINE = HEAP;
+CREATE TABLE t0(c0 SMALLINT(12)  , c1 MEDIUMINT  UNIQUE) ;
+DELETE QUICK FROM t0 WHERE '';
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE (((+ (-501896036))) || ((+ (t0.c0)))) IS UNKNOWN;
+DELETE LOW_PRIORITY QUICK FROM t0;
+DELETE LOW_PRIORITY FROM t0;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL), (NULL), ('');
+INSERT INTO t0(c1, c0) VALUES(NULL, -1795626888);
+INSERT INTO t0(c0) VALUES("");
+REPLACE DELAYED INTO t0(c0, c1) VALUES(-501896036, NULL);
+REPLACE DELAYED INTO t0(c0, c1) VALUES(NULL, ""), (-2130425670, ''), (NULL, -144391954);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(1264882836);
+INSERT INTO t0(c0) VALUES(-1153932205);
+INSERT IGNORE INTO t0(c1) VALUES("");
+DELETE QUICK IGNORE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database98';
+ALTER TABLE t0 INSERT_METHOD FIRST, CHECKSUM 1, FORCE, COMPRESSION 'NONE', STATS_AUTO_RECALC DEFAULT, ENABLE KEYS, ROW_FORMAT COMPRESSED, DROP COLUMN c1, RENAME TO t0, PACK_KEYS DEFAULT, STATS_PERSISTENT 0, DELAY_KEY_WRITE 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database98';

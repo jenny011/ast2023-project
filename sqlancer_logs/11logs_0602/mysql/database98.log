@@ -1,0 +1,40 @@
+--java.lang.AssertionError: ALTER TABLE t0 ENABLE KEYS, COMPRESSION 'LZ4', INSERT_METHOD NO, CHECKSUM 0, ALGORITHM INSTANT, FORCE, PACK_KEYS DEFAULT, STATS_AUTO_RECALC 1, DELAY_KEY_WRITE 1, STATS_PERSISTENT DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:38:09
+-- Database: database98
+-- Database version: 8.0.11
+-- seed value: 1685637011088
+DROP DATABASE IF EXISTS database98;
+CREATE DATABASE database98;
+USE database98;
+CREATE TABLE t0(c0 TEXT  COLUMN_FORMAT FIXED) ;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0;
+SET SESSION old_alter_table = ON;
+ALTER TABLE t0 STATS_PERSISTENT 1, FORCE;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database98';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database98';
+DELETE IGNORE FROM t0;
+DELETE FROM t0 WHERE (t0.c0) IS UNKNOWN;
+SET SESSION sql_log_off = ON;
+ALTER TABLE t0 STATS_AUTO_RECALC DEFAULT, ENABLE KEYS, COMPRESSION 'LZ4', STATS_PERSISTENT 0, ALGORITHM INPLACE, CHECKSUM 0;

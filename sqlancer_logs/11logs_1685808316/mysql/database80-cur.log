@@ -1,0 +1,15 @@
+-- Time: 2023/06/03 17:57:49
+-- Database: database80
+-- Database version: 8.0.11
+-- seed value: 1685807359627
+DROP DATABASE IF EXISTS database80;
+CREATE DATABASE database80;
+USE database80;
+CREATE TABLE t0(c0 TINYINT(43)   COLUMN_FORMAT DYNAMIC  COMMENT 'asdf'  STORAGE DISK UNIQUE, c1 TINYINT  COLUMN_FORMAT DYNAMIC  UNIQUE KEY  STORAGE MEMORY) STATS_AUTO_RECALC = DEFAULT, PACK_KEYS = DEFAULT; -- 32ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database80'; -- 1ms;
+TRUNCATE TABLE t0; -- 37ms;
+REPLACE DELAYED INTO t0(c0, c1) VALUES("-360457068", ''); -- 2ms;
+REPLACE DELAYED INTO t0(c1, c0) VALUES(NULL, NULL); -- 3ms;
+REPLACE INTO t0(c1, c0) VALUES("-1004369250", NULL), (NULL, NULL), (NULL, NULL), (-448799405, 851709817), ('~ghR&b[ j', NULL); -- 0ms;
+INSERT IGNORE INTO t0(c0, c1) VALUES('''!', "-1592130621"); -- 4ms;
+SET SESSION optimizer_switch = 'semijoin=on,block_nested_loop=off,use_invisible_indexes=off,index_merge_intersection=on,materialization=off,index_merge=off,loosescan=off,subquery_materialization_cost_based=off,derived_merge=on,condition_fanout_filter=off,batched_key_access=on,mrr=on,index_merge_sort_union=on,index_condition_pushdown=off,firstmatch=off,duplicateweedout=off,engine_condition_pushdown=off,skip_scan=on,mrr_cost_based=off';

@@ -1,0 +1,40 @@
+-- Time: 2023/06/01 18:30:11
+-- Database: database4
+-- Database version: 8.0.11
+-- seed value: 1685637010978
+DROP DATABASE IF EXISTS database4;
+CREATE DATABASE database4;
+USE database4;
+CREATE TABLE t0(c0 TINYTEXT  STORAGE MEMORY) ; -- 53ms;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0; -- 229ms;
+DELETE LOW_PRIORITY QUICK FROM t1; -- 1ms;
+ALTER TABLE t1 ROW_FORMAT COMPACT, ALGORITHM INPLACE, PACK_KEYS 1, FORCE, COMPRESSION 'ZLIB', INSERT_METHOD NO, RENAME AS t2, DELAY_KEY_WRITE 1; -- 422ms;
+SET SESSION foreign_key_checks = 1; -- 1ms;
+SET SESSION sql_quote_show_create = OFF; -- 0ms;
+INSERT LOW_PRIORITY IGNORE INTO t2(c0) VALUES(-1244015373); -- 11ms;
+REPLACE INTO t2(c0) VALUES('-1244015373'), (NULL), (NULL), (-1244015373), ("3!4#O"), ('-1244015373'), (NULL); -- 9ms;
+CHECK TABLE t0, t2 CHANGED MEDIUM EXTENDED QUICK FAST; -- 1ms;
+INSERT INTO t2(c0) VALUES(NULL); -- 9ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 3ms;
+INSERT INTO t2(c0) VALUES(926363269); -- 6ms;
+CREATE INDEX i0 USING HASH ON t0(c0(4) DESC); -- 0ms;
+CREATE INDEX i0 ON t2(c0) VISIBLE ALGORITHM= COPY; -- 1ms;
+CREATE UNIQUE INDEX i0 USING BTREE ON t2(c0(2) DESC); -- 185ms;
+CREATE INDEX i0 ON t2(c0) VISIBLE ALGORITHM= COPY; -- 1ms;
+DELETE LOW_PRIORITY FROM t2; -- 13ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 9ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 12ms;
+DELETE LOW_PRIORITY FROM t0; -- 2ms;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t2; -- 1ms;
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES("4"); -- 26ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 2ms;
+REPLACE DELAYED INTO t2(c0) VALUES(NULL); -- 13ms;
+DELETE IGNORE FROM t0; -- 1ms;
+INSERT DELAYED INTO t0(c0) VALUES(''), (''), (NULL); -- 12ms;
+DELETE QUICK IGNORE FROM t0 WHERE (+ ((NULL) != (IF(t0.c0, 'o', NULL)))); -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 8ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 2ms;
+ALTER TABLE t0 DELAY_KEY_WRITE 0; -- 40ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 3ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 3ms;
+CREATE INDEX i0 ON t2((CAST(CAST((t2.c0) IS TRUE AS SIGNED) AS SIGNED))) VISIBLE ALGORITHM COPY;

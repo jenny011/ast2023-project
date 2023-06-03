@@ -1,0 +1,52 @@
+--java.lang.AssertionError: ALTER TABLE t0 ENABLE KEYS, COMPRESSION 'ZLIB', DROP COLUMN c1, RENAME t0, PACK_KEYS 0, ALGORITHM INSTANT, FORCE, ROW_FORMAT COMPACT, INSERT_METHOD LAST, DELAY_KEY_WRITE 0, CHECKSUM 0, STATS_PERSISTENT 0, STATS_AUTO_RECALC DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:55
+-- Database: database79
+-- Database version: 8.0.11
+-- seed value: 1685807359626
+DROP DATABASE IF EXISTS database79;
+CREATE DATABASE database79;
+USE database79;
+CREATE TABLE t0(c0 MEDIUMTEXT  STORAGE MEMORY NULL COLUMN_FORMAT DEFAULT, c1 SMALLINT(43)   COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE MEMORY) ;
+DELETE LOW_PRIORITY IGNORE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database79';
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(-1195356513);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1195356513);
+INSERT IGNORE INTO t0(c1) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-1195356513);
+REPLACE DELAYED INTO t0(c1) VALUES(600757814);
+INSERT DELAYED INTO t0(c1, c0) VALUES(600757814, 1622777548);
+INSERT IGNORE INTO t0(c1, c0) VALUES(NULL, NULL);
+INSERT INTO t0(c0, c1) VALUES(NULL, '-1195356513'), ("1622777548", 1622777548), (-300197935, NULL), (-2071474316, '+by?'), (2093627760, '');
+INSERT INTO t0(c0) VALUES(NULL), (NULL), (-75670263);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database79';
+REPLACE INTO t0(c0) VALUES(-1063957557);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database79';
+REPLACE DELAYED INTO t0(c1) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database79';
+REPLACE DELAYED INTO t0(c0, c1) VALUES("", 1075500231);
+REPLACE INTO t0(c1) VALUES(-1758422843);
+REPLACE INTO t0(c1, c0) VALUES(NULL, ''), (600757814, "+by?"), (1019186786, -617290269);
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(NULL);

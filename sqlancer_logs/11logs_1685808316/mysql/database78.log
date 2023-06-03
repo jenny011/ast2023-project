@@ -1,0 +1,76 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i1 ON t0((GREATEST(GREATEST(t0.c0, -2077810398), IF(t0.c0, 243745176, t0.c0)))) VISIBLE ALGORITHM= INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(GREATEST(GREATEST(t0.c0, -2077810398), IF(t0.c0, 243745176, t0.c0)))) VISIBLE A' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:55
+-- Database: database78
+-- Database version: 8.0.11
+-- seed value: 1685807359625
+DROP DATABASE IF EXISTS database78;
+CREATE DATABASE database78;
+USE database78;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT ) ;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("9(CRki\r*");
+INSERT IGNORE INTO t0(c0) VALUES('[]');
+DELETE FROM t0 WHERE (+ (((t0.c0) XOR (t0.c0)) IS NOT TRUE));
+DELETE IGNORE FROM t0 WHERE (BIT_COUNT(NULL)) IS NOT FALSE;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78';
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+CHECKSUM TABLE t0;
+INSERT INTO t0(c0) VALUES('HECUV!n');
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE (+ (IFNULL(NULL, t0.c0)));
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES('HECUV!n');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78';
+SET SESSION myisam_sort_buffer_size = 8303131774586544489;
+REPLACE INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78';
+REPLACE INTO t0(c0) VALUES('6?/U');
+INSERT IGNORE INTO t0(c0) VALUES(NULL), (NULL), (NULL);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(436476676);
+INSERT IGNORE INTO t0(c0) VALUES(-1676302931);
+DELETE LOW_PRIORITY QUICK FROM t0;
+REPLACE INTO t0(c0) VALUES(1745498051);
+INSERT INTO t0(c0) VALUES(NULL), (NULL), (-1676302931), ("[]J*<n]!~y?"), ('!Rq?/6?}');
+REPLACE INTO t0(c0) VALUES("");
+INSERT IGNORE INTO t0(c0) VALUES('?!MYHz');
+REPLACE INTO t0(c0) VALUES('-1676302931');
+INSERT IGNORE INTO t0(c0) VALUES(546384966);
+CREATE INDEX i0 ON t0(c0 ASC) ALGORITHM= COPY;
+DELETE LOW_PRIORITY IGNORE FROM t0;
+SET SESSION optimizer_search_depth = 12;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78';
+INSERT INTO t0(c0) VALUES(190262605), (NULL), (NULL), ("[]"), (NULL);
+REPLACE INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78';
+INSERT DELAYED INTO t0(c0) VALUES("");
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL), (546384966), (2073343123);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+ANALYZE NO_WRITE_TO_BINLOG TABLE t0 UPDATE HISTOGRAM ON c0;
+SET SESSION query_prealloc_size = 6886455031575058825;
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES("");
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL), ("~x9lGA}"), ('');
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(-472855116);
+CHECK TABLE t0 ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database78';

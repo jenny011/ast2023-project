@@ -1,0 +1,12 @@
+-- Time: 2023/06/03 17:49:22
+-- Database: database4
+-- Database version: 8.0.11
+-- seed value: 1685807359539
+DROP DATABASE IF EXISTS database4;
+CREATE DATABASE database4;
+USE database4;
+CREATE TABLE t0(c0 BIGINT(241) ) ; -- 260ms;
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE (591889910) IS FALSE; -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database4'; -- 2ms;
+DELETE IGNORE FROM t0; -- 1ms;
+ALTER TABLE t0 RENAME t0, COMPRESSION 'NONE', ROW_FORMAT DEFAULT, CHECKSUM 0, ENABLE KEYS, ALGORITHM INSTANT, FORCE, DELAY_KEY_WRITE 0;

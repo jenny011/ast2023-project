@@ -1,0 +1,50 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i76 USING BTREE ON t0(((('') NOT IN ((+ (NULL)))) OR (CAST((t0.c0) AND ("?v1kl1v") AS SIGNED))), (t0.c0)) INVISIBLE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((('') NOT IN ((+ (NULL)))) OR (CAST((t0.c0) AND ("?v1kl1v") AS SIGNED))), (t0' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:19
+-- Database: database6
+-- Database version: 8.0.11
+-- seed value: 1685807359544
+DROP DATABASE IF EXISTS database6;
+CREATE DATABASE database6;
+USE database6;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT(210)  STORAGE MEMORY COMMENT 'asdf'   COLUMN_FORMAT FIXED) CHECKSUM = 1, STATS_AUTO_RECALC = DEFAULT;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+DELETE LOW_PRIORITY QUICK FROM t0;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('ohqi\r');
+INSERT IGNORE INTO t0(c0) VALUES(2008509654), ("ohqi\r"), (']A?');
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+ANALYZE  TABLE t0 DROP HISTOGRAM ON c0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database6';
+SET SESSION read_rnd_buffer_size = 330351685;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database6';
+REPLACE INTO t0(c0) VALUES('?0');
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database6';
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+CHECK TABLE t0 QUICK FOR UPGRADE MEDIUM CHANGED FAST EXTENDED;
+REPLACE INTO t0(c0) VALUES(-209322096);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(NULL), ("l4xJo?R"), (1861360756);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES(NULL), (899286791), (NULL);

@@ -1,0 +1,32 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i88 USING BTREE ON t0((CAST(CAST(t0.c0 AS SIGNED) AS SIGNED)), (-382516420), ((( EXISTS (SELECT 1 wHERE FALSE)) XOR ((+ (t0.c0)))) OR (LEAST(t0.c0, t0.c2)))) ALGORITHM DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(CAST(CAST(t0.c0 AS SIGNED) AS SIGNED)), (-382516420), ((( EXISTS (SELECT 1 wHER' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:19
+-- Database: database5
+-- Database version: 8.0.11
+-- seed value: 1685807359543
+DROP DATABASE IF EXISTS database5;
+CREATE DATABASE database5;
+USE database5;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT  COMMENT 'asdf'  STORAGE DISK, c1 MEDIUMINT(201)  COLUMN_FORMAT DEFAULT  COMMENT 'asdf'  , c2 TEXT  COLUMN_FORMAT DYNAMIC ) ;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0;

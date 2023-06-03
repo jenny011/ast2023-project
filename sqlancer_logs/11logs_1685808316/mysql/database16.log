@@ -1,0 +1,127 @@
+--java.lang.AssertionError: CREATE INDEX i1 ON t0((t0.c1));
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(t0.c1))' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:20
+-- Database: database16
+-- Database version: 8.0.11
+-- seed value: 1685807359562
+DROP DATABASE IF EXISTS database16;
+CREATE DATABASE database16;
+USE database16;
+CREATE TABLE t0(c0 TINYINT  PRIMARY KEY UNIQUE, c1 VARCHAR(500)  STORAGE DISK COLUMN_FORMAT FIXED) ;
+DELETE LOW_PRIORITY IGNORE FROM t0;
+DELETE QUICK FROM t0;
+REPLACE DELAYED INTO t0(c0) VALUES(794483477);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES("[n");
+REPLACE DELAYED INTO t0(c1) VALUES(351436518);
+INSERT DELAYED INTO t0(c0) VALUES(NULL), (792370268), (160610661);
+INSERT IGNORE INTO t0(c0) VALUES(794483477);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16';
+INSERT IGNORE INTO t0(c1, c0) VALUES('[n', "");
+DELETE LOW_PRIORITY IGNORE FROM t0;
+CREATE UNIQUE INDEX i0 USING BTREE ON t0(c1(4) DESC) ALGORITHM DEFAULT;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16';
+REPLACE LOW_PRIORITY INTO t0(c0, c1) VALUES(NULL, "LI1"), ("Y{Xa-x", ''), (NULL, NULL);
+REPLACE INTO t0(c1) VALUES(NULL);
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(-1696042951);
+REPLACE LOW_PRIORITY INTO t0(c0, c1) VALUES(160610661, NULL), (792370268, NULL), (NULL, '351436518');
+REPLACE INTO t0(c1) VALUES(NULL), (NULL), (NULL);
+INSERT IGNORE INTO t0(c0, c1) VALUES(NULL, 'LI1'), (-1696042951, NULL), (1064779972, NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(942389195);
+INSERT INTO t0(c1) VALUES(-2102957786);
+REPLACE DELAYED INTO t0(c1, c0) VALUES(NULL, -1182975536);
+REPLACE INTO t0(c1) VALUES(-2102957786);
+REPLACE DELAYED INTO t0(c0, c1) VALUES(NULL, "");
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES("M]12zeZ|E");
+DELETE QUICK FROM t0 WHERE ( EXISTS (SELECT 1 wHERE FALSE)) != ((! (CAST(t0.c0 AS SIGNED))));
+INSERT HIGH_PRIORITY INTO t0(c1) VALUES(792370268);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0, c1) VALUES("-1182975536", NULL);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(-2102957786);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c0, c1) VALUES("160610661", -1696042951);
+INSERT IGNORE INTO t0(c1, c0) VALUES(NULL, "fy<\r!r]wG");
+DELETE QUICK IGNORE FROM t0;
+INSERT INTO t0(c0) VALUES("");
+REPLACE INTO t0(c1) VALUES('');
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(-761780946);
+REPLACE INTO t0(c1) VALUES("-1182975536");
+INSERT DELAYED INTO t0(c0) VALUES(NULL);
+INSERT DELAYED IGNORE INTO t0(c0, c1) VALUES('ou', 972821662);
+REPLACE INTO t0(c1, c0) VALUES(794483477, 'e?O-??');
+REPLACE DELAYED INTO t0(c0, c1) VALUES("M]12zeZ|E", 'ou');
+REPLACE DELAYED INTO t0(c1) VALUES("-1937784029");
+REPLACE LOW_PRIORITY INTO t0(c0, c1) VALUES(NULL, "[B!"), (-1500840777, 788666714), (NULL, 477150695);
+REPLACE INTO t0(c1, c0) VALUES("-1719235294", NULL), (160610661, ")b]Y"), (-1500840777, NULL), (NULL, NULL), ("j'#)^", NULL);
+REPLACE INTO t0(c1, c0) VALUES(88172392, -1164351648), ('', ""), (NULL, '-1500840777');
+INSERT LOW_PRIORITY INTO t0(c1, c0) VALUES(351436518, NULL);
+INSERT DELAYED INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c1, c0) VALUES(NULL, 'ou');
+REPLACE INTO t0(c1, c0) VALUES('', -1722661728);
+REPLACE DELAYED INTO t0(c1, c0) VALUES(NULL, -1937784029);
+REPLACE DELAYED INTO t0(c1) VALUES("))FL(+F"), (NULL), (-546449441), (NULL), (NULL);
+REPLACE DELAYED INTO t0(c0, c1) VALUES(NULL, 627071629);
+INSERT DELAYED INTO t0(c0, c1) VALUES(1132357508, NULL);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES('');
+DROP INDEX i0 ON t0 ALGORITHM=INPLACE;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1194658319);
+REPLACE INTO t0(c1, c0) VALUES(-734589625, '!?E?&o');
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(781026359, NULL);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES("qLv");
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0, c1) VALUES(-969700908, 88172392), ('', -956346899), (788666714, "-761780946");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16';
+DELETE FROM t0 WHERE (! (IFNULL(1614626126, t0.c0)));
+REPLACE INTO t0(c0, c1) VALUES(NULL, NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c1) VALUES(NULL);
+REPLACE INTO t0(c0, c1) VALUES(NULL, NULL);
+INSERT LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, 'fy<\r!r]wg');
+INSERT IGNORE INTO t0(c0) VALUES(NULL);
+INSERT DELAYED INTO t0(c0, c1) VALUES('pFBJTRf', NULL), (-2102957786, "uyu"), (NULL, '');
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES('');
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES('j''#)^', NULL);
+REPLACE INTO t0(c1) VALUES(1199131615);
+REPLACE INTO t0(c1, c0) VALUES('Y{Xa-x', NULL);
+INSERT LOW_PRIORITY INTO t0(c0, c1) VALUES('781026359', 1650799332);
+REPLACE INTO t0(c0, c1) VALUES(NULL, NULL), ("1614626126", 1088626597), (NULL, '788666714');
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(2093933564);
+INSERT IGNORE INTO t0(c0) VALUES(351436518);
+INSERT IGNORE INTO t0(c0) VALUES('xg{U_6'), (-1696042951), (-1534896028), (NULL), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16';
+REPLACE INTO t0(c1) VALUES(1092942081);
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT DELAYED INTO t0(c1) VALUES(1827027039);
+INSERT INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0, c1) VALUES('LI1', NULL);
+INSERT DELAYED INTO t0(c1) VALUES(NULL), (-59822436), (1937252805);
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(1595165990, '794483477');
+INSERT HIGH_PRIORITY IGNORE INTO t0(c1) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database16';
+INSERT HIGH_PRIORITY INTO t0(c1) VALUES(241458069), (''), ("-2102957786");
+REPLACE INTO t0(c1) VALUES('BQQh(b');
+REPLACE INTO t0(c1) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(')b]y');
+INSERT IGNORE INTO t0(c1) VALUES("");

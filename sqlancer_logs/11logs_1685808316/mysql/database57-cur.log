@@ -1,0 +1,18 @@
+-- Time: 2023/06/03 17:50:30
+-- Database: database57
+-- Database version: 8.0.11
+-- seed value: 1685807359604
+DROP DATABASE IF EXISTS database57;
+CREATE DATABASE database57;
+USE database57;
+CREATE TABLE t0(c0 SMALLINT(32)  STORAGE MEMORY UNIQUE NULL COLUMN_FORMAT FIXED , c1 SMALLINT(249) , c2 VARCHAR(500)  STORAGE DISK COLUMN_FORMAT DYNAMIC) ; -- 48ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57'; -- 2ms;
+DELETE QUICK FROM t0; -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57'; -- 2ms;
+CHECK TABLE t0 FOR UPGRADE FAST MEDIUM; -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57'; -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57'; -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database57'; -- 4ms;
+ANALYZE LOCAL TABLE t0 DROP HISTOGRAM ON c2; -- 6ms;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c2 DESC, c0, c1 ASC); -- 1ms;
+CREATE INDEX i0 USING HASH ON t0(((((t0.c0) != (t0.c2)) OR (2035703977)) XOR (CAST((t0.c1) && (-1512704208) AS SIGNED))), (CAST( EXISTS (SELECT 1 wHERE FALSE) AS SIGNED)));

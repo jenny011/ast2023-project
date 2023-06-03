@@ -1,0 +1,12 @@
+-- Time: 2023/06/01 18:31:34
+-- Database: database81
+-- Database version: 8.0.11
+-- seed value: 1685637011071
+DROP DATABASE IF EXISTS database81;
+CREATE DATABASE database81;
+USE database81;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT(96)  COLUMN_FORMAT DYNAMIC COMMENT 'asdf' ) ; -- 32ms;
+CREATE TABLE t1 LIKE t0; -- 55ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database81'; -- 7ms;
+INSERT IGNORE INTO t1(c0) VALUES('^?r'); -- 11ms;
+CREATE UNIQUE INDEX i0 ON t1((NULL)) ALGORITHM DEFAULT;

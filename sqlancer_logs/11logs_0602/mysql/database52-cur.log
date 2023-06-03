@@ -1,0 +1,13 @@
+-- Time: 2023/06/01 18:30:17
+-- Database: database52
+-- Database version: 8.0.11
+-- seed value: 1685637011042
+DROP DATABASE IF EXISTS database52;
+CREATE DATABASE database52;
+USE database52;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYTEXT ) ; -- 108ms;
+DELETE QUICK IGNORE FROM t0; -- 1ms;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(''), ('Oq'), (1537778292); -- 27ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database52'; -- 2ms;
+CREATE INDEX i0 USING HASH ON t0(c0 DESC) ALGORITHM INPLACE; -- 1ms;
+CREATE UNIQUE INDEX i0 USING HASH ON t0((t0.c0)) INVISIBLE ALGORITHM DEFAULT;

@@ -1,0 +1,62 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i1 USING HASH ON t1(((((t1.c0) OR (t1.c0)) NOT IN (CAST(t1.c0 AS SIGNED), t1.c1)) IS NOT FALSE)) VISIBLE ALGORITHM COPY;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((((t1.c0) OR (t1.c0)) NOT IN (CAST(t1.c0 AS SIGNED), t1.c1)) IS NOT FALSE)) VIS' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:17
+-- Database: database40
+-- Database version: 8.0.11
+-- seed value: 1685637011030
+DROP DATABASE IF EXISTS database40;
+CREATE DATABASE database40;
+USE database40;
+CREATE TABLE t0(c0 MEDIUMINT(166)  STORAGE MEMORY UNIQUE COMMENT 'asdf' , c1 VARCHAR(500)  ) ;
+CREATE TABLE t1 LIKE t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database40';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database40';
+ALTER TABLE t0 STATS_PERSISTENT 1, STATS_AUTO_RECALC 0, DELAY_KEY_WRITE 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database40';
+INSERT INTO t1(c0, c1) VALUES(-2089066020, NULL), ("", "1855222087"), (-717673230, NULL);
+INSERT INTO t1(c0) VALUES("V16Jo");
+REPLACE INTO t0(c1, c0) VALUES(NULL, "l!^4");
+REPLACE DELAYED INTO t0(c1) VALUES(NULL), ('&A'), ('V6~U''qFDI');
+INSERT LOW_PRIORITY INTO t1(c0, c1) VALUES(104795210, NULL), ('', ''), ('', -2089066020);
+INSERT INTO t0(c0, c1) VALUES(-203802584, NULL);
+INSERT INTO t0(c1) VALUES('');
+TRUNCATE TABLE t0;
+DELETE QUICK IGNORE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database40';
+REPLACE INTO t1(c1) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(1285212764);
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0, c1(2) DESC) ALGORITHM= INPLACE;
+CREATE INDEX i0 USING BTREE ON t1(c1(1), c0 DESC) INVISIBLE ALGORITHM= DEFAULT;
+CHECK TABLE t0 FOR UPGRADE CHANGED FAST EXTENDED;
+DROP INDEX c0 ON t0 LOCK=NONE;
+REPLACE INTO t1(c1) VALUES(-203802584);
+DELETE LOW_PRIORITY IGNORE FROM t1 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+SET SESSION query_alloc_block_size = 3127785573;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database40';
+DELETE QUICK FROM t1 WHERE ('') IS NOT TRUE;
+ALTER TABLE t1 INSERT_METHOD LAST, ALGORITHM INPLACE, STATS_AUTO_RECALC 1, COMPRESSION 'ZLIB', DISABLE KEYS, RENAME AS t0, DELAY_KEY_WRITE 1, FORCE, ROW_FORMAT REDUNDANT, CHECKSUM 1, PACK_KEYS 1;
+ALTER TABLE t0 ENABLE KEYS,  ORDER BY c1, c0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database40';
+REPLACE INTO t1(c1, c0) VALUES(NULL, 1344429821);
+INSERT IGNORE INTO t0(c0, c1) VALUES(NULL, "v16jo");

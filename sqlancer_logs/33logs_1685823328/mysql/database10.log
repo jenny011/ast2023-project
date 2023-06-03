@@ -1,0 +1,67 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCT SQL_NO_CACHE SQL_BIG_RESULT STRAIGHT_JOIN t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE (+ ((t1.c0) > (t0.c0))) ORDER BY GREATEST( EXISTS (SELECT 1), t0.c0, (t0.c0) XOR (t0.c0), (1681756057) IN ("", t0.c0), (t0.c0) IS FALSE, (NULL) OR (t0.c0)),  EXISTS (SELECT 1) ASC, t0.c0 LIMIT 2147483647) as result WHERE result.ref0 = '0' AND result.ref1 = 713602740;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/03 19:25:10
+-- Database: database10
+-- Database version: 8.0.33
+-- seed value: 1685808636561
+DROP DATABASE IF EXISTS database10;
+CREATE DATABASE database10;
+USE database10;
+CREATE TABLE IF NOT EXISTS t0(c0 LONGTEXT  COLUMN_FORMAT DYNAMIC) ;
+CREATE TABLE t1(c0 INT(162)  STORAGE DISK UNIQUE NULL COMMENT 'asdf'  COLUMN_FORMAT DYNAMIC) ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL), (510787651), (1502624443);
+ALTER TABLE t0 FORCE, STATS_AUTO_RECALC DEFAULT, RENAME t0, CHECKSUM 0, COMPRESSION 'ZLIB', DISABLE KEYS, INSERT_METHOD FIRST, DELAY_KEY_WRITE 1, ROW_FORMAT REDUNDANT, ALGORITHM INPLACE, PACK_KEYS 0, STATS_PERSISTENT 1;
+ALTER TABLE t0 ;
+ANALYZE NO_WRITE_TO_BINLOG TABLE t0, t1;
+CREATE UNIQUE INDEX i0 ON t1((CAST((("_#") IS NOT FALSE) NOT IN ((t1.c0) >= (t1.c0)) AS SIGNED)), (-13783242), (CAST(t1.c0 AS SIGNED))) ALGORITHM= COPY;
+ALTER TABLE t0 ;
+REPLACE INTO t1(c0) VALUES(713602740);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+REPLACE INTO t1(c0) VALUES(NULL);
+TRUNCATE TABLE t0;
+REPLACE DELAYED INTO t0(c0) VALUES('dh''u!{?Fm');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+ALTER TABLE t0 INSERT_METHOD FIRST, COMPRESSION 'ZLIB', DELAY_KEY_WRITE 1, RENAME t0, ALGORITHM INPLACE, ROW_FORMAT COMPRESSED, ENABLE KEYS, STATS_PERSISTENT DEFAULT, PACK_KEYS 0, CHECKSUM 1, STATS_AUTO_RECALC DEFAULT;
+ALTER TABLE t1 DELAY_KEY_WRITE 1, DISABLE KEYS, RENAME t0, STATS_AUTO_RECALC 1, ROW_FORMAT REDUNDANT, ALGORITHM COPY, FORCE, COMPRESSION 'LZ4';
+ALTER TABLE t1 FORCE, DELAY_KEY_WRITE 0, ALGORITHM COPY, ROW_FORMAT COMPACT, CHECKSUM 0, RENAME TO t0, STATS_PERSISTENT DEFAULT;
+ALTER TABLE t0 DISABLE KEYS, ALGORITHM COPY, DELAY_KEY_WRITE 1, CHECKSUM 1, ROW_FORMAT DYNAMIC, STATS_AUTO_RECALC 0, STATS_PERSISTENT 0, COMPRESSION 'NONE', FORCE, PACK_KEYS 1, INSERT_METHOD NO;
+SET SESSION join_buffer_size = 570867331438760171;
+CHECK TABLE t0, t1 FAST FOR UPGRADE;
+DELETE LOW_PRIORITY IGNORE FROM t1 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+CREATE INDEX i0 USING HASH ON t1(c0) VISIBLE;
+CHECKSUM TABLE t0, t1;
+DROP INDEX i0 ON t1 LOCK=NONE;
+DELETE IGNORE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+REPLACE INTO t0(c0) VALUES("?.");
+ALTER TABLE t0 COMPRESSION 'ZLIB', DELAY_KEY_WRITE 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+SET SESSION range_alloc_block_size = 1267441503696887306;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+DELETE FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+DELETE QUICK IGNORE FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+DELETE LOW_PRIORITY IGNORE FROM t1 WHERE COALESCE((! (t1.c0)), (t1.c0) IN (t1.c0));
+REPLACE INTO t1(c0) VALUES(-1791891572);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10';
+REPLACE INTO t0(c0) VALUES(0);
+SELECT * FROM (SELECT DISTINCT SQL_NO_CACHE SQL_BIG_RESULT STRAIGHT_JOIN t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE (+ ((t1.c0) > (t0.c0))) ORDER BY GREATEST( EXISTS (SELECT 1), t0.c0, (t0.c0) XOR (t0.c0), (1681756057) IN ("", t0.c0), (t0.c0) IS FALSE, (NULL) OR (t0.c0)),  EXISTS (SELECT 1) ASC, t0.c0 LIMIT 2147483647) as result WHERE result.ref0 = '0' AND result.ref1 = 713602740;

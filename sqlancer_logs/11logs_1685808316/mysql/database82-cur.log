@@ -1,0 +1,29 @@
+-- Time: 2023/06/03 17:51:47
+-- Database: database82
+-- Database version: 8.0.11
+-- seed value: 1685807359629
+DROP DATABASE IF EXISTS database82;
+CREATE DATABASE database82;
+USE database82;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT(120)  UNIQUE KEY STORAGE DISK NULL COMMENT 'asdf' ) ; -- 47ms;
+INSERT DELAYED INTO t0(c0) VALUES(""); -- 7ms;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(""); -- 1ms;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 11ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database82'; -- 1ms;
+REPLACE INTO t0(c0) VALUES(616882969); -- 1ms;
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(616882969); -- 0ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 7ms;
+DELETE LOW_PRIORITY FROM t0 WHERE ( EXISTS (SELECT 1 wHERE FALSE)) NOT IN (CAST(GREATEST(t0.c0, NULL, 616882969, t0.c0) AS SIGNED)); -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database82'; -- 4ms;
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE (CAST(848818638 AS SIGNED)) NOT IN ((t0.c0) IN ( EXISTS (SELECT 1))); -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database82'; -- 4ms;
+REPLACE DELAYED INTO t0(c0) VALUES(848818638); -- 3ms;
+REPLACE INTO t0(c0) VALUES(744418898), (-76991208), (473314653); -- 0ms;
+INSERT DELAYED INTO t0(c0) VALUES(616882969); -- 0ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(-1788652587); -- 10ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database82'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database82'; -- 4ms;
+DELETE LOW_PRIORITY QUICK FROM t0; -- 6ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL), (848818638), (''); -- 5ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 5ms;
+ALTER TABLE t0 ROW_FORMAT REDUNDANT, ALGORITHM INSTANT;

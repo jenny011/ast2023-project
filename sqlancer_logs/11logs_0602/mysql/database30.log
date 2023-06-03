@@ -1,0 +1,59 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i0 ON t0((t0.c0), (((t0.c0) IN ((-2130406374) || (t0.c0), -871557574)) IN (((t0.c0) NOT IN ('K*')) NOT IN (GREATEST(t0.c0, t0.c0)))), (( EXISTS (SELECT 1 wHERE FALSE)) IS NOT NULL)) VISIBLE ALGORITHM= DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(t0.c0), (((t0.c0) IN ((-2130406374) || (t0.c0), -871557574)) IN (((t0.c0) NOT I' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:38:58
+-- Database: database30
+-- Database version: 8.0.11
+-- seed value: 1685637011020
+DROP DATABASE IF EXISTS database30;
+CREATE DATABASE database30;
+USE database30;
+CREATE TABLE t0(c0 MEDIUMINT(152)  UNIQUE) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+DROP INDEX c0 ON t1 LOCK=NONE;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL), (NULL), (NULL);
+REPLACE INTO t0(c0) VALUES('');
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1791194769);
+REPLACE INTO t1(c0) VALUES(1181655093);
+INSERT IGNORE INTO t0(c0) VALUES(886712547);
+ALTER TABLE t0 STATS_PERSISTENT 0, PACK_KEYS 1, ALGORITHM INPLACE, STATS_AUTO_RECALC 1, COMPRESSION 'ZLIB', FORCE, CHECKSUM 0, ENABLE KEYS, ROW_FORMAT DEFAULT, DELAY_KEY_WRITE 1;
+ALTER TABLE t1 PACK_KEYS 0, DELAY_KEY_WRITE 0, COMPRESSION 'LZ4', ROW_FORMAT FIXED, RENAME TO t0, STATS_PERSISTENT DEFAULT, DISABLE KEYS, STATS_AUTO_RECALC 1, CHECKSUM 0, ALGORITHM DEFAULT, FORCE, INSERT_METHOD FIRST;
+ALTER TABLE t0 DISABLE KEYS, PACK_KEYS 0, DELAY_KEY_WRITE 1, COMPRESSION 'ZLIB', STATS_AUTO_RECALC 1, FORCE;
+INSERT DELAYED INTO t1(c0) VALUES(NULL);
+SET SESSION internal_tmp_mem_storage_engine = MEMORY;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+CHECK TABLE t1, t0 FAST;
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+ALTER TABLE t0 ALGORITHM DEFAULT, ROW_FORMAT FIXED;
+ALTER TABLE t1 ENABLE KEYS, STATS_AUTO_RECALC 0, ALGORITHM DEFAULT, STATS_PERSISTENT DEFAULT;
+CHECKSUM TABLE t0;
+REPLACE INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database30';
+INSERT IGNORE INTO t0(c0) VALUES(' ?H-');
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(-811771233), ("-149398723"), ('7k8?');
+ALTER TABLE t1 STATS_PERSISTENT 1, FORCE, COMPRESSION 'ZLIB', STATS_AUTO_RECALC 0, ROW_FORMAT DEFAULT;
+DELETE IGNORE FROM t1;
+INSERT INTO t0(c0) VALUES(NULL), (NULL), (NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(1273852543);

@@ -1,0 +1,54 @@
+--java.lang.AssertionError: SET SESSION optimizer_switch = 'mrr_cost_based=on,index_merge=off,loosescan=on,skip_scan=on,batched_key_access=off,subquery_materialization_cost_based=off,block_nested_loop=on,engine_condition_pushdown=on,mrr=on,firstmatch=off,index_merge_union=on,derived_merge=off,semijoin=off';
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: Variable 'optimizer_switch' can't be set to the value of 'skip_scan=on,batched_key_access=off,subquery_materialization_cost_based=off,block_nested_loop=on,engine_condition_pushdown=on,mrr=on,firstmatch=off,index_merge_union=on,derived_merge=off,semijoin=off'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:32:25
+-- Database: database72
+-- Database version: 8.0.11
+-- seed value: 1685637011062
+DROP DATABASE IF EXISTS database72;
+CREATE DATABASE database72;
+USE database72;
+CREATE TABLE t0(c0 TINYTEXT   COLUMN_FORMAT DEFAULT STORAGE MEMORY COMMENT 'asdf' , c1 VARCHAR(500)  COLUMN_FORMAT DYNAMIC STORAGE DISK COMMENT 'asdf'  ) ;
+DELETE IGNORE FROM t0;
+INSERT IGNORE INTO t0(c0, c1) VALUES(NULL, NULL);
+INSERT INTO t0(c0) VALUES("");
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, NULL);
+REPLACE INTO t0(c0, c1) VALUES(2122782478, "i|AzOuj");
+ALTER TABLE t0 ;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES('}YP?');
+SET SESSION show_old_temporals = ON;
+CHECK TABLE t0 QUICK CHANGED;
+REPLACE DELAYED INTO t0(c1) VALUES(-1176650548);
+REPLACE INTO t0(c0, c1) VALUES(NULL, NULL);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0, c1) VALUES(-917610205, NULL);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES("-422613462", 'Z~/i');
+ANALYZE  TABLE t0 DROP HISTOGRAM ON c1, c0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database72';
+INSERT IGNORE INTO t0(c0) VALUES(372539417);
+INSERT DELAYED INTO t0(c0, c1) VALUES('-813584717', NULL);
+CREATE INDEX i0 USING BTREE ON t0(c0(2) ASC, c1);
+REPLACE INTO t0(c1) VALUES(-967805829);
+DROP INDEX i0 ON t0 ALGORITHM=COPY LOCK=NONE;
+DROP INDEX i0 ON t0 ALGORITHM=INPLACE;

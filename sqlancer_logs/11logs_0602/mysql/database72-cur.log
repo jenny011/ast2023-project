@@ -1,0 +1,32 @@
+-- Time: 2023/06/01 18:32:25
+-- Database: database72
+-- Database version: 8.0.11
+-- seed value: 1685637011062
+DROP DATABASE IF EXISTS database72;
+CREATE DATABASE database72;
+USE database72;
+CREATE TABLE t0(c0 TINYTEXT   COLUMN_FORMAT DEFAULT STORAGE MEMORY COMMENT 'asdf' , c1 VARCHAR(500)  COLUMN_FORMAT DYNAMIC STORAGE DISK COMMENT 'asdf'  ) ; -- 43ms;
+DELETE IGNORE FROM t0; -- 14ms;
+INSERT IGNORE INTO t0(c0, c1) VALUES(NULL, NULL); -- 12ms;
+INSERT INTO t0(c0) VALUES(""); -- 12ms;
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, NULL); -- 7ms;
+REPLACE INTO t0(c0, c1) VALUES(2122782478, "i|AzOuj"); -- 4ms;
+ALTER TABLE t0 ; -- 4ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 9ms;
+REPLACE INTO t0(c0) VALUES('}YP?'); -- 8ms;
+SET SESSION show_old_temporals = ON; -- 0ms;
+CHECK TABLE t0 QUICK CHANGED; -- 0ms;
+REPLACE DELAYED INTO t0(c1) VALUES(-1176650548); -- 4ms;
+REPLACE INTO t0(c0, c1) VALUES(NULL, NULL); -- 6ms;
+INSERT LOW_PRIORITY IGNORE INTO t0(c0, c1) VALUES(-917610205, NULL); -- 9ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 4ms;
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES("-422613462", 'Z~/i'); -- 7ms;
+ANALYZE  TABLE t0 DROP HISTOGRAM ON c1, c0; -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database72'; -- 2ms;
+INSERT IGNORE INTO t0(c0) VALUES(372539417); -- 9ms;
+INSERT DELAYED INTO t0(c0, c1) VALUES('-813584717', NULL); -- 4ms;
+CREATE INDEX i0 USING BTREE ON t0(c0(2) ASC, c1); -- 38ms;
+REPLACE INTO t0(c1) VALUES(-967805829); -- 10ms;
+DROP INDEX i0 ON t0 ALGORITHM=COPY LOCK=NONE; -- 2ms;
+DROP INDEX i0 ON t0 ALGORITHM=INPLACE; -- 36ms;
+SET SESSION optimizer_switch = 'mrr_cost_based=on,index_merge=off,loosescan=on,skip_scan=on,batched_key_access=off,subquery_materialization_cost_based=off,block_nested_loop=on,engine_condition_pushdown=on,mrr=on,firstmatch=off,index_merge_union=on,derived_merge=off,semijoin=off';

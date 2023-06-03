@@ -1,0 +1,61 @@
+--java.lang.AssertionError: ALTER TABLE t0 INSERT_METHOD NO, DELAY_KEY_WRITE 0, COMPRESSION 'NONE', RENAME TO t0, ALGORITHM INSTANT, ROW_FORMAT REDUNDANT, DISABLE KEYS, STATS_AUTO_RECALC DEFAULT, STATS_PERSISTENT 1, PACK_KEYS 0, FORCE, CHECKSUM 0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:31
+-- Database: database61
+-- Database version: 8.0.11
+-- seed value: 1685807359608
+DROP DATABASE IF EXISTS database61;
+CREATE DATABASE database61;
+USE database61;
+CREATE TABLE t0(c0 MEDIUMTEXT  COLUMN_FORMAT FIXED COMMENT 'asdf'   STORAGE MEMORY) ;
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES('VK');
+INSERT INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database61';
+INSERT IGNORE INTO t0(c0) VALUES(1452232580);
+INSERT INTO t0(c0) VALUES(NULL);
+ALTER TABLE t0 CHECKSUM 0, DISABLE KEYS, COMPRESSION 'LZ4', RENAME t0, DELAY_KEY_WRITE 1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database61';
+CHECK TABLE t0 ;
+INSERT INTO t0(c0) VALUES("j("), (1452232580), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database61';
+INSERT DELAYED INTO t0(c0) VALUES(NULL), ('qQM'), (NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(-1), (1154395589), (NULL);
+REPLACE INTO t0(c0) VALUES('1154395589');
+INSERT IGNORE INTO t0(c0) VALUES("??+"), (NULL), (-1);
+INSERT INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(1154395589);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES("He>?5");
+DELETE LOW_PRIORITY FROM t0;
+INSERT IGNORE INTO t0(c0) VALUES(1452232580);
+ALTER TABLE t0 FORCE, CHECKSUM 0, ALGORITHM COPY, STATS_PERSISTENT 1;
+CHECKSUM TABLE t0;
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES('');
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(1452232580);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(1921418375), (NULL), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database61';
+INSERT IGNORE INTO t0(c0) VALUES("^");
+REPLACE INTO t0(c0) VALUES(-1323489907);

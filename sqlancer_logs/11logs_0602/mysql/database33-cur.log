@@ -1,0 +1,17 @@
+-- Time: 2023/06/01 18:31:29
+-- Database: database33
+-- Database version: 8.0.11
+-- seed value: 1685637011023
+DROP DATABASE IF EXISTS database33;
+CREATE DATABASE database33;
+USE database33;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT(13)  STORAGE MEMORY) ; -- 51ms;
+CREATE TABLE t1 LIKE t0; -- 38ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database33'; -- 5ms;
+DELETE QUICK FROM t0; -- 1ms;
+DELETE FROM t0 WHERE (((t0.c0) IN (t0.c0)) IS FALSE) XOR (( EXISTS (SELECT 1 wHERE FALSE)) XOR (('1086262379') IN (t0.c0))); -- 1ms;
+INSERT IGNORE INTO t1(c0) VALUES(NULL); -- 9ms;
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(NULL); -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database33'; -- 2ms;
+SET SESSION sql_log_off = OFF; -- 1ms;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(( EXISTS (SELECT 1))) INVISIBLE;

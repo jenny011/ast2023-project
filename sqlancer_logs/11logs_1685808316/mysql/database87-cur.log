@@ -1,0 +1,34 @@
+-- Time: 2023/06/03 17:53:05
+-- Database: database87
+-- Database version: 8.0.11
+-- seed value: 1685807359634
+DROP DATABASE IF EXISTS database87;
+CREATE DATABASE database87;
+USE database87;
+CREATE TABLE t0(c0 SMALLINT  COMMENT 'asdf' ) ; -- 56ms;
+SET SESSION query_alloc_block_size = 3256415774; -- 0ms;
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE ((CAST(t0.c0 AS SIGNED)) IN ((NULL) NOT IN (-2001139329), (t0.c0) IN (t0.c0))) XOR (t0.c0); -- 3ms;
+DELETE IGNORE FROM t0; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87'; -- 14ms;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(''); -- 1ms;
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL); -- 14ms;
+INSERT INTO t0(c0) VALUES(110414930), (NULL), (-2052379211); -- 0ms;
+INSERT IGNORE INTO t0(c0) VALUES(''), (1620899032), (""); -- 9ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(1620899032); -- 6ms;
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE 1008797542; -- 13ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(""); -- 0ms;
+INSERT IGNORE INTO t0(c0) VALUES(-1263148086), ("?>"), (NULL); -- 6ms;
+DELETE IGNORE FROM t0; -- 8ms;
+ANALYZE  TABLE t0 DROP HISTOGRAM ON c0; -- 9ms;
+ALTER TABLE t0 COMPRESSION 'ZLIB', INSERT_METHOD LAST, FORCE, ALGORITHM INPLACE, DELAY_KEY_WRITE 1; -- 85ms;
+DELETE FROM t0; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87'; -- 3ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87'; -- 3ms;
+TRUNCATE TABLE t0; -- 52ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database87'; -- 2ms;
+REPLACE DELAYED INTO t0(c0) VALUES('-1953689359'); -- 4ms;
+REPLACE INTO t0(c0) VALUES(-2001139329); -- 1ms;
+REPLACE INTO t0(c0) VALUES('	j57C'); -- 0ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 5ms;
+CREATE UNIQUE INDEX i0 ON t0(c0); -- 31ms;
+CREATE UNIQUE INDEX i1 ON t0((CAST((GREATEST(1620899032, -2001139329, t0.c0, t0.c0)) <= ( EXISTS (SELECT 1 wHERE FALSE)) AS SIGNED))) ALGORITHM= COPY;

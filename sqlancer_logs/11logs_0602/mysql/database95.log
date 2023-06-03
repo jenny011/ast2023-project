@@ -1,0 +1,38 @@
+--java.lang.AssertionError: CREATE INDEX i0 USING HASH ON t0((492598940)) VISIBLE ALGORITHM INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(492598940)) VISIBLE ALGORITHM INPLACE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:31:50
+-- Database: database95
+-- Database version: 8.0.11
+-- seed value: 1685637011085
+DROP DATABASE IF EXISTS database95;
+CREATE DATABASE database95;
+USE database95;
+CREATE TABLE IF NOT EXISTS t0(c0 LONGTEXT  COLUMN_FORMAT DEFAULT STORAGE MEMORY COMMENT 'asdf' ) STATS_PERSISTENT = 1, AVG_ROW_LENGTH = 3721230174;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(2030531994), (NULL), (-71472834);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database95';
+DELETE LOW_PRIORITY IGNORE FROM t0;
+SET SESSION max_sort_length = 6104246;
+ALTER TABLE t0 FORCE, DELAY_KEY_WRITE 1, ALGORITHM COPY, STATS_PERSISTENT 0, ROW_FORMAT COMPACT, DISABLE KEYS, RENAME t0, CHECKSUM 1, PACK_KEYS DEFAULT, INSERT_METHOD LAST, STATS_AUTO_RECALC 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database95';
+REPLACE DELAYED INTO t0(c0) VALUES(-1656049172);

@@ -1,0 +1,79 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT SQL_SMALL_RESULT t0.c0 AS ref0, t0.c1 AS ref1, t0.c2 AS ref2, t2.c0 AS ref3, t2.c1 AS ref4, t2.c2 AS ref5, t1.c0 AS ref6, t1.c1 AS ref7, t1.c2 AS ref8 FROM t0, t2, t1 WHERE (t2.c1) > ((+ (t0.c0))) GROUP BY t0.c0, t0.c1, t0.c2, t2.c0, t2.c1, t2.c2, t1.c0, t1.c1, t1.c2 ORDER BY CAST(t0.c0 AS SIGNED) LIMIT 2147483647) as result WHERE result.ref0 = -1302584869 AND result.ref1 = 71 AND result.ref2 IS NULL AND result.ref3 IS NULL AND result.ref4 = 998068800 AND result.ref5 = 0 AND result.ref6 = -1852300900 AND result.ref7 IS NULL AND result.ref8 = -1398045636;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/03 19:08:40
+-- Database: database6
+-- Database version: 8.0.33
+-- seed value: 1685808636553
+DROP DATABASE IF EXISTS database6;
+CREATE DATABASE database6;
+USE database6;
+CREATE TABLE t0(c0 BIGINT(114)  COMMENT 'asdf' , c1 BIGINT   UNIQUE KEY, c2 INT(29) ) ;
+CREATE TABLE t1 LIKE t0;
+CREATE TABLE t2 LIKE t1;
+REPLACE LOW_PRIORITY INTO t0(c2, c1, c0) VALUES(2039536243, NULL, NULL);
+INSERT IGNORE INTO t2(c0, c2) VALUES(NULL, 'pF');
+INSERT INTO t0(c2) VALUES('317056247'), (827741444), ("E.");
+REPLACE INTO t2(c2) VALUES(-628941434);
+ALTER TABLE t0 ALGORITHM DEFAULT, STATS_PERSISTENT 0, DISABLE KEYS, PACK_KEYS 1;
+INSERT IGNORE INTO t0(c0) VALUES(2067618927);
+INSERT DELAYED IGNORE INTO t2(c0) VALUES(-292928472);
+SET SESSION query_prealloc_size = 5388416035956669698;
+REPLACE DELAYED INTO t2(c2) VALUES(NULL);
+ANALYZE  TABLE t2, t1;
+DROP INDEX c1 ON t0;
+REPLACE INTO t1(c1) VALUES(NULL);
+REPLACE DELAYED INTO t2(c1, c2, c0) VALUES(998068800, 0, NULL);
+REPLACE INTO t2(c1) VALUES(-1883437710);
+INSERT IGNORE INTO t2(c0, c1) VALUES(1210322546, '-1306858967');
+INSERT DELAYED INTO t2(c0, c2, c1) VALUES(-85159127, "j ", NULL);
+INSERT IGNORE INTO t0(c0, c2) VALUES(-1130673746, -86039885);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0, c1, c2) VALUES(975729323, NULL, '');
+ALTER TABLE t0 STATS_AUTO_RECALC DEFAULT, STATS_PERSISTENT 1, COMPRESSION 'LZ4', PACK_KEYS 1, DELAY_KEY_WRITE 0, RENAME t2, CHECKSUM 1, ENABLE KEYS, ROW_FORMAT COMPRESSED, INSERT_METHOD LAST;
+ALTER TABLE t2 ;
+INSERT INTO t1(c0, c2, c1) VALUES(165023978, "", -1130673746);
+REPLACE LOW_PRIORITY INTO t1(c0, c1) VALUES(NULL, NULL);
+REPLACE INTO t1(c0, c1, c2) VALUES(NULL, 1280584570, NULL);
+DELETE LOW_PRIORITY FROM t1;
+ALTER TABLE t1 ROW_FORMAT DYNAMIC, PACK_KEYS DEFAULT, COMPRESSION 'ZLIB', DELAY_KEY_WRITE 1, ENABLE KEYS, CHECKSUM 0, FORCE, INSERT_METHOD FIRST, STATS_PERSISTENT 1;
+REPLACE INTO t2(c2, c0) VALUES('', NULL);
+INSERT IGNORE INTO t1(c2, c0) VALUES(-1398045636, -1852300900);
+REPLACE INTO t1(c0, c2) VALUES("/)X[uM9nn", NULL);
+INSERT LOW_PRIORITY INTO t2(c1) VALUES(NULL);
+SET SESSION range_alloc_block_size = 7243170120483954491;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database6';
+CHECKSUM TABLE t2, t0, t1;
+REPLACE LOW_PRIORITY INTO t0(c0, c2) VALUES(NULL, NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t2(c2, c1) VALUES(872471223, -1907673360);
+INSERT IGNORE INTO t2(c2) VALUES(-1195763609);
+INSERT LOW_PRIORITY IGNORE INTO t0(c1, c0, c2) VALUES('1704661755', -2005599017, "");
+REPLACE DELAYED INTO t0(c2) VALUES(NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0, c2, c1) VALUES(-2059546006, 'fpf', -1612876088);
+INSERT LOW_PRIORITY INTO t2(c2, c0) VALUES(-1792717189, NULL);
+REPLACE INTO t0(c0) VALUES(NULL);
+DELETE LOW_PRIORITY IGNORE FROM t0;
+INSERT DELAYED INTO t2(c1) VALUES("KV");
+REPLACE INTO t1(c2, c0) VALUES(NULL, NULL), (160913618, '8*'), ("~d", "#1");
+REPLACE LOW_PRIORITY INTO t2(c0, c1) VALUES(-1025311704, -1817386180);
+REPLACE DELAYED INTO t2(c1, c2, c0) VALUES("p?2n", NULL, '}<');
+REPLACE DELAYED INTO t0(c1, c0, c2) VALUES('71', -1302584869, NULL);
+INSERT INTO t0(c0) VALUES('vgr1');
+INSERT DELAYED IGNORE INTO t0(c2) VALUES(-1771518569);
+CHECK TABLE t1, t2 ;
+SELECT * FROM (SELECT SQL_SMALL_RESULT t0.c0 AS ref0, t0.c1 AS ref1, t0.c2 AS ref2, t2.c0 AS ref3, t2.c1 AS ref4, t2.c2 AS ref5, t1.c0 AS ref6, t1.c1 AS ref7, t1.c2 AS ref8 FROM t0, t2, t1 WHERE (t2.c1) > ((+ (t0.c0))) GROUP BY t0.c0, t0.c1, t0.c2, t2.c0, t2.c1, t2.c2, t1.c0, t1.c1, t1.c2 ORDER BY CAST(t0.c0 AS SIGNED) LIMIT 2147483647) as result WHERE result.ref0 = -1302584869 AND result.ref1 = 71 AND result.ref2 IS NULL AND result.ref3 IS NULL AND result.ref4 = 998068800 AND result.ref5 = 0 AND result.ref6 = -1852300900 AND result.ref7 IS NULL AND result.ref8 = -1398045636;

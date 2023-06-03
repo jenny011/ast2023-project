@@ -1,0 +1,43 @@
+--java.lang.AssertionError: ALTER TABLE t2 ROW_FORMAT COMPACT, STATS_AUTO_RECALC DEFAULT, RENAME t6, COMPRESSION 'LZ4', ALGORITHM INSTANT, FORCE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:31
+-- Database: database20
+-- Database version: 8.0.11
+-- seed value: 1685807359566
+DROP DATABASE IF EXISTS database20;
+CREATE DATABASE database20;
+USE database20;
+CREATE TABLE t0(c0 VARCHAR(500)  STORAGE MEMORY COMMENT 'asdf'  NULL) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+CREATE TABLE t2 LIKE t1;
+ALTER TABLE t2 DISABLE KEYS, STATS_PERSISTENT 1, PACK_KEYS 0;
+CHECK TABLE t1, t0 FAST MEDIUM EXTENDED CHANGED QUICK;
+REPLACE INTO t0(c0) VALUES(NULL), ("1422589330"), (NULL);
+INSERT INTO t1(c0) VALUES(-34800693), (-1040305387), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+REPLACE INTO t2(c0) VALUES(NULL);
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(2013291120);
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(-1947831681);

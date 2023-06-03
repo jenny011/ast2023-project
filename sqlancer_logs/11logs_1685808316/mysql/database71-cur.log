@@ -1,0 +1,11 @@
+-- Time: 2023/06/03 17:55:47
+-- Database: database71
+-- Database version: 8.0.11
+-- seed value: 1685807359618
+DROP DATABASE IF EXISTS database71;
+CREATE DATABASE database71;
+USE database71;
+CREATE TABLE IF NOT EXISTS t0(c0 TEXT  STORAGE DISK  COMMENT 'asdf' ) ; -- 33ms;
+CREATE TABLE t1 LIKE t0; -- 31ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database71'; -- 2ms;
+ALTER TABLE t1 ALGORITHM INSTANT, STATS_PERSISTENT DEFAULT, PACK_KEYS 1, INSERT_METHOD NO, CHECKSUM 0, ROW_FORMAT DEFAULT, ENABLE KEYS, FORCE;

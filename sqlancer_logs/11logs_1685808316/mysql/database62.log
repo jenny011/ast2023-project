@@ -1,0 +1,58 @@
+--java.lang.AssertionError: ALTER TABLE t0 RENAME AS t0, ALGORITHM INSTANT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:32
+-- Database: database62
+-- Database version: 8.0.11
+-- seed value: 1685807359609
+DROP DATABASE IF EXISTS database62;
+CREATE DATABASE database62;
+USE database62;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT  UNIQUE KEY, c1 INT(160)  COLUMN_FORMAT FIXED COMMENT 'asdf' ) ;
+CHECKSUM TABLE t0 EXTENDED;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62';
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c1) VALUES(NULL), (211665959), ("VN'");
+INSERT INTO t0(c1, c0) VALUES("211665959", 281645260);
+REPLACE INTO t0(c0) VALUES(281645260);
+REPLACE DELAYED INTO t0(c1) VALUES('');
+INSERT IGNORE INTO t0(c1) VALUES(1861084814);
+REPLACE INTO t0(c0, c1) VALUES('281645260', -1);
+REPLACE INTO t0(c0, c1) VALUES(11598382, 281645260), ('pw?a	?E', 281645260), (NULL, 2001124114);
+REPLACE DELAYED INTO t0(c1) VALUES(NULL);
+DROP INDEX c0 ON t0 ALGORITHM=COPY LOCK=SHARED;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62';
+CREATE UNIQUE INDEX i0 ON t0(c0, c1 ASC) ALGORITHM= INPLACE;
+INSERT DELAYED IGNORE INTO t0(c1) VALUES(''), (NULL), (1905449113);
+CREATE INDEX i1 ON t0(c0 DESC, c1) INVISIBLE ALGORITHM= COPY;
+CREATE INDEX i2 USING BTREE ON t0(c0) VISIBLE;
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c1) VALUES(535241337);
+TRUNCATE TABLE t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62';
+REPLACE INTO t0(c1) VALUES('535241337');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62';
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, NULL), (1861084814, 1574721693), (1778838835, NULL), ('5B4n! #8', 971110659), (NULL, "");
+REPLACE INTO t0(c0) VALUES(NULL);

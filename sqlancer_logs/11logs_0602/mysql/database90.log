@@ -1,0 +1,88 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW t2.c0 AS ref0, t0.c0 AS ref1 FROM t2, t0 WHERE (NOT ("")) GROUP BY t2.c0, t0.c0 ORDER BY t0.c0) as result WHERE result.ref0 IS NULL AND result.ref1 IS NULL;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Out of sort memory, consider increasing server sort buffer size
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/01 18:31:36
+-- Database: database90
+-- Database version: 8.0.11
+-- seed value: 1685637011080
+DROP DATABASE IF EXISTS database90;
+CREATE DATABASE database90;
+USE database90;
+CREATE TABLE t0(c0 MEDIUMTEXT  COLUMN_FORMAT DEFAULT COMMENT 'asdf'  NULL) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+CREATE TABLE IF NOT EXISTS t2(c0 SMALLINT  UNIQUE KEY COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE DISK) ;
+INSERT INTO t1(c0) VALUES('');
+INSERT DELAYED INTO t2(c0) VALUES(NULL), (529432704), (NULL), (''), (NULL);
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES('to');
+INSERT INTO t2(c0) VALUES(-216219613);
+INSERT DELAYED IGNORE INTO t1(c0) VALUES('');
+INSERT DELAYED INTO t2(c0) VALUES(' ?');
+REPLACE INTO t0(c0) VALUES(-453004484);
+TRUNCATE TABLE t1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+DELETE LOW_PRIORITY FROM t2;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(-216219613);
+INSERT IGNORE INTO t2(c0) VALUES(-1780266509);
+INSERT LOW_PRIORITY INTO t0(c0) VALUES('-216219613');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+ALTER TABLE t0 ENABLE KEYS, DELAY_KEY_WRITE 1;
+INSERT INTO t1(c0) VALUES(-201225424);
+REPLACE DELAYED INTO t1(c0) VALUES("to");
+REPLACE DELAYED INTO t2(c0) VALUES(1478473940);
+REPLACE INTO t2(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES(NULL), (""), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+INSERT DELAYED IGNORE INTO t2(c0) VALUES(-2067346125);
+INSERT HIGH_PRIORITY IGNORE INTO t2(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+DELETE LOW_PRIORITY IGNORE FROM t1;
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(-2067346125);
+CREATE UNIQUE INDEX i0 ON t2(c0) INVISIBLE;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(-201225424);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(-453004484), (NULL), (" B"), (NULL), (1775551530), (-344092415), (1478473940);
+CHECKSUM TABLE t0, t2, t1 EXTENDED;
+CHECK TABLE t2 FAST MEDIUM QUICK FOR UPGRADE;
+ANALYZE NO_WRITE_TO_BINLOG TABLE t1 DROP HISTOGRAM ON c0;
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+SET SESSION myisam_stats_method = nulls_ignored;
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(1740790264);
+REPLACE INTO t2(c0) VALUES(NULL);
+CREATE INDEX i1 USING BTREE ON t2(c0) ALGORITHM DEFAULT;
+SET SESSION range_alloc_block_size = 3280536937315542643;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+INSERT DELAYED IGNORE INTO t2(c0) VALUES(1244011857);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+INSERT IGNORE INTO t2(c0) VALUES(NULL);
+SET SESSION max_sort_length = 5935630;
+DELETE LOW_PRIORITY IGNORE FROM t1 WHERE -216219613;
+INSERT IGNORE INTO t1(c0) VALUES(-216219613);
+INSERT INTO t0(c0) VALUES("'");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database90';
+INSERT IGNORE INTO t1(c0) VALUES(830166023);
+DELETE FROM t2;
+REPLACE INTO t0(c0) VALUES(-496022633), (NULL), (-1300233685);
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t2(c0) VALUES('to');
+REPLACE INTO t2(c0) VALUES(NULL);
+SET SESSION query_prealloc_size = 4713137106905882883;
+SELECT * FROM (SELECT DISTINCTROW t2.c0 AS ref0, t0.c0 AS ref1 FROM t2, t0 WHERE (NOT ("")) GROUP BY t2.c0, t0.c0 ORDER BY t0.c0) as result WHERE result.ref0 IS NULL AND result.ref1 IS NULL;

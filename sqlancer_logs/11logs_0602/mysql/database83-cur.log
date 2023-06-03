@@ -1,0 +1,23 @@
+-- Time: 2023/06/01 18:31:34
+-- Database: database83
+-- Database version: 8.0.11
+-- seed value: 1685637011073
+DROP DATABASE IF EXISTS database83;
+CREATE DATABASE database83;
+USE database83;
+CREATE TABLE t0(c0 SMALLINT(177) ) ; -- 34ms;
+INSERT IGNORE INTO t0(c0) VALUES(NULL); -- 6ms;
+INSERT INTO t0(c0) VALUES(""); -- 1ms;
+INSERT INTO t0(c0) VALUES(2076441199); -- 0ms;
+REPLACE INTO t0(c0) VALUES(-288872033); -- 0ms;
+INSERT IGNORE INTO t0(c0) VALUES(-425231248); -- 5ms;
+REPLACE INTO t0(c0) VALUES(-288872033), (''), (''); -- 0ms;
+INSERT INTO t0(c0) VALUES('jwmx 9ua#'), (""), (NULL); -- 1ms;
+INSERT INTO t0(c0) VALUES(NULL); -- 3ms;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 6ms;
+SET SESSION old_alter_table = ON; -- 0ms;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL); -- 4ms;
+INSERT IGNORE INTO t0(c0) VALUES(""); -- 4ms;
+INSERT IGNORE INTO t0(c0) VALUES(""), ('jwmx 9ua#'), ('jwmx 9ua#'); -- 4ms;
+INSERT IGNORE INTO t0(c0) VALUES(NULL); -- 4ms;
+CREATE UNIQUE INDEX i0 ON t0(((! (((NULL) < (t0.c0)) AND ( EXISTS (SELECT 1 wHERE FALSE)))))) INVISIBLE;

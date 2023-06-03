@@ -1,0 +1,50 @@
+--java.lang.AssertionError: CREATE INDEX i1 USING HASH ON t1((NULL)) ALGORITHM= INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(NULL)) ALGORITHM= INPLACE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:21
+-- Database: database23
+-- Database version: 8.0.11
+-- seed value: 1685807359569
+DROP DATABASE IF EXISTS database23;
+CREATE DATABASE database23;
+USE database23;
+CREATE TABLE IF NOT EXISTS t0(c0 BIGINT  COMMENT 'asdf'  PRIMARY KEY STORAGE MEMORY NOT NULL UNIQUE KEY COLUMN_FORMAT FIXED, c1 VARCHAR(500)  COMMENT 'asdf' ) ;
+CREATE TABLE IF NOT EXISTS t1(c0 SMALLINT(46)   COLUMN_FORMAT FIXED  STORAGE DISK) COMPRESSION = 'ZLIB', STATS_SAMPLE_PAGES = 23390;
+DELETE LOW_PRIORITY FROM t0;
+ANALYZE NO_WRITE_TO_BINLOG TABLE t0 DROP HISTOGRAM ON c0, c1;
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE (NULL) IN (( EXISTS (SELECT 1)) AND ((! (t0.c0))));
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database23';
+SET SESSION max_heap_table_size = 3265558661210725380;
+SET SESSION bulk_insert_buffer_size = 5428490423008632412;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database23';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database23';
+DELETE IGNORE FROM t1;
+DELETE FROM t1 WHERE  EXISTS (SELECT 1);
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c1 DESC, c0) VISIBLE ALGORITHM= COPY;
+CREATE INDEX i0 USING BTREE ON t0(c1 ASC, c0) VISIBLE ALGORITHM DEFAULT;
+CHECK TABLE t1, t0 QUICK FOR UPGRADE EXTENDED CHANGED;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database23';
+CHECKSUM TABLE t0, t1;
+DELETE LOW_PRIORITY IGNORE FROM t1;
+REPLACE DELAYED INTO t1(c0) VALUES("ms7g");
+INSERT DELAYED INTO t1(c0) VALUES(NULL);

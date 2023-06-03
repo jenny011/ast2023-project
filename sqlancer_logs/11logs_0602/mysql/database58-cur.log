@@ -1,0 +1,20 @@
+-- Time: 2023/06/01 18:30:18
+-- Database: database58
+-- Database version: 8.0.11
+-- seed value: 1685637011048
+DROP DATABASE IF EXISTS database58;
+CREATE DATABASE database58;
+USE database58;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMINT  NULL STORAGE MEMORY UNIQUE KEY  COMMENT 'asdf' , c1 TEXT  COMMENT 'asdf'  STORAGE MEMORY COLUMN_FORMAT DYNAMIC) ; -- 63ms;
+CREATE TABLE t1(c0 LONGTEXT  COMMENT 'asdf' , c1 TINYTEXT   COMMENT 'asdf'  COLUMN_FORMAT DYNAMIC STORAGE MEMORY) ; -- 54ms;
+SET SESSION bulk_insert_buffer_size = 2867971908567966900; -- 1ms;
+INSERT IGNORE INTO t0(c1, c0) VALUES(NULL, 931764597); -- 25ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database58'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database58'; -- 2ms;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c1) VALUES(NULL); -- 7ms;
+INSERT DELAYED IGNORE INTO t1(c1) VALUES(-1537262719); -- 7ms;
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(931764597); -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database58'; -- 2ms;
+REPLACE DELAYED INTO t1(c1, c0) VALUES(-298545989, NULL); -- 4ms;
+SET SESSION max_seeks_for_key = 7375501501671554525; -- 0ms;
+CREATE INDEX i0 USING HASH ON t1(((t1.c0) NOT IN (((t1.c1) NOT IN (NULL)) < (CAST(1654812084 AS SIGNED))))) ALGORITHM= COPY;

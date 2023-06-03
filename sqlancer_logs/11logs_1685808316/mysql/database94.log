@@ -1,0 +1,62 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i3 USING HASH ON t1((t1.c0)) INVISIBLE ALGORITHM= INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(t1.c0)) INVISIBLE ALGORITHM= INPLACE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:54:04
+-- Database: database94
+-- Database version: 8.0.11
+-- seed value: 1685807359641
+DROP DATABASE IF EXISTS database94;
+CREATE DATABASE database94;
+USE database94;
+CREATE TABLE IF NOT EXISTS t0(c0 INT(76)  COLUMN_FORMAT DYNAMIC  COMMENT 'asdf' ) ;
+CREATE TABLE t1 LIKE t0;
+DELETE IGNORE FROM t1;
+INSERT DELAYED IGNORE INTO t1(c0) VALUES('');
+CREATE INDEX i0 ON t1(c0 ASC) ALGORITHM DEFAULT;
+REPLACE INTO t1(c0) VALUES('');
+REPLACE DELAYED INTO t1(c0) VALUES('');
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(NULL);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(471400011);
+SET SESSION bulk_insert_buffer_size = 5646070071873915168;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database94';
+REPLACE DELAYED INTO t0(c0) VALUES(-2017947415);
+REPLACE DELAYED INTO t1(c0) VALUES(631245437);
+INSERT DELAYED INTO t0(c0) VALUES(515020691);
+REPLACE INTO t0(c0) VALUES(515020691);
+SET SESSION sql_quote_show_create = OFF;
+ANALYZE  TABLE t1, t0;
+CHECK TABLE t1, t0 QUICK;
+CREATE UNIQUE INDEX i1 USING HASH ON t1(c0 DESC) ALGORITHM= INPLACE;
+CREATE UNIQUE INDEX i1 ON t1(c0 ASC) VISIBLE;
+SET SESSION foreign_key_checks = 0;
+REPLACE INTO t1(c0) VALUES(-2017947415);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database94';
+INSERT DELAYED INTO t1(c0) VALUES("");
+REPLACE INTO t1(c0) VALUES(NULL), (639038809), (-596999371);
+INSERT INTO t1(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES("?q"), (515020691), ("");
+SET SESSION max_sort_length = 7569464;
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES('A3zWw'), (NULL), (NULL);
+REPLACE DELAYED INTO t1(c0) VALUES(-1715578642);
+CREATE INDEX i2 USING BTREE ON t1(c0) ALGORITHM COPY;

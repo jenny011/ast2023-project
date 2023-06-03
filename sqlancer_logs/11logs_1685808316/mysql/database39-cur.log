@@ -1,0 +1,23 @@
+-- Time: 2023/06/03 17:49:25
+-- Database: database39
+-- Database version: 8.0.11
+-- seed value: 1685807359586
+DROP DATABASE IF EXISTS database39;
+CREATE DATABASE database39;
+USE database39;
+CREATE TABLE t0(c0 INT(32) ) ; -- 214ms;
+CREATE INDEX i0 ON t0(c0) VISIBLE ALGORITHM DEFAULT; -- 75ms;
+ALTER TABLE t0 DELAY_KEY_WRITE 1, STATS_PERSISTENT 0, COMPRESSION 'ZLIB', PACK_KEYS 0, FORCE, ROW_FORMAT COMPRESSED, CHECKSUM 0; -- 4ms;
+ALTER TABLE t0 STATS_AUTO_RECALC 1, INSERT_METHOD NO, DELAY_KEY_WRITE 1, CHECKSUM 1, ROW_FORMAT COMPACT, COMPRESSION 'ZLIB', FORCE, RENAME t0, ALGORITHM COPY, STATS_PERSISTENT 0; -- 118ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database39'; -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database39'; -- 13ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database39'; -- 12ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database39'; -- 9ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(""); -- 0ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1375265151); -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database39'; -- 2ms;
+TRUNCATE TABLE t0; -- 53ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database39'; -- 1ms;
+CREATE INDEX i1 USING BTREE ON t0(c0) VISIBLE ALGORITHM= COPY; -- 103ms;
+INSERT IGNORE INTO t0(c0) VALUES(NULL); -- 12ms;
+ALTER TABLE t0 PACK_KEYS 1, COMPRESSION 'LZ4', STATS_AUTO_RECALC 1, FORCE, STATS_PERSISTENT DEFAULT, RENAME AS t2, ALGORITHM INSTANT;

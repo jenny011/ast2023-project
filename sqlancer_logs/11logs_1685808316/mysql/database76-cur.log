@@ -1,0 +1,12 @@
+-- Time: 2023/06/03 17:50:55
+-- Database: database76
+-- Database version: 8.0.11
+-- seed value: 1685807359623
+DROP DATABASE IF EXISTS database76;
+CREATE DATABASE database76;
+USE database76;
+CREATE TABLE t0(c0 INT(98)  STORAGE DISK COMMENT 'asdf' ) ; -- 24ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database76'; -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database76'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database76'; -- 2ms;
+ALTER TABLE t0 STATS_PERSISTENT 1, DELAY_KEY_WRITE 0, COMPRESSION 'LZ4', STATS_AUTO_RECALC 1, ALGORITHM INSTANT, FORCE, RENAME t2, INSERT_METHOD FIRST, ROW_FORMAT DYNAMIC, PACK_KEYS 0;

@@ -1,0 +1,43 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i0 ON t0(( EXISTS (SELECT 1 wHERE FALSE))) INVISIBLE ALGORITHM INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( EXISTS (SELECT 1 wHERE FALSE))) INVISIBLE ALGORITHM INPLACE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:20
+-- Database: database17
+-- Database version: 8.0.11
+-- seed value: 1685807359563
+DROP DATABASE IF EXISTS database17;
+CREATE DATABASE database17;
+USE database17;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMINT   NULL COMMENT 'asdf'  STORAGE MEMORY) ;
+INSERT DELAYED INTO t0(c0) VALUES(-592581241);
+REPLACE DELAYED INTO t0(c0) VALUES(')jpRb,?');
+REPLACE INTO t0(c0) VALUES(-1542159166);
+REPLACE INTO t0(c0) VALUES("wu2c.#pSw");
+REPLACE DELAYED INTO t0(c0) VALUES(714178324), (-1210190817), (-1572085832);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL), (NULL), (1073347562);
+REPLACE INTO t0(c0) VALUES("-1572085832");
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL), (NULL), ("");
+INSERT INTO t0(c0) VALUES(""), ('-1542159166'), (NULL);
+REPLACE INTO t0(c0) VALUES(NULL);

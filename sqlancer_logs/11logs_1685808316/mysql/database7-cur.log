@@ -1,0 +1,20 @@
+-- Time: 2023/06/03 17:49:20
+-- Database: database7
+-- Database version: 8.0.11
+-- seed value: 1685807359545
+DROP DATABASE IF EXISTS database7;
+CREATE DATABASE database7;
+USE database7;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYTEXT  STORAGE DISK COLUMN_FORMAT DYNAMIC ) ; -- 139ms;
+ALTER TABLE t0 CHECKSUM 0, DISABLE KEYS; -- 508ms;
+DELETE LOW_PRIORITY QUICK FROM t0; -- 0ms;
+ALTER TABLE t0 ENABLE KEYS, FORCE; -- 989ms;
+INSERT INTO t0(c0) VALUES('?B)F?'); -- 7ms;
+DELETE QUICK IGNORE FROM t0; -- 8ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7'; -- 2ms;
+SET SESSION old_alter_table = OFF; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7'; -- 2ms;
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(-1077832187); -- 13ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database7'; -- 2ms;
+CREATE INDEX i0 USING HASH ON t0(c0(1) ASC) ALGORITHM= INPLACE; -- 1ms;
+CREATE INDEX i0 ON t0((t0.c0), ( EXISTS (SELECT 1))) INVISIBLE;

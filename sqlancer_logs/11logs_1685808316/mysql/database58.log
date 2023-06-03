@@ -1,0 +1,37 @@
+--java.lang.AssertionError: ALTER TABLE t0 COMPRESSION 'LZ4', FORCE, CHECKSUM 1, DISABLE KEYS, ALGORITHM INSTANT, STATS_AUTO_RECALC 1, INSERT_METHOD NO, STATS_PERSISTENT 0, ROW_FORMAT FIXED;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:30
+-- Database: database58
+-- Database version: 8.0.11
+-- seed value: 1685807359605
+DROP DATABASE IF EXISTS database58;
+CREATE DATABASE database58;
+USE database58;
+CREATE TABLE IF NOT EXISTS t0(c0 INT(178)  COLUMN_FORMAT FIXED) ;
+DELETE QUICK FROM t0;
+ANALYZE NO_WRITE_TO_BINLOG TABLE t0 UPDATE HISTOGRAM ON c0;
+DELETE LOW_PRIORITY FROM t0;
+CHECKSUM TABLE t0;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0 DESC);
+CREATE INDEX i0 ON t0(c0 ASC) VISIBLE;

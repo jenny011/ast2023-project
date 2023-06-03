@@ -1,0 +1,9 @@
+-- Time: 2023/06/01 18:31:21
+-- Database: database68
+-- Database version: 8.0.11
+-- seed value: 1685637011058
+DROP DATABASE IF EXISTS database68;
+CREATE DATABASE database68;
+USE database68;
+CREATE TABLE t0(c0 MEDIUMTEXT  STORAGE DISK, c1 TEXT   STORAGE DISK, c2 TINYINT  COMMENT 'asdf'  UNIQUE  ) ; -- 43ms;
+CREATE INDEX i0 ON t0(((+ (t0.c2)))) VISIBLE;

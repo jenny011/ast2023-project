@@ -1,0 +1,65 @@
+--java.lang.AssertionError: SET SESSION optimizer_switch = 'skip_scan=on,batched_key_access=off,use_index_extensions=on,semijoin=off,engine_condition_pushdown=on';
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: Variable 'optimizer_switch' can't be set to the value of 'skip_scan=on,batched_key_access=off,use_index_extensions=on,semijoin=off,engine_condition_pushdown=on'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:14
+-- Database: database36
+-- Database version: 8.0.11
+-- seed value: 1685637011026
+DROP DATABASE IF EXISTS database36;
+CREATE DATABASE database36;
+USE database36;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMINT ) ;
+REPLACE INTO t0(c0) VALUES(NULL), (279242010), ("279242010");
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('5');
+SET SESSION histogram_generation_max_mem_size = 994694041874498319;
+REPLACE INTO t0(c0) VALUES('');
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES('');
+REPLACE INTO t0(c0) VALUES("/-");
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+SET SESSION parser_max_mem_size = 689170022112144477;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(""), (NULL), ("]5uSS");
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES(1031670409);
+REPLACE DELAYED INTO t0(c0) VALUES(-1974311639);
+INSERT INTO t0(c0) VALUES(NULL);
+DELETE LOW_PRIORITY FROM t0;
+REPLACE DELAYED INTO t0(c0) VALUES("NPFMR?O3M");
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("-1974311639"), (190120715), ("");
+INSERT IGNORE INTO t0(c0) VALUES(-1842178190), (NULL), (673612413);
+REPLACE DELAYED INTO t0(c0) VALUES(-1974311639);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('');
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+DELETE QUICK FROM t0;
+INSERT IGNORE INTO t0(c0) VALUES(-339788652);
+DELETE QUICK IGNORE FROM t0;
+DELETE LOW_PRIORITY QUICK FROM t0;
+INSERT INTO t0(c0) VALUES(-662036385);
+INSERT IGNORE INTO t0(c0) VALUES(-1974311639);
+INSERT IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(-458977673);
+REPLACE DELAYED INTO t0(c0) VALUES(190120715);
+INSERT INTO t0(c0) VALUES(-92139497);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES('E2nj.?');
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);

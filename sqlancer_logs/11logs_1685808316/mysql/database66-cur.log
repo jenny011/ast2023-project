@@ -1,0 +1,37 @@
+-- Time: 2023/06/03 17:50:32
+-- Database: database66
+-- Database version: 8.0.11
+-- seed value: 1685807359613
+DROP DATABASE IF EXISTS database66;
+CREATE DATABASE database66;
+USE database66;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT  COMMENT 'asdf'  COLUMN_FORMAT FIXED) ; -- 46ms;
+REPLACE INTO t0(c0) VALUES(""), (1569566477), ("1569566477"); -- 9ms;
+INSERT IGNORE INTO t0(c0) VALUES(""); -- 4ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("ln"), ("!}CaN\ri53"), (NULL); -- 6ms;
+INSERT INTO t0(c0) VALUES('%?'); -- 5ms;
+SET SESSION unique_checks = OFF; -- 0ms;
+CHECK TABLE t0 FOR UPGRADE MEDIUM EXTENDED QUICK FAST CHANGED; -- 0ms;
+REPLACE INTO t0(c0) VALUES(1569566477); -- 11ms;
+ANALYZE  TABLE t0; -- 13ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(1569566477); -- 5ms;
+DELETE IGNORE FROM t0; -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database66'; -- 2ms;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(''); -- 23ms;
+INSERT INTO t0(c0) VALUES(267668007); -- 6ms;
+REPLACE DELAYED INTO t0(c0) VALUES("ln"); -- 7ms;
+TRUNCATE TABLE t0; -- 39ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database66'; -- 2ms;
+CHECKSUM TABLE t0 QUICK; -- 2ms;
+INSERT INTO t0(c0) VALUES(NULL), ('????OA'), (""); -- 6ms;
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES('uc'); -- 8ms;
+REPLACE INTO t0(c0) VALUES('f'), (1569566477), (NULL); -- 3ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database66'; -- 2ms;
+REPLACE INTO t0(c0) VALUES(986025511); -- 5ms;
+INSERT IGNORE INTO t0(c0) VALUES("Ln"); -- 3ms;
+REPLACE INTO t0(c0) VALUES(-1362449867); -- 5ms;
+REPLACE INTO t0(c0) VALUES(753629362); -- 4ms;
+INSERT IGNORE INTO t0(c0) VALUES(1569566477); -- 4ms;
+INSERT INTO t0(c0) VALUES('C#[?<JT]('); -- 4ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 5ms;
+CREATE UNIQUE INDEX i0 ON t0(((! ( EXISTS (SELECT 1 wHERE FALSE)))));

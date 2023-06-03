@@ -1,0 +1,44 @@
+--java.lang.AssertionError: CREATE INDEX i0 USING BTREE ON t0((147670281), ((( EXISTS (SELECT 1)) XOR ((t0.c0) AND ("?,"))) != (((+ (561856238))) != (BIT_COUNT(t0.c0)))));
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(147670281), ((( EXISTS (SELECT 1)) XOR ((t0.c0) AND ("?,"))) != (((+ (5618562' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:32
+-- Database: database56
+-- Database version: 8.0.11
+-- seed value: 1685807359603
+DROP DATABASE IF EXISTS database56;
+CREATE DATABASE database56;
+USE database56;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT(203)  STORAGE DISK PRIMARY KEY COLUMN_FORMAT DEFAULT) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(-1051789132);
+INSERT IGNORE INTO t0(c0) VALUES(-559070821);
+SET SESSION preload_buffer_size = 395743173;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database56';
+ALTER TABLE t0 ROW_FORMAT FIXED, DELAY_KEY_WRITE 0, RENAME t2, COMPRESSION 'LZ4', STATS_PERSISTENT 1, FORCE, ENABLE KEYS, STATS_AUTO_RECALC 1, PACK_KEYS 1, INSERT_METHOD NO, ALGORITHM INPLACE;
+ALTER TABLE t1 ;
+INSERT INTO t0(c0) VALUES(NULL), (NULL), (-384031023);
+INSERT IGNORE INTO t1(c0) VALUES("	/b?js");
+SET SESSION sql_quote_show_create = ON;
+INSERT IGNORE INTO t0(c0) VALUES(''), (-1168418025), (NULL), (-1718325817), (NULL);
+INSERT IGNORE INTO t0(c0) VALUES(2078960188);

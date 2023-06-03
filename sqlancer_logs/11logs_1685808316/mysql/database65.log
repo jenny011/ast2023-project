@@ -1,0 +1,62 @@
+--java.lang.AssertionError: ALTER TABLE t2 DELAY_KEY_WRITE 1, STATS_AUTO_RECALC 0, DISABLE KEYS, FORCE, INSERT_METHOD NO, ROW_FORMAT DYNAMIC, STATS_PERSISTENT 0, RENAME t0, COMPRESSION 'LZ4', ALGORITHM INSTANT, PACK_KEYS 1, CHECKSUM 1;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:33
+-- Database: database65
+-- Database version: 8.0.11
+-- seed value: 1685807359612
+DROP DATABASE IF EXISTS database65;
+CREATE DATABASE database65;
+USE database65;
+CREATE TABLE t0(c0 VARCHAR(500) ) ;
+CREATE TABLE IF NOT EXISTS t1(c0 SMALLINT  COMMENT 'asdf'  PRIMARY KEY STORAGE MEMORY NOT NULL COLUMN_FORMAT DEFAULT) ;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database65';
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+TRUNCATE TABLE t0;
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(281517346);
+DELETE QUICK FROM t0;
+ALTER TABLE t1 ALGORITHM COPY, PACK_KEYS 0;
+ALTER TABLE t0 RENAME t0, COMPRESSION 'ZLIB', STATS_PERSISTENT 0, PACK_KEYS 0;
+INSERT DELAYED INTO t0(c0) VALUES("[]{}");
+ALTER TABLE t0 STATS_AUTO_RECALC 0, RENAME TO t2;
+DROP INDEX `PRIMARY` ON t1 LOCK=NONE;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database65';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database65';
+INSERT IGNORE INTO t1(c0) VALUES(223517469);
+INSERT IGNORE INTO t2(c0) VALUES("MM+6");
+DELETE LOW_PRIORITY FROM t1 WHERE IFNULL( EXISTS (SELECT 1), (! (NULL)));
+INSERT INTO t1(c0) VALUES(NULL);
+REPLACE INTO t2(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database65';
+REPLACE INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t2(c0) VALUES(223517469);
+INSERT IGNORE INTO t1(c0) VALUES(666799873), (NULL), (1570443969);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database65';
+INSERT IGNORE INTO t1(c0) VALUES(-2066248305);
+INSERT HIGH_PRIORITY IGNORE INTO t2(c0) VALUES(281517346);
+INSERT IGNORE INTO t2(c0) VALUES(-276743123);
+ALTER TABLE t1 RENAME AS t2, PACK_KEYS 1, FORCE, INSERT_METHOD NO, COMPRESSION 'NONE';
+ALTER TABLE t1 RENAME t2, ROW_FORMAT DYNAMIC, DELAY_KEY_WRITE 1, DISABLE KEYS, STATS_AUTO_RECALC DEFAULT, CHECKSUM 0, PACK_KEYS 0, ALGORITHM DEFAULT;

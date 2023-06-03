@@ -1,0 +1,22 @@
+-- Time: 2023/06/01 18:30:17
+-- Database: database54
+-- Database version: 8.0.11
+-- seed value: 1685637011044
+DROP DATABASE IF EXISTS database54;
+CREATE DATABASE database54;
+USE database54;
+CREATE TABLE t0(c0 TINYTEXT ) MIN_ROWS = 6720866736334985145, STATS_AUTO_RECALC = 0; -- 52ms;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0) INVISIBLE ALGORITHM= INPLACE; -- 22ms;
+SET SESSION query_alloc_block_size = 4006779815; -- 1ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54'; -- 27ms;
+ALTER TABLE t0 DELAY_KEY_WRITE 0, STATS_AUTO_RECALC 0, FORCE, CHECKSUM 1, DISABLE KEYS, STATS_PERSISTENT 1, INSERT_METHOD LAST, COMPRESSION 'LZ4', PACK_KEYS 0; -- 132ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54'; -- 2ms;
+ALTER TABLE t0 ALGORITHM DEFAULT, FORCE, INSERT_METHOD FIRST; -- 201ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54'; -- 1ms;
+INSERT INTO t0(c0) VALUES(1113989942); -- 13ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("K["); -- 10ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54'; -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54'; -- 4ms;
+ALTER TABLE t0 DISABLE KEYS, RENAME TO t2, INSERT_METHOD FIRST, STATS_AUTO_RECALC 0, COMPRESSION 'LZ4', ALGORITHM INSTANT, ROW_FORMAT REDUNDANT, DELAY_KEY_WRITE 1, FORCE, CHECKSUM 1, STATS_PERSISTENT 1;

@@ -1,0 +1,47 @@
+-- Time: 2023/06/01 18:30:13
+-- Database: database35
+-- Database version: 8.0.11
+-- seed value: 1685637011025
+DROP DATABASE IF EXISTS database35;
+CREATE DATABASE database35;
+USE database35;
+CREATE TABLE t0(c0 TEXT  NULL, c1 TINYTEXT  COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE MEMORY ) ; -- 65ms;
+REPLACE INTO t0(c0) VALUES(''); -- 7ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 13ms;
+REPLACE INTO t0(c0) VALUES(-319525571); -- 7ms;
+DELETE LOW_PRIORITY FROM t0; -- 11ms;
+CREATE INDEX i0 ON t0(c1(2), c0(2)) ALGORITHM COPY; -- 594ms;
+REPLACE INTO t0(c0) VALUES('-319525571'); -- 18ms;
+INSERT LOW_PRIORITY IGNORE INTO t0(c0, c1) VALUES("", NULL); -- 9ms;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(-1358563159); -- 9ms;
+INSERT DELAYED INTO t0(c1) VALUES('T(_'); -- 9ms;
+REPLACE INTO t0(c1, c0) VALUES(-319525571, NULL); -- 10ms;
+REPLACE INTO t0(c0) VALUES(682046120); -- 7ms;
+INSERT INTO t0(c1) VALUES(NULL); -- 13ms;
+CHECK TABLE t0 EXTENDED FAST CHANGED MEDIUM FOR UPGRADE; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 3ms;
+DELETE LOW_PRIORITY IGNORE FROM t0; -- 12ms;
+REPLACE INTO t0(c1) VALUES(NULL); -- 14ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 2ms;
+DELETE QUICK FROM t0 WHERE t0.c1; -- 0ms;
+CREATE UNIQUE INDEX i1 ON t0(c0(4), c1(3) DESC) VISIBLE ALGORITHM DEFAULT; -- 78ms;
+DELETE FROM t0; -- 15ms;
+SET SESSION range_alloc_block_size = 970574657615142806; -- 5ms;
+INSERT IGNORE INTO t0(c1, c0) VALUES('ONx', 682046120); -- 11ms;
+DELETE QUICK FROM t0 WHERE t0.c0; -- 9ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 4ms;
+DELETE LOW_PRIORITY FROM t0 WHERE ( EXISTS (SELECT 1)) LIKE ( EXISTS (SELECT 1)); -- 0ms;
+INSERT INTO t0(c1, c0) VALUES(-1862952857, '-1862952857'); -- 9ms;
+REPLACE INTO t0(c0, c1) VALUES(NULL, -1862952857); -- 14ms;
+INSERT LOW_PRIORITY INTO t0(c1) VALUES(-1862952857); -- 6ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-319525571); -- 13ms;
+REPLACE INTO t0(c1) VALUES(NULL); -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 3ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 6ms;
+INSERT INTO t0(c0) VALUES(1750709024); -- 16ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35'; -- 3ms;
+DELETE QUICK IGNORE FROM t0; -- 7ms;
+INSERT IGNORE INTO t0(c0) VALUES(-246398181); -- 15ms;
+SET SESSION autocommit = 1; -- 0ms;
+ALTER TABLE t0 DISABLE KEYS, DELAY_KEY_WRITE 0, DROP c0, FORCE, STATS_AUTO_RECALC 1, CHECKSUM 1, RENAME TO t2, ROW_FORMAT DEFAULT, INSERT_METHOD LAST, PACK_KEYS DEFAULT, STATS_PERSISTENT DEFAULT, ALGORITHM INSTANT, COMPRESSION 'NONE';

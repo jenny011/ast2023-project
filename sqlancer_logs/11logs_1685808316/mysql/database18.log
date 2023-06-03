@@ -1,0 +1,48 @@
+--java.lang.AssertionError: CREATE INDEX i23 ON t1((t1.c1));
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(t1.c1))' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:21
+-- Database: database18
+-- Database version: 8.0.11
+-- seed value: 1685807359564
+DROP DATABASE IF EXISTS database18;
+CREATE DATABASE database18;
+USE database18;
+CREATE TABLE t0(c0 MEDIUMINT(120)  COLUMN_FORMAT FIXED, c1 INT(180)  UNIQUE KEY PRIMARY KEY STORAGE MEMORY) ;
+CREATE TABLE IF NOT EXISTS t1(c0 BIGINT  COLUMN_FORMAT DYNAMIC, c1 MEDIUMINT  COMMENT 'asdf'  PRIMARY KEY NOT NULL COLUMN_FORMAT DEFAULT STORAGE DISK UNIQUE KEY, c2 LONGTEXT  STORAGE MEMORY) ;
+CREATE TABLE t2(c0 TINYTEXT  COMMENT 'asdf'  STORAGE MEMORY ) ;
+DROP INDEX `PRIMARY` ON t1 LOCK=SHARED;
+INSERT INTO t1(c2, c0) VALUES(NULL, NULL);
+INSERT DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t1(c1) VALUES(-101939146);
+REPLACE LOW_PRIORITY INTO t1(c1, c2) VALUES("-101939146", NULL);
+INSERT INTO t1(c2) VALUES(-101939146);
+INSERT IGNORE INTO t0(c1, c0) VALUES(NULL, 397397998), (-1124078793, 943497374), ('', 943497374);
+SET SESSION read_buffer_size = 1863640800;
+SET SESSION max_sort_length = 1072867;
+REPLACE INTO t2(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c1) VALUES(401553740);
+CHECKSUM TABLE t2, t0, t1 EXTENDED;
+SET SESSION max_seeks_for_key = 6569848728824319045;
+DELETE FROM t0;
+INSERT IGNORE INTO t1(c2, c1) VALUES(NULL, '_\r X5s');

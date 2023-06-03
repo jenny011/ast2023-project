@@ -1,0 +1,39 @@
+--java.lang.AssertionError: ALTER TABLE t1 DISABLE KEYS, FORCE, CHECKSUM 0, INSERT_METHOD LAST, RENAME TO t2, ALGORITHM INSTANT, DELAY_KEY_WRITE 0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:36:45
+-- Database: database59
+-- Database version: 8.0.11
+-- seed value: 1685637011049
+DROP DATABASE IF EXISTS database59;
+CREATE DATABASE database59;
+USE database59;
+CREATE TABLE t0(c0 VARCHAR(500)  COLUMN_FORMAT FIXED COMMENT 'asdf'  ) ;
+CREATE TABLE t1 LIKE t0;
+INSERT IGNORE INTO t0(c0) VALUES(961067644);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("");
+CHECK TABLE t0 ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database59';
+ALTER TABLE t0 RENAME TO t0, ALGORITHM DEFAULT, FORCE, STATS_PERSISTENT 0, PACK_KEYS DEFAULT;
+ALTER TABLE t1 STATS_PERSISTENT DEFAULT, COMPRESSION 'LZ4', STATS_AUTO_RECALC DEFAULT, ALGORITHM COPY, ENABLE KEYS, INSERT_METHOD LAST, CHECKSUM 0, RENAME TO t0, ROW_FORMAT COMPACT;
+ALTER TABLE t1 COMPRESSION 'NONE', ENABLE KEYS, DELAY_KEY_WRITE 1, ALGORITHM INPLACE, STATS_AUTO_RECALC 1, PACK_KEYS 1, RENAME TO t2;

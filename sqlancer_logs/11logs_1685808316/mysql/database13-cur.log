@@ -1,0 +1,12 @@
+-- Time: 2023/06/03 17:53:27
+-- Database: database13
+-- Database version: 8.0.11
+-- seed value: 1685807359558
+DROP DATABASE IF EXISTS database13;
+CREATE DATABASE database13;
+USE database13;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT(221)  STORAGE MEMORY  UNIQUE  COMMENT 'asdf'  COLUMN_FORMAT DEFAULT) ; -- 44ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('G,'); -- 3ms;
+INSERT DELAYED INTO t0(c0) VALUES(NULL); -- 9ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database13'; -- 2ms;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(( EXISTS (SELECT 1))) ALGORITHM= DEFAULT;

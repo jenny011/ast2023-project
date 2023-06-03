@@ -1,0 +1,94 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT SQL_NO_CACHE STRAIGHT_JOIN t0.c0 AS ref0, t0.c1 AS ref1, t0.c2 AS ref2, t2.c0 AS ref3, t2.c2 AS ref4 FROM t0, t2 WHERE (NOT (((! (t0.c1))) >= (t2.c2))) ORDER BY (IFNULL(t0.c2, -2066253455)) IS FALSE LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = '773017485' AND result.ref1 = "" AND result.ref2 = 655269074 AND result.ref3 IS NULL AND result.ref4 = 142474209;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/03 18:22:07
+-- Database: database14
+-- Database version: 8.0.33
+-- seed value: 1685808636569
+DROP DATABASE IF EXISTS database14;
+CREATE DATABASE database14;
+USE database14;
+CREATE TABLE t0(c0 TINYTEXT  NULL COLUMN_FORMAT FIXED, c1 TINYTEXT  NULL STORAGE DISK, c2 INT  PRIMARY KEY COMMENT 'asdf'  NOT NULL STORAGE DISK UNIQUE KEY COLUMN_FORMAT DEFAULT) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+CHECKSUM TABLE t0, t1 EXTENDED;
+SET SESSION range_alloc_block_size = 4008686311413045956;
+REPLACE DELAYED INTO t0(c2, c1) VALUES(0, NULL), (NULL, NULL), (2030758569, 1017135444);
+REPLACE INTO t0(c0, c2) VALUES(NULL, NULL);
+INSERT INTO t0(c0, c2, c1) VALUES("", "", NULL);
+INSERT DELAYED INTO t1(c1) VALUES(-1884941456);
+INSERT INTO t0(c0, c1) VALUES(741885108, '');
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t1(c1, c0, c2) VALUES(707309960, 1619940095, NULL);
+SET SESSION max_sp_recursion_depth = 49;
+INSERT INTO t0(c2) VALUES(NULL);
+REPLACE INTO t1(c0, c2) VALUES(NULL, NULL);
+REPLACE DELAYED INTO t1(c0) VALUES(1194690713);
+REPLACE INTO t1(c0) VALUES(-1540294956);
+REPLACE INTO t0(c0) VALUES(NULL), (NULL), (-1177108382);
+INSERT INTO t1(c1) VALUES(2337842), (-273038628), (-1420469771);
+REPLACE LOW_PRIORITY INTO t1(c0, c2, c1) VALUES(1858481517, "", 1791353339);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1551538430);
+REPLACE INTO t1(c2, c0) VALUES('h2<\r', "");
+INSERT INTO t1(c1, c0) VALUES('opx', 608559430), (NULL, 1514055224), (-826013905, NULL), (106638942, -741169880), ('', NULL);
+REPLACE LOW_PRIORITY INTO t1(c2) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t1(c1) VALUES(-1625985222);
+REPLACE INTO t0(c0, c2, c1) VALUES('Um', '', 562554665);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(218819979);
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0, c1, c2) VALUES(-1144605781, NULL, NULL);
+REPLACE DELAYED INTO t1(c1, c0) VALUES(NULL, NULL), (NULL, NULL), ("-520602686", "v66c-sA");
+INSERT HIGH_PRIORITY IGNORE INTO t0(c1, c2, c0) VALUES('f', NULL, NULL), ('#THs', NULL, NULL), (NULL, 'l*je', 918650237);
+CREATE INDEX i0 USING BTREE ON t0(c2);
+ANALYZE LOCAL TABLE t0;
+REPLACE DELAYED INTO t1(c2) VALUES(-1627967902);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+INSERT DELAYED IGNORE INTO t1(c1, c2) VALUES('434446684', 1192112502);
+REPLACE INTO t1(c1, c2, c0) VALUES(NULL, "?Bj", "1906339640"), (NULL, '+u', NULL), ('+?', 'A2j0k', NULL);
+REPLACE INTO t1(c2, c1, c0) VALUES("m)", -1640616054, 61117574);
+INSERT INTO t0(c0) VALUES(-1538338031);
+REPLACE INTO t0(c2) VALUES(1017135444);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+REPLACE INTO t0(c2) VALUES(NULL);
+INSERT IGNORE INTO t1(c1, c2, c0) VALUES(1152813336, NULL, 2069743406);
+INSERT HIGH_PRIORITY INTO t0(c1, c0, c2) VALUES(1428290200, NULL, -1613593382);
+INSERT IGNORE INTO t1(c0, c1) VALUES(NULL, -398807498);
+REPLACE INTO t1(c2, c0, c1) VALUES(NULL, 1282875597, NULL);
+REPLACE INTO t1(c0, c2, c1) VALUES(NULL, '', '7?MXOy>Pc');
+REPLACE DELAYED INTO t1(c2, c0) VALUES("?q\rt?o2", 'g	5 ');
+REPLACE INTO t0(c1) VALUES(-1322075889);
+INSERT HIGH_PRIORITY INTO t0(c2) VALUES(NULL);
+INSERT IGNORE INTO t1(c0, c1, c2) VALUES("3f", NULL, '-1040134330'), (NULL, NULL, ""), (NULL, "z~o?8?", '+_Ni?<}');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+REPLACE INTO t0(c1, c0, c2) VALUES('', 773017485, 655269074);
+SET SESSION max_sp_recursion_depth = 162;
+CREATE INDEX i1 ON t1(((IF(-1653253056, t1.c2, "1329595763")) IS NOT NULL));
+DELETE LOW_PRIORITY QUICK FROM t1 WHERE ((IF(1111392933, t1.c0, -73519131)) IN ((t1.c2) NOT IN (NULL))) <= (((t1.c0) NOT IN ('VN', 'AZN', t1.c1)) != (NULL));
+CREATE INDEX i2 USING BTREE ON t1(c1(1) DESC);
+REPLACE INTO t1(c1) VALUES('ar?');
+REPLACE LOW_PRIORITY INTO t1(c0, c1, c2) VALUES(1852895796, NULL, '-1857063941');
+INSERT HIGH_PRIORITY INTO t0(c1, c0) VALUES("-1344651829", 950079160);
+INSERT INTO t1(c1) VALUES('A2');
+INSERT IGNORE INTO t1(c1, c2) VALUES(NULL, 142474209), ("k?.pc}9b", 444307979), (NULL, "L(4(o?");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+ALTER TABLE t1 CHECKSUM 1, DROP c0, FORCE, INSERT_METHOD NO, DISABLE KEYS, COMPRESSION 'ZLIB', DELAY_KEY_WRITE 1, PACK_KEYS DEFAULT, STATS_PERSISTENT 0, RENAME t0;
+ALTER TABLE t1 STATS_AUTO_RECALC 0, CHECKSUM 0, INSERT_METHOD NO, STATS_PERSISTENT 0, RENAME AS t2, ROW_FORMAT COMPACT, ALGORITHM COPY, PACK_KEYS 0, FORCE, DROP COLUMN c1, DELAY_KEY_WRITE 0, COMPRESSION 'LZ4';
+DROP INDEX `PRIMARY` ON t2 ALGORITHM=INPLACE LOCK=NONE;
+DROP INDEX `PRIMARY` ON t2;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+SELECT * FROM (SELECT SQL_NO_CACHE STRAIGHT_JOIN t0.c0 AS ref0, t0.c1 AS ref1, t0.c2 AS ref2, t2.c0 AS ref3, t2.c2 AS ref4 FROM t0, t2 WHERE (NOT (((! (t0.c1))) >= (t2.c2))) ORDER BY (IFNULL(t0.c2, -2066253455)) IS FALSE LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = '773017485' AND result.ref1 = "" AND result.ref2 = 655269074 AND result.ref3 IS NULL AND result.ref4 = 142474209;

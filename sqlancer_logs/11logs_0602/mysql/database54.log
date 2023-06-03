@@ -1,0 +1,44 @@
+--java.lang.AssertionError: ALTER TABLE t0 DISABLE KEYS, RENAME TO t2, INSERT_METHOD FIRST, STATS_AUTO_RECALC 0, COMPRESSION 'LZ4', ALGORITHM INSTANT, ROW_FORMAT REDUNDANT, DELAY_KEY_WRITE 1, FORCE, CHECKSUM 1, STATS_PERSISTENT 1;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:18
+-- Database: database54
+-- Database version: 8.0.11
+-- seed value: 1685637011044
+DROP DATABASE IF EXISTS database54;
+CREATE DATABASE database54;
+USE database54;
+CREATE TABLE t0(c0 TINYTEXT ) MIN_ROWS = 6720866736334985145, STATS_AUTO_RECALC = 0;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0) INVISIBLE ALGORITHM= INPLACE;
+SET SESSION query_alloc_block_size = 4006779815;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54';
+ALTER TABLE t0 DELAY_KEY_WRITE 0, STATS_AUTO_RECALC 0, FORCE, CHECKSUM 1, DISABLE KEYS, STATS_PERSISTENT 1, INSERT_METHOD LAST, COMPRESSION 'LZ4', PACK_KEYS 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54';
+ALTER TABLE t0 ALGORITHM DEFAULT, FORCE, INSERT_METHOD FIRST;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54';
+INSERT INTO t0(c0) VALUES(1113989942);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("K[");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database54';

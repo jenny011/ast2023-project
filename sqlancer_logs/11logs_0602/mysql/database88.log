@@ -1,0 +1,66 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT STRAIGHT_JOIN t0.c0 AS ref0 FROM t0 WHERE (! ((t0.c0) != (t0.c0))) GROUP BY t0.c0 ORDER BY t0.c0 ASC LIMIT 2147483647) as result WHERE result.ref0 = '-1327135751';
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Out of sort memory, consider increasing server sort buffer size
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/01 18:31:35
+-- Database: database88
+-- Database version: 8.0.11
+-- seed value: 1685637011078
+DROP DATABASE IF EXISTS database88;
+CREATE DATABASE database88;
+USE database88;
+CREATE TABLE IF NOT EXISTS t0(c0 TEXT  COLUMN_FORMAT DEFAULT  COMMENT 'asdf' ) ;
+TRUNCATE TABLE t0;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(-468573414);
+SET SESSION show_create_table_verbosity = OFF;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+DELETE IGNORE FROM t0;
+INSERT IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1003636768);
+REPLACE INTO t0(c0) VALUES('j?');
+REPLACE INTO t0(c0) VALUES(-1327657884), (-1821517527), (-1937093878);
+INSERT IGNORE INTO t0(c0) VALUES(-555844958), (NULL), (71343454);
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+DELETE QUICK IGNORE FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+DELETE LOW_PRIORITY IGNORE FROM t0;
+INSERT DELAYED INTO t0(c0) VALUES(-1862107359), (NULL), ('tU'), (NULL), (NULL);
+REPLACE INTO t0(c0) VALUES('+{'), ("-53837776"), (-887147906);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('');
+REPLACE INTO t0(c0) VALUES(-1984833621);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL);
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+REPLACE INTO t0(c0) VALUES(-242252627), (1704739336), (-1937093878);
+INSERT INTO t0(c0) VALUES(-1221884805);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database88';
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1869581961);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL), (-471739824), (NULL);
+REPLACE INTO t0(c0) VALUES("");
+INSERT INTO t0(c0) VALUES(1457806756);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(-1307681956);
+DELETE FROM t0;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1327135751);
+INSERT INTO t0(c0) VALUES(NULL), ('-887147906'), (NULL);
+CHECK TABLE t0 QUICK FAST CHANGED FOR UPGRADE MEDIUM;
+SET SESSION max_sort_length = 5211415;
+REPLACE INTO t0(c0) VALUES(-836705732), (NULL), (NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES(-379428224), (418639531), (NULL);
+REPLACE INTO t0(c0) VALUES(180600829);
+SELECT * FROM (SELECT STRAIGHT_JOIN t0.c0 AS ref0 FROM t0 WHERE (! ((t0.c0) != (t0.c0))) GROUP BY t0.c0 ORDER BY t0.c0 ASC LIMIT 2147483647) as result WHERE result.ref0 = '-1327135751';

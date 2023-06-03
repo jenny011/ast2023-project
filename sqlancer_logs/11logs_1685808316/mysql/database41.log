@@ -1,0 +1,46 @@
+--java.lang.AssertionError: CREATE INDEX i0 USING HASH ON t1(((CAST( EXISTS (SELECT 1) AS SIGNED)) = (((t1.c1) IS NOT TRUE) IS NOT TRUE)));
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((CAST( EXISTS (SELECT 1) AS SIGNED)) = (((t1.c1) IS NOT TRUE) IS NOT TRUE)))' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:24
+-- Database: database41
+-- Database version: 8.0.11
+-- seed value: 1685807359588
+DROP DATABASE IF EXISTS database41;
+CREATE DATABASE database41;
+USE database41;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT , c1 INT(68)  COLUMN_FORMAT FIXED STORAGE DISK COMMENT 'asdf'  UNIQUE NULL) ;
+CREATE TABLE IF NOT EXISTS t1(c0 TINYTEXT  NULL STORAGE MEMORY COMMENT 'asdf'  COLUMN_FORMAT DYNAMIC, c1 TINYTEXT  COLUMN_FORMAT DEFAULT STORAGE MEMORY , c2 MEDIUMINT  PRIMARY KEY) COMPRESSION = 'NONE', AVG_ROW_LENGTH = 506498778;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database41';
+REPLACE INTO t0(c0) VALUES("");
+REPLACE INTO t0(c0, c1) VALUES(-793222228, NULL);
+REPLACE DELAYED INTO t1(c2) VALUES(NULL), (NULL), (-793222228);
+INSERT INTO t1(c2) VALUES(1104405996);
+INSERT LOW_PRIORITY INTO t0(c0, c1) VALUES(123117596, 1104405996), (-566874305, "{u[_*oRg3"), ('123117596', NULL);
+REPLACE DELAYED INTO t1(c2, c0) VALUES(NULL, 420570607);
+INSERT IGNORE INTO t0(c1) VALUES(-1795026870), (NULL), (-88134979);
+CREATE UNIQUE INDEX i28 ON t0(c0 DESC) ALGORITHM= COPY;
+SET SESSION optimizer_prune_level = 0;
+DELETE IGNORE FROM t0;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t1;
+ANALYZE  TABLE t1 DROP HISTOGRAM ON c2, c1;
+CREATE UNIQUE INDEX i0 ON t1(c0, c2);

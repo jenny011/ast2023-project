@@ -1,0 +1,35 @@
+-- Time: 2023/06/01 18:30:12
+-- Database: database22
+-- Database version: 8.0.11
+-- seed value: 1685637011012
+DROP DATABASE IF EXISTS database22;
+CREATE DATABASE database22;
+USE database22;
+CREATE TABLE IF NOT EXISTS t0(c0 VARCHAR(500) ) ; -- 59ms;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0; -- 87ms;
+CREATE TABLE IF NOT EXISTS t2 LIKE t0; -- 90ms;
+REPLACE INTO t2(c0) VALUES(NULL); -- 18ms;
+INSERT INTO t0(c0) VALUES(NULL); -- 12ms;
+DELETE QUICK FROM t0; -- 10ms;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(384628071); -- 13ms;
+REPLACE INTO t2(c0) VALUES(NULL); -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22'; -- 2ms;
+INSERT LOW_PRIORITY IGNORE INTO t2(c0) VALUES(384628071); -- 8ms;
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(384628071); -- 13ms;
+INSERT INTO t1(c0) VALUES(-1948588294); -- 21ms;
+SET SESSION max_length_for_sort_data = 4550059; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22'; -- 2ms;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL), (78432481), (856901104); -- 20ms;
+TRUNCATE TABLE t0; -- 219ms;
+REPLACE DELAYED INTO t0(c0) VALUES('*]MKG7'); -- 9ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22'; -- 4ms;
+SET SESSION read_buffer_size = 1492987210; -- 2ms;
+CHECKSUM TABLE t1 EXTENDED; -- 1ms;
+INSERT LOW_PRIORITY IGNORE INTO t2(c0) VALUES(NULL); -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22'; -- 2ms;
+REPLACE INTO t0(c0) VALUES(')u5A<'); -- 5ms;
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(288280349), (-1948588294), (NULL); -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22'; -- 3ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22'; -- 2ms;
+ALTER TABLE t1 ALGORITHM INSTANT, CHECKSUM 1, COMPRESSION 'LZ4', DELAY_KEY_WRITE 0, ROW_FORMAT FIXED, DISABLE KEYS, STATS_AUTO_RECALC 0, FORCE, STATS_PERSISTENT DEFAULT;

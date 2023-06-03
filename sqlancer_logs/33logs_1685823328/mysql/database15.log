@@ -1,0 +1,75 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCT SQL_NO_CACHE SQL_BIG_RESULT STRAIGHT_JOIN SQL_SMALL_RESULT t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE (! ((t1.c0) < (t0.c0))) ORDER BY -1489323966 ASC LIMIT 2147483647) as result WHERE result.ref0 = -32768 AND result.ref1 = 8388607;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/03 19:07:26
+-- Database: database15
+-- Database version: 8.0.33
+-- seed value: 1685808636570
+DROP DATABASE IF EXISTS database15;
+CREATE DATABASE database15;
+USE database15;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT ) ;
+CREATE TABLE IF NOT EXISTS t1(c0 MEDIUMINT  STORAGE MEMORY  COLUMN_FORMAT DYNAMIC) ;
+REPLACE INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES('_9');
+REPLACE INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database15';
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(1191021817);
+CREATE UNIQUE INDEX i85 USING BTREE ON t1(c0 DESC);
+DELETE QUICK FROM t0 WHERE (NULL) XOR (t0.c0);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database15';
+DELETE LOW_PRIORITY QUICK FROM t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database15';
+TRUNCATE TABLE t1;
+REPLACE DELAYED INTO t0(c0) VALUES(1319707433);
+INSERT IGNORE INTO t0(c0) VALUES(1618367233);
+INSERT IGNORE INTO t0(c0) VALUES(-1162487370);
+CHECKSUM TABLE t0;
+SET SESSION range_alloc_block_size = 5148527927789197048;
+SET SESSION read_rnd_buffer_size = 1912378250;
+INSERT IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(250702675);
+REPLACE INTO t0(c0) VALUES("1d}Cxs"), ('8i<X)XAb_'), (NULL);
+REPLACE INTO t1(c0) VALUES('EhAL');
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('<	j');
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database15';
+CREATE INDEX i0 ON t0(c0) ALGORITHM DEFAULT;
+INSERT DELAYED INTO t0(c0) VALUES(NULL);
+CREATE UNIQUE INDEX i1 ON t1(c0);
+REPLACE INTO t0(c0) VALUES("");
+INSERT LOW_PRIORITY INTO t0(c0) VALUES('1219924440');
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(1989622693), (NULL), ("");
+INSERT INTO t0(c0) VALUES("");
+INSERT INTO t0(c0) VALUES(NULL);
+ANALYZE LOCAL TABLE t0;
+DELETE IGNORE FROM t1 WHERE t1.c0;
+CHECK TABLE t1, t0 QUICK EXTENDED FAST;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES(-1550888077);
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(599036497);
+REPLACE INTO t0(c0) VALUES("X?");
+INSERT IGNORE INTO t1(c0) VALUES(NULL), (NULL), (1976199936);
+CREATE INDEX i2 USING BTREE ON t0(c0);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('xX');
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(934246631), ('3F'), (973557073);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+SELECT * FROM (SELECT DISTINCT SQL_NO_CACHE SQL_BIG_RESULT STRAIGHT_JOIN SQL_SMALL_RESULT t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE (! ((t1.c0) < (t0.c0))) ORDER BY -1489323966 ASC LIMIT 2147483647) as result WHERE result.ref0 = -32768 AND result.ref1 = 8388607;

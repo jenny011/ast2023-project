@@ -1,0 +1,46 @@
+-- Time: 2023/06/03 17:50:37
+-- Database: database31
+-- Database version: 8.0.11
+-- seed value: 1685807359578
+DROP DATABASE IF EXISTS database31;
+CREATE DATABASE database31;
+USE database31;
+CREATE TABLE IF NOT EXISTS t0(c0 BIGINT  COMMENT 'asdf'  UNIQUE COLUMN_FORMAT DEFAULT STORAGE DISK  , c1 BIGINT(106)  COMMENT 'asdf'  NULL STORAGE MEMORY  UNIQUE COLUMN_FORMAT FIXED) ; -- 54ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 1ms;
+INSERT IGNORE INTO t0(c0, c1) VALUES(NULL, "PK"), (NULL, NULL), (-1957132489, NULL); -- 11ms;
+DELETE QUICK FROM t0; -- 9ms;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL); -- 8ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 2ms;
+REPLACE DELAYED INTO t0(c1, c0) VALUES(817242914, 1162841089); -- 6ms;
+DELETE IGNORE FROM t0; -- 12ms;
+ALTER TABLE t0 ROW_FORMAT DEFAULT; -- 80ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 3ms;
+REPLACE INTO t0(c0, c1) VALUES("?,", "nfmz9h"), ("!l", 'Md[,5e	^,'), (-1968535720, NULL); -- 1ms;
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(2144541906); -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 1ms;
+SET SESSION sql_log_off = OFF; -- 1ms;
+DELETE IGNORE FROM t0; -- 5ms;
+REPLACE DELAYED INTO t0(c0, c1) VALUES(-2143283202, NULL); -- 7ms;
+CHECKSUM TABLE t0; -- 0ms;
+DELETE QUICK IGNORE FROM t0 WHERE t0.c0; -- 5ms;
+SET SESSION autocommit = 1; -- 0ms;
+INSERT INTO t0(c0, c1) VALUES('xduo', -1881120321); -- 1ms;
+REPLACE LOW_PRIORITY INTO t0(c0, c1) VALUES(NULL, 369535236); -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 1ms;
+INSERT INTO t0(c0) VALUES(""); -- 0ms;
+INSERT INTO t0(c0) VALUES(''), (NULL), (-708178835); -- 0ms;
+REPLACE INTO t0(c0, c1) VALUES(NULL, "qjx"); -- 0ms;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c1) VALUES(317535744); -- 5ms;
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(7673053, '<|'); -- 1ms;
+INSERT IGNORE INTO t0(c0, c1) VALUES('782611993', -92342568); -- 4ms;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0; -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 2ms;
+SET SESSION parser_max_mem_size = 6056697690793561134; -- 0ms;
+REPLACE DELAYED INTO t0(c1) VALUES(NULL); -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database31'; -- 2ms;
+REPLACE DELAYED INTO t0(c1, c0) VALUES(NULL, NULL), (NULL, ""), (473887970, ''); -- 3ms;
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(""); -- 0ms;
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES('1685595834'), (-2075232028), (-416895958); -- 5ms;
+DROP INDEX c0 ON t0; -- 32ms;
+ALTER TABLE t0 CHECKSUM 1, ALGORITHM INSTANT, STATS_AUTO_RECALC DEFAULT, FORCE, DROP c0, ENABLE KEYS, ROW_FORMAT DEFAULT, PACK_KEYS 1, RENAME t0, DELAY_KEY_WRITE 1, STATS_PERSISTENT 1;

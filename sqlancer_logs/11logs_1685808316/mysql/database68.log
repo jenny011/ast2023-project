@@ -1,0 +1,52 @@
+--java.lang.AssertionError: CREATE INDEX i1 USING BTREE ON t2((t2.c0)) VISIBLE ALGORITHM INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(t2.c0)) VISIBLE ALGORITHM INPLACE' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:50:33
+-- Database: database68
+-- Database version: 8.0.11
+-- seed value: 1685807359615
+DROP DATABASE IF EXISTS database68;
+CREATE DATABASE database68;
+USE database68;
+CREATE TABLE t0(c0 TINYTEXT , c1 MEDIUMTEXT  NULL) AVG_ROW_LENGTH = 990729128, ENGINE = MEMORY;
+CREATE TABLE t0(c0 MEDIUMTEXT  STORAGE MEMORY COMMENT 'asdf'  COLUMN_FORMAT FIXED) ;
+CREATE TABLE t1 LIKE t0;
+CREATE TABLE t2 LIKE t0;
+DELETE FROM t1;
+INSERT IGNORE INTO t1(c0) VALUES(NULL), (794898421), (794898421);
+CHECK TABLE t0, t2 EXTENDED QUICK MEDIUM CHANGED FOR UPGRADE;
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+INSERT IGNORE INTO t2(c0) VALUES(-706188104);
+INSERT IGNORE INTO t0(c0) VALUES(794898421), (NULL), (1121505844);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(-2083304434);
+REPLACE INTO t2(c0) VALUES(NULL), (1476918419), ('F1*%.&7');
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+CREATE UNIQUE INDEX i0 ON t2(c0(2)) ALGORITHM= INPLACE;
+ALTER TABLE t2 CHECKSUM 0, STATS_AUTO_RECALC 0, COMPRESSION 'NONE', STATS_PERSISTENT DEFAULT, RENAME t2, INSERT_METHOD LAST, ALGORITHM COPY, FORCE, DELAY_KEY_WRITE 0;
+REPLACE INTO t1(c0) VALUES('F1*%.&7');
+DELETE LOW_PRIORITY FROM t0 WHERE  EXISTS (SELECT 1);
+DELETE IGNORE FROM t2 WHERE t2.c0;
+REPLACE INTO t2(c0) VALUES('<+?uG');
+INSERT DELAYED INTO t1(c0) VALUES(1476918419);
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(NULL);

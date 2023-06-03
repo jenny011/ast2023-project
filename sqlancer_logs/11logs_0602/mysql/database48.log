@@ -1,0 +1,63 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i0 USING BTREE ON t0((NULL)) ALGORITHM DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(NULL)) ALGORITHM DEFAULT' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:17
+-- Database: database48
+-- Database version: 8.0.11
+-- seed value: 1685637011038
+DROP DATABASE IF EXISTS database48;
+CREATE DATABASE database48;
+USE database48;
+CREATE TABLE IF NOT EXISTS t0(c0 TEXT ) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+INSERT IGNORE INTO t0(c0) VALUES(NULL);
+CHECKSUM TABLE t0, t1 QUICK;
+ALTER TABLE t1 PACK_KEYS DEFAULT, STATS_PERSISTENT 0, INSERT_METHOD FIRST, ROW_FORMAT DYNAMIC, CHECKSUM 0, ENABLE KEYS, COMPRESSION 'LZ4', FORCE, ALGORITHM COPY, STATS_AUTO_RECALC 0, DELAY_KEY_WRITE 1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database48';
+REPLACE INTO t0(c0) VALUES("-968817570");
+REPLACE INTO t0(c0) VALUES(-18799336);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database48';
+INSERT DELAYED INTO t0(c0) VALUES('4|Pb\r');
+INSERT INTO t1(c0) VALUES(378115830);
+DELETE LOW_PRIORITY IGNORE FROM t0;
+DELETE IGNORE FROM t1 WHERE NULL;
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database48';
+DELETE FROM t1;
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+REPLACE DELAYED INTO t1(c0) VALUES("A*Fc%?Sy?");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database48';
+SET SESSION myisam_sort_buffer_size = 4354422041748673581;
+ALTER TABLE t1 PACK_KEYS 0, CHECKSUM 0, DELAY_KEY_WRITE 0, ALGORITHM COPY;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+SET SESSION range_alloc_block_size = 2215562789807038166;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0;
+TRUNCATE TABLE t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database48';
+INSERT IGNORE INTO t1(c0) VALUES(378115830);
+ALTER TABLE t0 STATS_PERSISTENT 1, ALGORITHM DEFAULT, RENAME TO t0, INSERT_METHOD FIRST, PACK_KEYS DEFAULT, ROW_FORMAT REDUNDANT, ENABLE KEYS, FORCE, DELAY_KEY_WRITE 1, COMPRESSION 'LZ4', STATS_AUTO_RECALC 1;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(988958826);
+CHECK TABLE t0, t1 FAST EXTENDED MEDIUM FOR UPGRADE QUICK;
+INSERT DELAYED INTO t0(c0) VALUES(-18799336);
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES('378115830'), (280503980), (NULL), (988958826), ("UBCHD'?O");

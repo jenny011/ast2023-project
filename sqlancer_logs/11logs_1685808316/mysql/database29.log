@@ -1,0 +1,42 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i0 ON t0(((t0.c0) IS NOT FALSE)) VISIBLE ALGORITHM= DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((t0.c0) IS NOT FALSE)) VISIBLE ALGORITHM= DEFAULT' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:22
+-- Database: database29
+-- Database version: 8.0.11
+-- seed value: 1685807359575
+DROP DATABASE IF EXISTS database29;
+CREATE DATABASE database29;
+USE database29;
+CREATE TABLE t0(c0 BIGINT  COLUMN_FORMAT DEFAULT PRIMARY KEY STORAGE MEMORY UNIQUE KEY NOT NULL) ;
+ALTER TABLE t0 DELAY_KEY_WRITE 0, STATS_AUTO_RECALC DEFAULT, STATS_PERSISTENT 0, CHECKSUM 0, FORCE, INSERT_METHOD NO;
+REPLACE INTO t0(c0) VALUES(-873242562), (NULL), (-873242562);
+REPLACE INTO t0(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES('y2c'), ("?"), (-1151369205);
+INSERT INTO t0(c0) VALUES(2072285667);
+INSERT INTO t0(c0) VALUES('??,Fsb+');
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(">cO");
+ALTER TABLE t0 INSERT_METHOD NO, PACK_KEYS 0, STATS_PERSISTENT 1, CHECKSUM 1, ROW_FORMAT FIXED, ALGORITHM DEFAULT;
+ALTER TABLE t0 STATS_PERSISTENT 1, PACK_KEYS DEFAULT, DELAY_KEY_WRITE 1, STATS_AUTO_RECALC 0, COMPRESSION 'LZ4', FORCE, INSERT_METHOD FIRST, ALGORITHM DEFAULT, DISABLE KEYS, RENAME t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database29';

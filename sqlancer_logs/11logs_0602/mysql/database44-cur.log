@@ -1,0 +1,21 @@
+-- Time: 2023/06/01 18:30:15
+-- Database: database44
+-- Database version: 8.0.11
+-- seed value: 1685637011034
+DROP DATABASE IF EXISTS database44;
+CREATE DATABASE database44;
+USE database44;
+CREATE TABLE IF NOT EXISTS t0(c0 LONGTEXT , c1 TINYTEXT  COMMENT 'asdf'  STORAGE DISK) ; -- 101ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database44'; -- 2ms;
+CREATE INDEX i0 USING HASH ON t0(c0(3), c1(2)) ALGORITHM= COPY; -- 413ms;
+DELETE QUICK IGNORE FROM t0; -- 1ms;
+REPLACE INTO t0(c0) VALUES(""); -- 7ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database44'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database44'; -- 7ms;
+REPLACE INTO t0(c0, c1) VALUES(NULL, -769294672); -- 11ms;
+INSERT DELAYED IGNORE INTO t0(c0, c1) VALUES('Oxfs', 56396210); -- 5ms;
+INSERT INTO t0(c1) VALUES(2063818242), (""), (''); -- 8ms;
+REPLACE INTO t0(c1, c0) VALUES(-1838708895, NULL); -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database44'; -- 1ms;
+DROP INDEX i0 ON t0 ALGORITHM=INPLACE LOCK=NONE; -- 24ms;
+CREATE UNIQUE INDEX i1 USING BTREE ON t0((NULL)) VISIBLE;

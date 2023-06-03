@@ -1,0 +1,36 @@
+-- Time: 2023/06/03 17:50:31
+-- Database: database62
+-- Database version: 8.0.11
+-- seed value: 1685807359609
+DROP DATABASE IF EXISTS database62;
+CREATE DATABASE database62;
+USE database62;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT  UNIQUE KEY, c1 INT(160)  COLUMN_FORMAT FIXED COMMENT 'asdf' ) ; -- 61ms;
+CHECKSUM TABLE t0 EXTENDED; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62'; -- 13ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 10ms;
+INSERT INTO t0(c1) VALUES(NULL), (211665959), ("VN'"); -- 5ms;
+INSERT INTO t0(c1, c0) VALUES("211665959", 281645260); -- 0ms;
+REPLACE INTO t0(c0) VALUES(281645260); -- 1ms;
+REPLACE DELAYED INTO t0(c1) VALUES(''); -- 0ms;
+INSERT IGNORE INTO t0(c1) VALUES(1861084814); -- 8ms;
+REPLACE INTO t0(c0, c1) VALUES('281645260', -1); -- 0ms;
+REPLACE INTO t0(c0, c1) VALUES(11598382, 281645260), ('pw?a	?E', 281645260), (NULL, 2001124114); -- 0ms;
+REPLACE DELAYED INTO t0(c1) VALUES(NULL); -- 9ms;
+DROP INDEX c0 ON t0 ALGORITHM=COPY LOCK=SHARED; -- 146ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62'; -- 2ms;
+CREATE UNIQUE INDEX i0 ON t0(c0, c1 ASC) ALGORITHM= INPLACE; -- 31ms;
+INSERT DELAYED IGNORE INTO t0(c1) VALUES(''), (NULL), (1905449113); -- 26ms;
+CREATE INDEX i1 ON t0(c0 DESC, c1) INVISIBLE ALGORITHM= COPY; -- 124ms;
+CREATE INDEX i2 USING BTREE ON t0(c0) VISIBLE; -- 59ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 31ms;
+INSERT IGNORE INTO t0(c1) VALUES(535241337); -- 8ms;
+TRUNCATE TABLE t0; -- 216ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62'; -- 1ms;
+REPLACE INTO t0(c1) VALUES('535241337'); -- 24ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62'; -- 3ms;
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, NULL), (1861084814, 1574721693), (1778838835, NULL), ('5B4n! #8', 971110659), (NULL, ""); -- 4ms;
+REPLACE INTO t0(c0) VALUES(NULL); -- 11ms;
+ALTER TABLE t0 RENAME AS t0, ALGORITHM INSTANT;

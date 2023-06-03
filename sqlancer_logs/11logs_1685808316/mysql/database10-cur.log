@@ -1,0 +1,18 @@
+-- Time: 2023/06/03 17:49:19
+-- Database: database10
+-- Database version: 8.0.11
+-- seed value: 1685807359549
+DROP DATABASE IF EXISTS database10;
+CREATE DATABASE database10;
+USE database10;
+CREATE TABLE t0(c0 SMALLINT , c1 TINYTEXT  COMMENT 'asdf'  COLUMN_FORMAT DYNAMIC NULL STORAGE DISK) ; -- 82ms;
+CREATE TABLE t1 LIKE t0; -- 78ms;
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(""); -- 8ms;
+REPLACE LOW_PRIORITY INTO t0(c0, c1) VALUES(NULL, -1882629623); -- 16ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database10'; -- 2ms;
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE (NULL) IS NOT FALSE; -- 7ms;
+INSERT INTO t0(c1) VALUES(-1882629623); -- 100ms;
+INSERT HIGH_PRIORITY INTO t0(c1) VALUES(""), (NULL), (-288383628); -- 6ms;
+SET SESSION foreign_key_checks = 1; -- 1ms;
+CREATE UNIQUE INDEX i0 ON t0((COALESCE(-288383628, (t0.c0) IS NOT UNKNOWN))) INVISIBLE;

@@ -1,0 +1,34 @@
+-- Time: 2023/06/03 17:49:19
+-- Database: database3
+-- Database version: 8.0.11
+-- seed value: 1685807359538
+DROP DATABASE IF EXISTS database3;
+CREATE DATABASE database3;
+USE database3;
+CREATE TABLE t0(c0 TINYINT(60)  COLUMN_FORMAT DYNAMIC PRIMARY KEY COMMENT 'asdf'  STORAGE DISK UNIQUE KEY, c1 SMALLINT(100)  COMMENT 'asdf'   UNIQUE KEY STORAGE MEMORY COLUMN_FORMAT FIXED NULL) ; -- 125ms;
+CREATE TABLE t1(c0 LONGTEXT   COLUMN_FORMAT DEFAULT STORAGE DISK) ; -- 241ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3'; -- 4ms;
+INSERT DELAYED IGNORE INTO t0(c1) VALUES(781234992), (NULL), (NULL); -- 13ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3'; -- 3ms;
+DELETE QUICK FROM t1 WHERE "[96X?O"; -- 2ms;
+DELETE QUICK FROM t1; -- 0ms;
+DELETE FROM t0; -- 8ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database3'; -- 4ms;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(-1607439759); -- 10ms;
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES('-1607439759', "[96X?O"); -- 1ms;
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(NULL); -- 0ms;
+INSERT HIGH_PRIORITY INTO t0(c0, c1) VALUES(-635760021, NULL); -- 5ms;
+INSERT DELAYED INTO t1(c0) VALUES("[96X?O"); -- 22ms;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(-1607439759); -- 7ms;
+ALTER TABLE t0 ; -- 11ms;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(-1729413367); -- 16ms;
+REPLACE DELAYED INTO t0(c0, c1) VALUES("", NULL); -- 0ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-635760021), ('[96X?O'), (1390393520), (NULL), ("j3"); -- 0ms;
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL); -- 12ms;
+REPLACE INTO t1(c0) VALUES(-1699104014); -- 16ms;
+SET SESSION optimizer_switch = 'engine_condition_pushdown=off,firstmatch=off'; -- 0ms;
+INSERT INTO t0(c0, c1) VALUES("x", -1699104014); -- 0ms;
+INSERT INTO t1(c0) VALUES('17H'); -- 11ms;
+DELETE LOW_PRIORITY IGNORE FROM t0; -- 0ms;
+CREATE INDEX i0 USING BTREE ON t1(( EXISTS (SELECT 1 wHERE FALSE)), (((IF(-1699104014, 117417552, t1.c0)) = ((t1.c0) <= (t1.c0))) XOR (IF(t1.c0, 'E b??q', NULL)))) INVISIBLE;

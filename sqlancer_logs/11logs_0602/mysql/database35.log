@@ -1,0 +1,69 @@
+--java.lang.AssertionError: ALTER TABLE t0 DISABLE KEYS, DELAY_KEY_WRITE 0, DROP c0, FORCE, STATS_AUTO_RECALC 1, CHECKSUM 1, RENAME TO t2, ROW_FORMAT DEFAULT, INSERT_METHOD LAST, PACK_KEYS DEFAULT, STATS_PERSISTENT DEFAULT, ALGORITHM INSTANT, COMPRESSION 'NONE';
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:15
+-- Database: database35
+-- Database version: 8.0.11
+-- seed value: 1685637011025
+DROP DATABASE IF EXISTS database35;
+CREATE DATABASE database35;
+USE database35;
+CREATE TABLE t0(c0 TEXT  NULL, c1 TINYTEXT  COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE MEMORY ) ;
+REPLACE INTO t0(c0) VALUES('');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+REPLACE INTO t0(c0) VALUES(-319525571);
+DELETE LOW_PRIORITY FROM t0;
+CREATE INDEX i0 ON t0(c1(2), c0(2)) ALGORITHM COPY;
+REPLACE INTO t0(c0) VALUES('-319525571');
+INSERT LOW_PRIORITY IGNORE INTO t0(c0, c1) VALUES("", NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(-1358563159);
+INSERT DELAYED INTO t0(c1) VALUES('T(_');
+REPLACE INTO t0(c1, c0) VALUES(-319525571, NULL);
+REPLACE INTO t0(c0) VALUES(682046120);
+INSERT INTO t0(c1) VALUES(NULL);
+CHECK TABLE t0 EXTENDED FAST CHANGED MEDIUM FOR UPGRADE;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+DELETE LOW_PRIORITY IGNORE FROM t0;
+REPLACE INTO t0(c1) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+DELETE QUICK FROM t0 WHERE t0.c1;
+CREATE UNIQUE INDEX i1 ON t0(c0(4), c1(3) DESC) VISIBLE ALGORITHM DEFAULT;
+DELETE FROM t0;
+SET SESSION range_alloc_block_size = 970574657615142806;
+INSERT IGNORE INTO t0(c1, c0) VALUES('ONx', 682046120);
+DELETE QUICK FROM t0 WHERE t0.c0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+DELETE LOW_PRIORITY FROM t0 WHERE ( EXISTS (SELECT 1)) LIKE ( EXISTS (SELECT 1));
+INSERT INTO t0(c1, c0) VALUES(-1862952857, '-1862952857');
+REPLACE INTO t0(c0, c1) VALUES(NULL, -1862952857);
+INSERT LOW_PRIORITY INTO t0(c1) VALUES(-1862952857);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-319525571);
+REPLACE INTO t0(c1) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+INSERT INTO t0(c0) VALUES(1750709024);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database35';
+DELETE QUICK IGNORE FROM t0;
+INSERT IGNORE INTO t0(c0) VALUES(-246398181);
+SET SESSION autocommit = 1;

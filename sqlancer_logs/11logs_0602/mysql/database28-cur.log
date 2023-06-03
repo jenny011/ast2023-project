@@ -1,0 +1,15 @@
+-- Time: 2023/06/01 18:30:12
+-- Database: database28
+-- Database version: 8.0.11
+-- seed value: 1685637011018
+DROP DATABASE IF EXISTS database28;
+CREATE DATABASE database28;
+USE database28;
+CREATE TABLE t0(c0 MEDIUMTEXT  COMMENT 'asdf'  COLUMN_FORMAT DEFAULT STORAGE DISK NULL, c1 MEDIUMINT  UNIQUE KEY COLUMN_FORMAT FIXED COMMENT 'asdf'  STORAGE DISK ) ; -- 329ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database28'; -- 2ms;
+CHECKSUM TABLE t0; -- 8ms;
+REPLACE INTO t0(c0, c1) VALUES(NULL, NULL), (1492239498, 1492239498), ("?l?FJDts#", NULL); -- 4ms;
+INSERT IGNORE INTO t0(c1, c0) VALUES(NULL, NULL); -- 7ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database28'; -- 6ms;
+SET SESSION internal_tmp_mem_storage_engine = MEMORY; -- 0ms;
+ALTER TABLE t0 RENAME t0, PACK_KEYS 0, DELAY_KEY_WRITE 0, ALGORITHM INSTANT;

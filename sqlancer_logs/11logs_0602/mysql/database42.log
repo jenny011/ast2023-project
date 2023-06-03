@@ -1,0 +1,74 @@
+--java.lang.AssertionError: ALTER TABLE t0 STATS_AUTO_RECALC DEFAULT, DISABLE KEYS, RENAME TO t0, CHECKSUM 1, PACK_KEYS 1, DROP c2, DELAY_KEY_WRITE 1, ALGORITHM INSTANT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:16
+-- Database: database42
+-- Database version: 8.0.11
+-- seed value: 1685637011032
+DROP DATABASE IF EXISTS database42;
+CREATE DATABASE database42;
+USE database42;
+CREATE TABLE t0(c0 MEDIUMINT , c1 TEXT  COMMENT 'asdf'  COLUMN_FORMAT DEFAULT STORAGE MEMORY, c2 SMALLINT(71)  UNIQUE KEY ) ;
+CHECKSUM TABLE t0;
+REPLACE INTO t0(c1, c0, c2) VALUES(250676958, '', NULL);
+INSERT IGNORE INTO t0(c1, c0, c2) VALUES(250676958, '?,? J{qR', NULL), (NULL, 'mY', -1809430979), (NULL, NULL, -1415758568);
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database42';
+REPLACE LOW_PRIORITY INTO t0(c2, c1, c0) VALUES('?,?7J{qR', -1716392942, '-1415758568');
+INSERT DELAYED IGNORE INTO t0(c0, c1, c2) VALUES(NULL, NULL, "mY");
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(1272143162), (-1415758568), (NULL);
+DELETE LOW_PRIORITY QUICK FROM t0 WHERE 1557260760;
+ALTER TABLE t0 ALGORITHM INPLACE, FORCE, COMPRESSION 'LZ4';
+REPLACE INTO t0(c0) VALUES(541371957), ('Xw2{7I|D]'), (-1716392942);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(250676958);
+INSERT LOW_PRIORITY INTO t0(c0, c1) VALUES(NULL, -1809430979), (NULL, -74347991), (2004779021, "1272143162");
+REPLACE DELAYED INTO t0(c1, c0) VALUES("Yh", -1809430979);
+INSERT IGNORE INTO t0(c1, c0) VALUES('>q>~', NULL);
+SET SESSION sql_buffer_result = OFF;
+REPLACE LOW_PRIORITY INTO t0(c1, c0, c2) VALUES(NULL, -1834098997, "");
+REPLACE DELAYED INTO t0(c2) VALUES("250676958");
+INSERT IGNORE INTO t0(c0, c1) VALUES(1094714524, -880186238);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database42';
+SET SESSION show_old_temporals = OFF;
+INSERT IGNORE INTO t0(c2) VALUES(NULL);
+DELETE IGNORE FROM t0;
+SET SESSION max_sort_length = 4550084;
+INSERT INTO t0(c2, c1, c0) VALUES('-528837144', 'Q?', NULL);
+INSERT HIGH_PRIORITY INTO t0(c1, c0) VALUES("vO?[g?][Q", -880186238), (-949241824, 'zJeXJ'), (NULL, 1557260760);
+REPLACE DELAYED INTO t0(c1) VALUES(-1809430979);
+TRUNCATE TABLE t0;
+INSERT LOW_PRIORITY IGNORE INTO t0(c2, c1) VALUES(NULL, NULL);
+ALTER TABLE t0 DELAY_KEY_WRITE 1, PACK_KEYS 0, FORCE;
+INSERT INTO t0(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c2) VALUES("xw2{7i|d]");
+INSERT DELAYED INTO t0(c0, c2, c1) VALUES("", NULL, "");
+INSERT IGNORE INTO t0(c1, c0, c2) VALUES(NULL, NULL, '8l7?k2E''');
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0, c2, c1) VALUES(-1229673759, NULL, NULL);
+REPLACE LOW_PRIORITY INTO t0(c2, c0, c1) VALUES(NULL, 707523254, 'Mly?wS');
+REPLACE INTO t0(c2) VALUES(NULL);
+INSERT INTO t0(c1, c2, c0) VALUES(NULL, 907283793, 1647047124);
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(-467832469);
+INSERT DELAYED INTO t0(c2, c1, c0) VALUES(NULL, -1274595720, '8l7?k2e''');
+REPLACE DELAYED INTO t0(c1) VALUES('541371957');
+INSERT IGNORE INTO t0(c1, c2) VALUES(-1229673759, -1684964545);
+ALTER TABLE t0 FORCE, DISABLE KEYS, ROW_FORMAT COMPACT, ALGORITHM INPLACE;

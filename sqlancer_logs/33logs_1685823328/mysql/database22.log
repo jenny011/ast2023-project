@@ -1,0 +1,100 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT ALL t1.c0 AS ref0, t1.c1 AS ref1, t1.c2 AS ref2, t2.c0 AS ref3, t2.c1 AS ref4, t2.c2 AS ref5 FROM t1, t2 WHERE (! ((t2.c0) <= (BIT_COUNT(t1.c2)))) ORDER BY (CAST(t2.c0 AS SIGNED)) >= (t2.c2) LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 IS NULL AND result.ref2 = 0 AND result.ref3 = 127 AND result.ref4 IS NULL AND result.ref5 IS NULL;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/03 21:22:40
+-- Database: database22
+-- Database version: 8.0.33
+-- seed value: 1685808636577
+DROP DATABASE IF EXISTS database22;
+CREATE DATABASE database22;
+USE database22;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYINT  UNIQUE KEY STORAGE MEMORY COMMENT 'asdf'  NULL, c1 TINYINT  COLUMN_FORMAT DYNAMIC STORAGE DISK  UNIQUE KEY  COMMENT 'asdf' , c2 TINYINT(62)  COMMENT 'asdf'  COLUMN_FORMAT FIXED NULL UNIQUE ) COMPRESSION = 'LZ4', AVG_ROW_LENGTH = 2600805178, AUTO_INCREMENT = 2600493660541430049, STATS_AUTO_RECALC = 0;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+CREATE TABLE t2 LIKE t0;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t1;
+INSERT IGNORE INTO t2(c1, c0, c2) VALUES(')U&G4', NULL, NULL);
+ALTER TABLE t1 STATS_PERSISTENT DEFAULT, ROW_FORMAT COMPRESSED, COMPRESSION 'NONE', STATS_AUTO_RECALC DEFAULT, PACK_KEYS 1, FORCE;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+INSERT INTO t1(c0, c2, c1) VALUES(-1353267250, NULL, NULL);
+REPLACE INTO t0(c0, c1, c2) VALUES("", -2055126345, '-1904494247');
+INSERT LOW_PRIORITY IGNORE INTO t2(c0, c2) VALUES(NULL, -1566712100);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+INSERT INTO t2(c0, c1, c2) VALUES(575290224, NULL, NULL);
+REPLACE DELAYED INTO t2(c2, c0) VALUES("6", -1644774573), (-2081267400, -1289656319), ("1399792168", -632704395);
+REPLACE INTO t1(c2, c1, c0) VALUES(24918418, NULL, NULL);
+REPLACE LOW_PRIORITY INTO t2(c0, c2, c1) VALUES("{}", NULL, 566386177);
+REPLACE INTO t2(c0, c1) VALUES("1847637310", NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('/NLjd'), (NULL), (874757469);
+REPLACE LOW_PRIORITY INTO t0(c2, c0) VALUES('', "Y0"), (-1477105172, 722827975), (NULL, "ceah??ng"), (NULL, ''), (2128312229, 'kFCV*fjCY');
+SET SESSION range_alloc_block_size = 9096029213729182660;
+REPLACE INTO t1(c0, c2) VALUES('', 102321004);
+REPLACE INTO t2(c0, c2, c1) VALUES("R", -2010019891, 'rm');
+INSERT DELAYED IGNORE INTO t2(c0) VALUES('rS');
+REPLACE DELAYED INTO t1(c1, c0, c2) VALUES(NULL, NULL, -1643306051);
+INSERT IGNORE INTO t1(c2, c1) VALUES('v''I{	?F,', NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+REPLACE INTO t1(c0, c1, c2) VALUES('*?', "jQMn/Zw", 46704982);
+INSERT HIGH_PRIORITY INTO t1(c2) VALUES(-522178378);
+INSERT IGNORE INTO t2(c1, c0, c2) VALUES(-468735208, 1293809323, NULL), (NULL, '', "?-"), (-1079285974, NULL, 237357296), (NULL, 'e%', NULL), (-2100672700, -1838105026, NULL);
+CREATE UNIQUE INDEX i0 USING HASH ON t1(c2, c0 DESC, c1) INVISIBLE;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c2 ASC, c0 DESC) INVISIBLE;
+CREATE UNIQUE INDEX i17 ON t0(c0, c1, c2 DESC);
+INSERT DELAYED IGNORE INTO t0(c2) VALUES(1476119560), (NULL), (109030050);
+DELETE FROM t2;
+REPLACE LOW_PRIORITY INTO t0(c2) VALUES(1338136400);
+REPLACE DELAYED INTO t0(c2) VALUES('');
+INSERT IGNORE INTO t2(c0, c2) VALUES(-992550557, 2051114910);
+INSERT INTO t2(c0, c1, c2) VALUES(NULL, -1210467063, NULL);
+INSERT IGNORE INTO t2(c1, c0) VALUES('xr', "Kw");
+REPLACE INTO t1(c2, c0, c1) VALUES(NULL, 1921343581, "9S&"), (NULL, NULL, NULL), (NULL, 1422858630, -43484268);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0, c1) VALUES('', "1207094932");
+REPLACE INTO t1(c1) VALUES('');
+INSERT DELAYED INTO t0(c0, c1) VALUES(NULL, "6?5|6"), (-1962235063, 533913604), (1230423394, NULL);
+REPLACE DELAYED INTO t0(c1, c2, c0) VALUES("", "", 267106530), (1975398924, '>~', -479630019), ('R?', NULL, 481595544);
+INSERT DELAYED IGNORE INTO t0(c0, c2) VALUES(899810189, "A1"), (-283422287, -2084254685), ('To~/O', NULL);
+ALTER TABLE t1 COMPRESSION 'NONE', STATS_AUTO_RECALC DEFAULT, ENABLE KEYS, PACK_KEYS DEFAULT, CHECKSUM 0, ROW_FORMAT REDUNDANT, DROP c2, RENAME AS t2, STATS_PERSISTENT 1, INSERT_METHOD NO, ALGORITHM COPY, DELAY_KEY_WRITE 0, FORCE;
+ALTER TABLE t1 DELAY_KEY_WRITE 1, STATS_PERSISTENT 0, FORCE, INSERT_METHOD LAST, ENABLE KEYS;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+CREATE INDEX i0 ON t0(c2, c0);
+CHECK TABLE t1, t2, t0 EXTENDED FOR UPGRADE MEDIUM CHANGED FAST;
+CREATE UNIQUE INDEX i1 USING BTREE ON t0(c2, c1, c0 ASC) ALGORITHM= DEFAULT;
+DROP INDEX i0 ON t0 ALGORITHM=DEFAULT;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+INSERT INTO t0(c0) VALUES(NULL);
+SET SESSION max_sort_length = 856990;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+REPLACE LOW_PRIORITY INTO t2(c1, c0, c2) VALUES("!6f", -1904494247, "");
+REPLACE INTO t0(c0, c2, c1) VALUES(NULL, '-1475853164', -1710685926);
+REPLACE INTO t0(c1, c0) VALUES(581819149, -1882351592), (NULL, -1103849632), (NULL, 'I?_|3U,');
+INSERT INTO t0(c2, c1, c0) VALUES('of??]W', 1346432495, "l?Qw??iF");
+INSERT IGNORE INTO t0(c2) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+ALTER TABLE t2 RENAME AS t0, PACK_KEYS DEFAULT, STATS_PERSISTENT 1, ALGORITHM INPLACE, CHECKSUM 1, ENABLE KEYS, STATS_AUTO_RECALC 0, INSERT_METHOD LAST;
+ALTER TABLE t2 ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database22';
+INSERT DELAYED IGNORE INTO t2(c1, c0) VALUES(NULL, 1546278581), (NULL, ""), (NULL, "-373501443");
+REPLACE INTO t2(c2, c0) VALUES(-1926013553, "jYK!");
+REPLACE LOW_PRIORITY INTO t0(c2) VALUES('I?_|3U,'), ("tE.>kID}p"), (-890886341), (NULL), (680229961);
+INSERT DELAYED INTO t0(c1, c0, c2) VALUES(NULL, NULL, "?X");
+REPLACE INTO t2(c1, c0, c2) VALUES(NULL, "", 1772021528);
+INSERT INTO t0(c2, c1, c0) VALUES(NULL, NULL, "");
+INSERT LOW_PRIORITY IGNORE INTO t0(c1) VALUES(442892900);
+ANALYZE  TABLE t1 UPDATE HISTOGRAM ON c2 WITH 494 BUCKETS;
+SELECT * FROM (SELECT ALL t1.c0 AS ref0, t1.c1 AS ref1, t1.c2 AS ref2, t2.c0 AS ref3, t2.c1 AS ref4, t2.c2 AS ref5 FROM t1, t2 WHERE (! ((t2.c0) <= (BIT_COUNT(t1.c2)))) ORDER BY (CAST(t2.c0 AS SIGNED)) >= (t2.c2) LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 IS NULL AND result.ref2 = 0 AND result.ref3 = 127 AND result.ref4 IS NULL AND result.ref5 IS NULL;

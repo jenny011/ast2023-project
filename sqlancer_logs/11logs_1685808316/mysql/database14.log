@@ -1,0 +1,53 @@
+--java.lang.AssertionError: ALTER TABLE t0 CHECKSUM 0, COMPRESSION 'LZ4', RENAME t0, PACK_KEYS 0, FORCE, INSERT_METHOD FIRST, STATS_AUTO_RECALC 0, ENABLE KEYS, ROW_FORMAT COMPACT, ALGORITHM INSTANT, DELAY_KEY_WRITE 0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Unknown ALGORITHM 'INSTANT'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:20
+-- Database: database14
+-- Database version: 8.0.11
+-- seed value: 1685807359559
+DROP DATABASE IF EXISTS database14;
+CREATE DATABASE database14;
+USE database14;
+CREATE TABLE IF NOT EXISTS t0(c0 TEXT ) ;
+CREATE TABLE t1(c0 BIGINT(80)  COLUMN_FORMAT FIXED UNIQUE STORAGE DISK NULL  COMMENT 'asdf' ) ;
+INSERT IGNORE INTO t0(c0) VALUES('Jd'), (NULL), (NULL);
+REPLACE INTO t1(c0) VALUES(-456559371);
+DELETE IGNORE FROM t1 WHERE (CAST(t1.c0 AS SIGNED)) >= (((NULL) XOR (t1.c0)) >= (NULL));
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+INSERT IGNORE INTO t1(c0) VALUES(-1063617085);
+REPLACE INTO t0(c0) VALUES('4?');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+ALTER TABLE t1 RENAME AS t0, STATS_PERSISTENT 1;
+ALTER TABLE t1 FORCE, PACK_KEYS 1, COMPRESSION 'NONE', DELAY_KEY_WRITE 1, INSERT_METHOD NO, DISABLE KEYS, STATS_AUTO_RECALC 0, ROW_FORMAT FIXED, STATS_PERSISTENT 1, RENAME t0, ALGORITHM INPLACE;
+ALTER TABLE t0 COMPRESSION 'ZLIB', FORCE, DELAY_KEY_WRITE 1, PACK_KEYS 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+DROP INDEX c0 ON t1;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+REPLACE DELAYED INTO t0(c0) VALUES(""), (-456559371), ('TRUE');
+INSERT INTO t0(c0) VALUES(-1283474633);
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(-1063617085);
+CHECK TABLE t0 ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database14';
+ALTER TABLE t1 STATS_AUTO_RECALC 1, ALGORITHM DEFAULT, RENAME AS t2, DISABLE KEYS, FORCE, COMPRESSION 'LZ4', ROW_FORMAT FIXED, CHECKSUM 0, INSERT_METHOD NO, STATS_PERSISTENT DEFAULT;

@@ -1,0 +1,26 @@
+-- Time: 2023/06/03 17:50:30
+-- Database: database60
+-- Database version: 8.0.11
+-- seed value: 1685807359607
+DROP DATABASE IF EXISTS database60;
+CREATE DATABASE database60;
+USE database60;
+CREATE TABLE t0(c0 VARCHAR(500) ) ; -- 36ms;
+SET SESSION query_prealloc_size = 648499731996886358; -- 0ms;
+TRUNCATE TABLE t0; -- 60ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database60'; -- 2ms;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0; -- 2ms;
+DELETE LOW_PRIORITY IGNORE FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE); -- 1ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database60'; -- 2ms;
+CREATE UNIQUE INDEX i0 USING BTREE ON t0(c0(2)) INVISIBLE; -- 32ms;
+CHECK TABLE t0 QUICK CHANGED MEDIUM FOR UPGRADE; -- 1ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database60'; -- 2ms;
+DELETE IGNORE FROM t0 WHERE CAST((785063021) < ((NULL) >= (t0.c0)) AS SIGNED); -- 4ms;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t0; -- 0ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database60'; -- 4ms;
+DELETE QUICK FROM t0 WHERE  EXISTS (SELECT 1); -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database60'; -- 7ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database60'; -- 4ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database60'; -- 6ms;
+DELETE QUICK FROM t0; -- 3ms;
+CREATE INDEX i1 USING HASH ON t0(( EXISTS (SELECT 1 wHERE FALSE)), (NULL)) ALGORITHM COPY;

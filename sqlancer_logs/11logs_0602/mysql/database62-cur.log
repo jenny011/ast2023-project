@@ -1,0 +1,16 @@
+-- Time: 2023/06/01 18:30:18
+-- Database: database62
+-- Database version: 8.0.11
+-- seed value: 1685637011052
+DROP DATABASE IF EXISTS database62;
+CREATE DATABASE database62;
+USE database62;
+CREATE TABLE t0(c0 TINYTEXT  COMMENT 'asdf' ) ; -- 58ms;
+CREATE TABLE IF NOT EXISTS t1(c0 SMALLINT(134)  UNIQUE STORAGE DISK COMMENT 'asdf' ) ; -- 70ms;
+SET SESSION myisam_stats_method = nulls_equal; -- 0ms;
+REPLACE INTO t1(c0) VALUES(NULL), (-559701575), ('?'); -- 12ms;
+REPLACE DELAYED INTO t0(c0) VALUES(''); -- 26ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database62'; -- 2ms;
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(''); -- 1ms;
+REPLACE DELAYED INTO t0(c0) VALUES("g ?AT"); -- 16ms;
+CREATE UNIQUE INDEX i0 USING HASH ON t0((((t0.c0) < (t0.c0)) XOR (CAST(CAST(t0.c0 AS SIGNED) AS SIGNED)))) ALGORITHM DEFAULT;

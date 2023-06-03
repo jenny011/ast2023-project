@@ -1,0 +1,50 @@
+--java.lang.AssertionError: CREATE INDEX i0 ON t0(((((t0.c1) OR (759533703)) NOT IN ((! (NULL)))) >= ( EXISTS (SELECT 1 wHERE FALSE)))) ALGORITHM= DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '((((t0.c1) OR (759533703)) NOT IN ((! (NULL)))) >= ( EXISTS (SELECT 1 wHERE FALS' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:56:10
+-- Database: database95
+-- Database version: 8.0.11
+-- seed value: 1685807359642
+DROP DATABASE IF EXISTS database95;
+CREATE DATABASE database95;
+USE database95;
+CREATE TABLE IF NOT EXISTS t0(c0 TEXT  COMMENT 'asdf' , c1 LONGTEXT   STORAGE MEMORY COLUMN_FORMAT FIXED) ;
+SET SESSION sql_quote_show_create = ON;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1822544361);
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(1566513925), ('-1102017692'), (-1050641720);
+INSERT HIGH_PRIORITY INTO t0(c0, c1) VALUES("2100736193", 136845557);
+INSERT LOW_PRIORITY INTO t0(c1, c0) VALUES("BR", "");
+INSERT IGNORE INTO t0(c0) VALUES(884262642);
+REPLACE INTO t0(c1) VALUES(877944846);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0, c1) VALUES("~IG!", '	v#Rt');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database95';
+CREATE UNIQUE INDEX i52 ON t0(c1 ASC, c0) ALGORITHM= INPLACE;
+CREATE UNIQUE INDEX i0 USING HASH ON t0(c0 DESC) VISIBLE;
+CREATE UNIQUE INDEX i25 USING HASH ON t0(c1, c0) ALGORITHM INPLACE;
+REPLACE INTO t0(c1, c0) VALUES(NULL, -148999653);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database95';
+INSERT HIGH_PRIORITY IGNORE INTO t0(c1, c0) VALUES(1889087312, 1535641925);
+INSERT LOW_PRIORITY INTO t0(c0, c1) VALUES('-1953391352', -228579019);
+INSERT INTO t0(c0) VALUES(1819370824);
+CREATE UNIQUE INDEX i0 ON t0(c0 ASC, c1 DESC);

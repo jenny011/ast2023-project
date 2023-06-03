@@ -1,0 +1,59 @@
+--java.lang.AssertionError: CREATE INDEX i0 USING BTREE ON t2((( EXISTS (SELECT 1)) <= ((t2.c0) IS NOT TRUE))) ALGORITHM= DEFAULT;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(( EXISTS (SELECT 1)) <= ((t2.c0) IS NOT TRUE))) ALGORITHM= DEFAULT' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:30:12
+-- Database: database18
+-- Database version: 8.0.11
+-- seed value: 1685637011007
+DROP DATABASE IF EXISTS database18;
+CREATE DATABASE database18;
+USE database18;
+CREATE TABLE t0(c0 SMALLINT  PRIMARY KEY COLUMN_FORMAT DEFAULT UNIQUE KEY) ;
+ALTER TABLE t0 FORCE, DISABLE KEYS, STATS_AUTO_RECALC 1, ALGORITHM COPY, RENAME t2, ROW_FORMAT FIXED;
+ALTER TABLE t0 COMPRESSION 'ZLIB', STATS_AUTO_RECALC 1, ROW_FORMAT COMPACT, RENAME TO t2, PACK_KEYS DEFAULT, STATS_PERSISTENT 1, ENABLE KEYS;
+REPLACE INTO t2(c0) VALUES(''), (1554512189), (1554512189);
+INSERT IGNORE INTO t2(c0) VALUES(1762988752);
+REPLACE DELAYED INTO t2(c0) VALUES(-2129624112);
+INSERT HIGH_PRIORITY INTO t2(c0) VALUES(NULL);
+INSERT LOW_PRIORITY IGNORE INTO t2(c0) VALUES(-50266784);
+DELETE QUICK IGNORE FROM t2;
+INSERT LOW_PRIORITY INTO t2(c0) VALUES(NULL);
+INSERT INTO t2(c0) VALUES(519773586);
+REPLACE INTO t2(c0) VALUES(2094383649);
+INSERT INTO t2(c0) VALUES(NULL);
+REPLACE DELAYED INTO t2(c0) VALUES('u?KS');
+INSERT INTO t2(c0) VALUES(NULL);
+REPLACE DELAYED INTO t2(c0) VALUES(519773586);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(665703049);
+REPLACE DELAYED INTO t2(c0) VALUES("Q*O"), (1909630231), (519773586);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(NULL);
+INSERT INTO t2(c0) VALUES('');
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(NULL);
+INSERT INTO t2(c0) VALUES('{}l\r'), (1648639353), (NULL);
+REPLACE INTO t2(c0) VALUES("");
+REPLACE DELAYED INTO t2(c0) VALUES(410478021);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(-322442145);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(256031799), (NULL), ("u?KS"), (NULL), ('519773586');
+INSERT IGNORE INTO t2(c0) VALUES("w"), (NULL), (1762988752);
+DROP INDEX `PRIMARY` ON t2 LOCK=DEFAULT;
+DELETE LOW_PRIORITY IGNORE FROM t2;

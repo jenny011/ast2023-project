@@ -1,0 +1,65 @@
+--java.lang.AssertionError: CREATE UNIQUE INDEX i1 USING BTREE ON t2((CAST(IF(t2.c1, t2.c2, 708265020) AS SIGNED)), (((NULL) IS NOT TRUE) IN (t2.c1, COALESCE(NULL, "")))) INVISIBLE ALGORITHM= INPLACE;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(CAST(IF(t2.c1, t2.c2, 708265020) AS SIGNED)), (((NULL) IS NOT TRUE) IN (t2.c1, ' at line 1
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/01 18:31:25
+-- Database: database34
+-- Database version: 8.0.11
+-- seed value: 1685637011024
+DROP DATABASE IF EXISTS database34;
+CREATE DATABASE database34;
+USE database34;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT(161)  , c1 SMALLINT(38)  STORAGE DISK COMMENT 'asdf'  COLUMN_FORMAT DEFAULT, c2 TEXT  COMMENT 'asdf'  NULL) AVG_ROW_LENGTH = 3783106320, KEY_BLOCK_SIZE = 18302;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT(58)  STORAGE DISK, c1 VARCHAR(500)  STORAGE MEMORY COMMENT 'asdf'   COLUMN_FORMAT FIXED) ;
+CREATE TABLE IF NOT EXISTS t1 LIKE t0;
+CREATE TABLE t2(c0 TEXT , c1 TEXT  COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE MEMORY, c2 INT    UNIQUE STORAGE DISK) ;
+DELETE QUICK FROM t1;
+REPLACE INTO t2(c2) VALUES(-1765202564);
+REPLACE INTO t0(c1) VALUES(NULL), (660246511), (390099730);
+DELETE QUICK IGNORE FROM t1;
+INSERT INTO t2(c0, c1, c2) VALUES(NULL, -2111349661, ',&?Lgd7');
+INSERT LOW_PRIORITY INTO t2(c0, c2) VALUES('v9mWT9(]''', -1421169942);
+REPLACE DELAYED INTO t2(c0, c2, c1) VALUES('cJ', '>vQ?Q*Z(k', 1931004555);
+REPLACE LOW_PRIORITY INTO t1(c1) VALUES('');
+INSERT IGNORE INTO t0(c0, c1) VALUES(NULL, 'oo ?	');
+REPLACE LOW_PRIORITY INTO t0(c1) VALUES(-1461150570);
+REPLACE INTO t2(c0) VALUES(-670251865);
+INSERT INTO t0(c0, c1) VALUES(-360149288, "Va?");
+INSERT IGNORE INTO t0(c1, c0) VALUES(NULL, NULL);
+INSERT IGNORE INTO t0(c1, c0) VALUES(1513001925, '%.v?/x5E*');
+CREATE UNIQUE INDEX i0 USING BTREE ON t1(c1, c0);
+INSERT HIGH_PRIORITY IGNORE INTO t2(c2) VALUES("}P73L?\rJ");
+REPLACE LOW_PRIORITY INTO t2(c2, c1) VALUES(')SO4y', -552345841), (396142122, NULL), (NULL, NULL);
+INSERT DELAYED INTO t2(c2, c0, c1) VALUES(-1396916485, 24134159, "D");
+ALTER TABLE t2 DELAY_KEY_WRITE 0, FORCE, DROP COLUMN c0, ALGORITHM INPLACE, PACK_KEYS DEFAULT, INSERT_METHOD FIRST, CHECKSUM 1;
+DELETE LOW_PRIORITY FROM t0 WHERE CAST(( EXISTS (SELECT 1 wHERE FALSE)) IS NOT UNKNOWN AS SIGNED);
+CHECKSUM TABLE t2, t1 QUICK;
+REPLACE DELAYED INTO t0(c0, c1) VALUES(NULL, "");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database34';
+REPLACE DELAYED INTO t1(c1, c0) VALUES(-1928134752, 564937125);
+REPLACE INTO t2(c1) VALUES(NULL);
+REPLACE INTO t1(c1) VALUES(",?<z#4^P"), (1764890807), (NULL);
+TRUNCATE TABLE t1;
+SET SESSION range_optimizer_max_mem_size = 7745494947328867442;
+INSERT IGNORE INTO t1(c0, c1) VALUES('1179218896', NULL);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES("Luf"), (-1620554221), (-2134042474);
+DELETE LOW_PRIORITY FROM t1;

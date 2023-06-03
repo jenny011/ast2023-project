@@ -1,0 +1,19 @@
+-- Time: 2023/06/01 18:31:20
+-- Database: database66
+-- Database version: 8.0.11
+-- seed value: 1685637011056
+DROP DATABASE IF EXISTS database66;
+CREATE DATABASE database66;
+USE database66;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT  COMMENT 'asdf'  COLUMN_FORMAT DEFAULT  STORAGE MEMORY) ; -- 89ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(57904397), (1160683779), (NULL); -- 9ms;
+SET SESSION myisam_stats_method = nulls_ignored; -- 1ms;
+REPLACE INTO t0(c0) VALUES("?"); -- 3ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(''); -- 11ms;
+INSERT INTO t0(c0) VALUES(-1511069700), (525605831), (""); -- 6ms;
+DELETE QUICK IGNORE FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE); -- 0ms;
+INSERT DELAYED INTO t0(c0) VALUES(1106329666), (NULL), (NULL); -- 6ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database66'; -- 2ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database66'; -- 2ms;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL); -- 4ms;
+CREATE INDEX i0 ON t0((536108727));

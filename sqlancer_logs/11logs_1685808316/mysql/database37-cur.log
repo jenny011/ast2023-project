@@ -1,0 +1,16 @@
+-- Time: 2023/06/03 17:49:22
+-- Database: database37
+-- Database version: 8.0.11
+-- seed value: 1685807359584
+DROP DATABASE IF EXISTS database37;
+CREATE DATABASE database37;
+USE database37;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMTEXT  NULL COLUMN_FORMAT FIXED) ; -- 94ms;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("2n09^"); -- 10ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database37'; -- 5ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database37'; -- 4ms;
+REPLACE INTO t0(c0) VALUES('y%I jY'); -- 137ms;
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(-1534834117); -- 10ms;
+SET SESSION show_create_table_verbosity = ON; -- 0ms;
+INSERT INTO t0(c0) VALUES(-1602050317); -- 5ms;
+ALTER TABLE t0 ROW_FORMAT COMPACT, COMPRESSION 'LZ4', ENABLE KEYS, INSERT_METHOD LAST, CHECKSUM 1, ALGORITHM INSTANT, STATS_AUTO_RECALC 1, DELAY_KEY_WRITE 0, RENAME AS t0, PACK_KEYS 1;

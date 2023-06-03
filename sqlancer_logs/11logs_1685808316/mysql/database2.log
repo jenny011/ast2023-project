@@ -1,0 +1,38 @@
+--java.lang.AssertionError: SET SESSION optimizer_switch = 'derived_merge=off,mrr=on,batched_key_access=on,loosescan=off,duplicateweedout=off,mrr_cost_based=on,skip_scan=off,index_condition_pushdown=off,semijoin=off,subquery_materialization_cost_based=on,use_invisible_indexes=on,condition_fanout_filter=off,use_index_extensions=off,firstmatch=on';
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:93)
+--	at sqlancer.Main$QueryManager.execute(Main.java:265)
+--	at sqlancer.GlobalState.executeStatement(GlobalState.java:108)
+--	at sqlancer.StatementExecutor.executeStatements(StatementExecutor.java:70)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:152)
+--	at sqlancer.mysql.MySQLProvider.generateDatabase(MySQLProvider.java:1)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:52)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLSyntaxErrorException: Variable 'optimizer_switch' can't be set to the value of 'skip_scan=off,index_condition_pushdown=off,semijoin=off,subquery_materialization_cost_based=on,use_invisible_indexes=on,condition_fanout_filter=off,use_index_extensions=off,firstmatch=on'
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+--	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+--	at sqlancer.common.query.SQLQueryAdapter.execute(SQLQueryAdapter.java:87)
+--	... 13 more
+---- Time: 2023/06/03 17:49:19
+-- Database: database2
+-- Database version: 8.0.11
+-- seed value: 1685807359536
+DROP DATABASE IF EXISTS database2;
+CREATE DATABASE database2;
+USE database2;
+CREATE TABLE IF NOT EXISTS t0(c0 INT(243)  STORAGE DISK COMMENT 'asdf' ) ;
+SET SESSION rbr_exec_mode = STRICT;
+DELETE LOW_PRIORITY FROM t0 WHERE ((714825661) NOT IN ((t0.c0) LIKE (t0.c0))) XOR ( EXISTS (SELECT 1));
+INSERT LOW_PRIORITY INTO t0(c0) VALUES("");
+INSERT IGNORE INTO t0(c0) VALUES(768198093);
+INSERT INTO t0(c0) VALUES(-1339413225);
+DELETE QUICK IGNORE FROM t0 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database2';

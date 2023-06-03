@@ -1,0 +1,11 @@
+-- Time: 2023/06/03 17:49:23
+-- Database: database42
+-- Database version: 8.0.11
+-- seed value: 1685807359589
+DROP DATABASE IF EXISTS database42;
+CREATE DATABASE database42;
+USE database42;
+CREATE TABLE IF NOT EXISTS t0(c0 TINYTEXT , c1 SMALLINT  ) ; -- 58ms;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database42'; -- 2ms;
+CREATE UNIQUE INDEX i0 USING BTREE ON t0(c1 DESC, c0 ASC); -- 2ms;
+CREATE INDEX i0 USING BTREE ON t0(((+ (IF(t0.c0, t0.c1, -862485479))))) ALGORITHM= DEFAULT;
