@@ -1,0 +1,77 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT SQL_NO_CACHE SQL_SMALL_RESULT t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE ((NOT ((t0.c0) OR (1392871126)))) >= (t1.c0) ORDER BY CAST(-1237845509 AS SIGNED) LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 = -515908200;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/04 04:30:16
+-- Database: database20
+-- Database version: 8.0.33
+-- seed value: 1685824446414
+DROP DATABASE IF EXISTS database20;
+CREATE DATABASE database20;
+USE database20;
+CREATE TABLE t0(c0 TINYINT  COLUMN_FORMAT DYNAMIC UNIQUE COMMENT 'asdf' ) ;
+CREATE TABLE t1(c0 BIGINT ) ;
+ALTER TABLE t1 ROW_FORMAT COMPRESSED, DELAY_KEY_WRITE 1, ALGORITHM DEFAULT, FORCE, INSERT_METHOD LAST, PACK_KEYS DEFAULT, DISABLE KEYS, RENAME TO t0, COMPRESSION 'LZ4', STATS_AUTO_RECALC DEFAULT, STATS_PERSISTENT 1;
+ALTER TABLE t0 STATS_PERSISTENT DEFAULT, PACK_KEYS DEFAULT, CHECKSUM 0, DELAY_KEY_WRITE 0, INSERT_METHOD FIRST, FORCE, RENAME TO t4, ALGORITHM COPY, STATS_AUTO_RECALC 1, COMPRESSION 'NONE', DISABLE KEYS, ROW_FORMAT REDUNDANT;
+DELETE IGNORE FROM t1;
+ALTER TABLE t1 CHECKSUM 0, FORCE, ALGORITHM COPY, COMPRESSION 'NONE', ENABLE KEYS, PACK_KEYS DEFAULT;
+CREATE UNIQUE INDEX i0 ON t1(c0 ASC) ALGORITHM DEFAULT;
+INSERT INTO t1(c0) VALUES(NULL), (-694678890), ('-1742757954');
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+DELETE LOW_PRIORITY FROM t1 WHERE  EXISTS (SELECT 1 wHERE FALSE);
+SET SESSION range_alloc_block_size = 3186361227362719105;
+ALTER TABLE t4 DELAY_KEY_WRITE 1, PACK_KEYS 0, COMPRESSION 'NONE', INSERT_METHOD FIRST, ALGORITHM COPY, RENAME t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t1(c0) VALUES('}?');
+INSERT IGNORE INTO t1(c0) VALUES('');
+SET SESSION max_seeks_for_key = 3738347061934890572;
+INSERT IGNORE INTO t0(c0) VALUES(NULL);
+REPLACE INTO t1(c0) VALUES('_?'), (172950665), (-1069578450);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES("+A!");
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("-*PnH8l");
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(NULL);
+ALTER TABLE t0 ALGORITHM INPLACE, DISABLE KEYS, FORCE, RENAME TO t2, PACK_KEYS 0, STATS_AUTO_RECALC DEFAULT, DELAY_KEY_WRITE 1, CHECKSUM 0, COMPRESSION 'NONE', STATS_PERSISTENT DEFAULT, INSERT_METHOD FIRST;
+ALTER TABLE t0 CHECKSUM 1, FORCE, ALGORITHM COPY, COMPRESSION 'NONE', ENABLE KEYS, DELAY_KEY_WRITE 1, ROW_FORMAT DEFAULT, RENAME AS t0, STATS_AUTO_RECALC DEFAULT;
+INSERT INTO t0(c0) VALUES(NULL);
+DELETE FROM t0;
+REPLACE INTO t0(c0) VALUES('eP)EeG');
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(NULL), (NULL), ('[#!	.p<');
+REPLACE INTO t0(c0) VALUES("'?");
+INSERT DELAYED INTO t1(c0) VALUES("3YZA");
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(-515908200);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+REPLACE DELAYED INTO t0(c0) VALUES("");
+INSERT INTO t0(c0) VALUES(NULL);
+CREATE INDEX i1 USING HASH ON t0(c0) INVISIBLE ALGORITHM COPY;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+SET SESSION sql_auto_is_null = ON;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+REPLACE INTO t0(c0) VALUES("");
+REPLACE DELAYED INTO t0(c0) VALUES(-1);
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+CREATE INDEX i2 ON t0(c0 ASC) ALGORITHM= DEFAULT;
+INSERT IGNORE INTO t0(c0) VALUES("");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database20';
+REPLACE INTO t0(c0) VALUES('b3?');
+INSERT INTO t0(c0) VALUES(NULL);
+SET SESSION optimizer_prune_level = 0;
+INSERT DELAYED INTO t1(c0) VALUES(1625447109);
+INSERT INTO t1(c0) VALUES(246761038);
+SELECT * FROM (SELECT SQL_NO_CACHE SQL_SMALL_RESULT t0.c0 AS ref0, t1.c0 AS ref1 FROM t0, t1 WHERE ((NOT ((t0.c0) OR (1392871126)))) >= (t1.c0) ORDER BY CAST(-1237845509 AS SIGNED) LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 = -515908200;

@@ -1,0 +1,65 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW SQL_SMALL_RESULT t1.c0 AS ref0, t2.c0 AS ref1 FROM t1, t2 WHERE ((('?R') NOT IN (t1.c0)) AND ( EXISTS (SELECT 1 wHERE FALSE))) <= (t2.c0) ORDER BY NULL ASC LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 IS NULL AND result.ref1 = 918854281;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/04 03:59:36
+-- Database: database18
+-- Database version: 8.0.33
+-- seed value: 1685824446412
+DROP DATABASE IF EXISTS database18;
+CREATE DATABASE database18;
+USE database18;
+CREATE TABLE t0(c0 INT(89)  COLUMN_FORMAT DYNAMIC  UNIQUE  STORAGE MEMORY COMMENT 'asdf' ) ;
+CREATE TABLE t1(c0 SMALLINT(253) ) ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database18';
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(396360664);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database18';
+INSERT INTO t1(c0) VALUES("N5%o5S+"), (NULL), ('l0?a?8C');
+INSERT DELAYED IGNORE INTO t1(c0) VALUES("1365714521");
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+SET SESSION range_alloc_block_size = 1257811387243352175;
+DELETE LOW_PRIORITY IGNORE FROM t1;
+REPLACE INTO t1(c0) VALUES("?#");
+REPLACE DELAYED INTO t0(c0) VALUES(-686497616);
+INSERT LOW_PRIORITY INTO t1(c0) VALUES('pl');
+INSERT LOW_PRIORITY INTO t0(c0) VALUES('*Ge');
+INSERT INTO t1(c0) VALUES(-1703790186);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL), (""), (1370909635);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-1017229882);
+INSERT IGNORE INTO t1(c0) VALUES('QUhB');
+REPLACE INTO t1(c0) VALUES(NULL);
+CREATE INDEX i0 ON t1(((! ((("psHl") > ('+?')) = ("Z?Th?'?")))));
+CREATE UNIQUE INDEX i0 USING BTREE ON t0(c0 DESC);
+DELETE QUICK FROM t1;
+DELETE LOW_PRIORITY FROM t1 WHERE (t1.c0) XOR (CAST(GREATEST(t1.c0, t1.c0) AS SIGNED));
+TRUNCATE TABLE t1;
+DELETE LOW_PRIORITY QUICK FROM t0;
+REPLACE INTO t0(c0) VALUES('hs''d');
+REPLACE INTO t0(c0) VALUES("-422872053");
+ALTER TABLE t0 ALGORITHM DEFAULT, FORCE, DISABLE KEYS, COMPRESSION 'LZ4';
+SET SESSION histogram_generation_max_mem_size = 7648531382608985418;
+ANALYZE  TABLE t1 UPDATE HISTOGRAM ON c0 WITH 973 BUCKETS;
+DELETE IGNORE FROM t0;
+SET SESSION max_sort_length = 2509985;
+SET SESSION bulk_insert_buffer_size = 1105958885488681185;
+REPLACE INTO t1(c0) VALUES("");
+INSERT DELAYED INTO t0(c0) VALUES(918854281);
+ALTER TABLE t0 ALGORITHM DEFAULT, PACK_KEYS 1, ROW_FORMAT DYNAMIC, RENAME t2, STATS_AUTO_RECALC 0;
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+INSERT LOW_PRIORITY INTO t2(c0) VALUES(NULL);
+SELECT * FROM (SELECT DISTINCTROW SQL_SMALL_RESULT t1.c0 AS ref0, t2.c0 AS ref1 FROM t1, t2 WHERE ((('?R') NOT IN (t1.c0)) AND ( EXISTS (SELECT 1 wHERE FALSE))) <= (t2.c0) ORDER BY NULL ASC LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 IS NULL AND result.ref1 = 918854281;

@@ -1,0 +1,101 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW SQL_SMALL_RESULT STRAIGHT_JOIN SQL_BIG_RESULT t0.c0 AS ref0, t2.c0 AS ref1 FROM t0, t2 WHERE (! ((NOT (((t0.c0) IS UNKNOWN) <= ((+ (t2.c0))))))) GROUP BY t0.c0, t2.c0 ORDER BY (NULL) || (((t2.c0) != ('QwFK6')) < (t0.c0)) LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 = 8388607;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/03 23:03:14
+-- Database: database0
+-- Database version: 8.0.33
+-- seed value: 1685824446383
+DROP DATABASE IF EXISTS database0;
+CREATE DATABASE database0;
+USE database0;
+CREATE TABLE IF NOT EXISTS t0(c0 MEDIUMINT(29)  STORAGE DISK UNIQUE KEY COMMENT 'asdf' ) ;
+CREATE TABLE t1(c0 MEDIUMINT  COMMENT 'asdf'  ) ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+REPLACE INTO t0(c0) VALUES("");
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(-1516471500);
+REPLACE DELAYED INTO t1(c0) VALUES(1119838567);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES("O>");
+INSERT DELAYED INTO t1(c0) VALUES(1384361437);
+INSERT INTO t0(c0) VALUES("");
+INSERT INTO t0(c0) VALUES(NULL);
+INSERT IGNORE INTO t0(c0) VALUES(-606996873);
+INSERT DELAYED INTO t0(c0) VALUES(NULL);
+CHECK TABLE t1 QUICK FAST EXTENDED CHANGED MEDIUM FOR UPGRADE;
+CREATE UNIQUE INDEX i0 USING BTREE ON t0(c0);
+INSERT INTO t0(c0) VALUES("");
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES('');
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES('^Q');
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+SET SESSION range_alloc_block_size = 2356880186769349888;
+CREATE INDEX i1 ON t1((BIT_COUNT(COALESCE(t1.c0, t1.c0))));
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY IGNORE INTO t1(c0) VALUES(38722727), (NULL), (-900393390), (715142914), (''), (''), ('');
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL), (86682722), ("*7"), ("ad*?ZPT"), (NULL);
+INSERT IGNORE INTO t0(c0) VALUES('BIcw)8-');
+ALTER TABLE t1 CHECKSUM 1, FORCE, STATS_PERSISTENT 0, ALGORITHM COPY, RENAME TO t2, PACK_KEYS 1, COMPRESSION 'LZ4', STATS_AUTO_RECALC 1, INSERT_METHOD FIRST, DELAY_KEY_WRITE 1, ROW_FORMAT DYNAMIC;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+SET SESSION max_sort_length = 4444988;
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+ALTER TABLE t0 FORCE, DELAY_KEY_WRITE 0, DISABLE KEYS, STATS_AUTO_RECALC 1, ROW_FORMAT REDUNDANT;
+SET SESSION sql_buffer_result = OFF;
+REPLACE INTO t2(c0) VALUES("#");
+REPLACE INTO t2(c0) VALUES(-142377336);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(-788467798);
+INSERT INTO t2(c0) VALUES(281247415);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES(NULL);
+DELETE QUICK FROM t2;
+TRUNCATE TABLE t2;
+ALTER TABLE t2 DELAY_KEY_WRITE 0, ROW_FORMAT COMPRESSED;
+ALTER TABLE t2 FORCE;
+REPLACE DELAYED INTO t0(c0) VALUES(1047264600);
+INSERT IGNORE INTO t0(c0) VALUES("");
+REPLACE INTO t2(c0) VALUES(-1835723999), (NULL), (1766698629);
+INSERT DELAYED IGNORE INTO t2(c0) VALUES(NULL);
+DELETE LOW_PRIORITY FROM t2 WHERE (NULL) IN ((t2.c0) IS NOT UNKNOWN);
+REPLACE DELAYED INTO t2(c0) VALUES(-1232433988);
+INSERT DELAYED IGNORE INTO t2(c0) VALUES(-464865098);
+REPLACE INTO t0(c0) VALUES(NULL);
+DROP INDEX c0 ON t0;
+REPLACE DELAYED INTO t2(c0) VALUES(-1542237586);
+INSERT HIGH_PRIORITY INTO t2(c0) VALUES(NULL), (1095213576), (NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES("0"), (NULL), (715142914);
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES(1864282695);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+ALTER TABLE t0 ENABLE KEYS, DELAY_KEY_WRITE 1, CHECKSUM 1, STATS_PERSISTENT DEFAULT, INSERT_METHOD LAST, STATS_AUTO_RECALC DEFAULT, RENAME t0, ALGORITHM COPY, PACK_KEYS DEFAULT, FORCE;
+INSERT IGNORE INTO t2(c0) VALUES("1582603755"), (1890643370), (466720496);
+INSERT LOW_PRIORITY INTO t2(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES('ojs');
+INSERT INTO t0(c0) VALUES(NULL);
+REPLACE INTO t2(c0) VALUES(NULL);
+ANALYZE LOCAL TABLE t2 DROP HISTOGRAM ON c0;
+INSERT INTO t2(c0) VALUES("");
+INSERT DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(299981070), (''), (-1748367287);
+REPLACE INTO t2(c0) VALUES('');
+REPLACE INTO t2(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES(NULL);
+CREATE INDEX i2 USING HASH ON t2(c0) ALGORITHM= DEFAULT;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database0';
+INSERT INTO t0(c0) VALUES(1351021447);
+INSERT DELAYED IGNORE INTO t2(c0) VALUES("2053719948");
+SET SESSION max_seeks_for_key = 6348919354318930404;
+SELECT * FROM (SELECT DISTINCTROW SQL_SMALL_RESULT STRAIGHT_JOIN SQL_BIG_RESULT t0.c0 AS ref0, t2.c0 AS ref1 FROM t0, t2 WHERE (! ((NOT (((t0.c0) IS UNKNOWN) <= ((+ (t2.c0))))))) GROUP BY t0.c0, t2.c0 ORDER BY (NULL) || (((t2.c0) != ('QwFK6')) < (t0.c0)) LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 = 8388607;

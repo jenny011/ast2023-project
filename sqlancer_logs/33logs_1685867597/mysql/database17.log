@@ -1,0 +1,72 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCT SQL_NO_CACHE STRAIGHT_JOIN SQL_BIG_RESULT SQL_SMALL_RESULT t1.c0 AS ref0, t0.c0 AS ref1 FROM t1, t0 WHERE (NOT (((IFNULL(t1.c0, 'T	')) IN (BIT_COUNT(-748888936))) > (t0.c0))) ORDER BY t1.c0 DESC, -1227230686, '986329894' LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 = 0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/03 23:25:42
+-- Database: database17
+-- Database version: 8.0.33
+-- seed value: 1685824446411
+DROP DATABASE IF EXISTS database17;
+CREATE DATABASE database17;
+USE database17;
+CREATE TABLE IF NOT EXISTS t0(c0 SMALLINT   COLUMN_FORMAT DYNAMIC COMMENT 'asdf'  STORAGE DISK) ;
+CREATE TABLE t1 LIKE t0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database17';
+INSERT IGNORE INTO t0(c0) VALUES(-185027350);
+CREATE UNIQUE INDEX i0 ON t0((t0.c0)) VISIBLE ALGORITHM= INPLACE;
+DELETE QUICK FROM t1;
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES('1631109456');
+INSERT INTO t1(c0) VALUES(-938861490), ('gpZP6J2L'), (773145246);
+REPLACE DELAYED INTO t0(c0) VALUES(-1909136353), (NULL), ("{E");
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+ALTER TABLE t1 PACK_KEYS DEFAULT, STATS_AUTO_RECALC 1, COMPRESSION 'LZ4', RENAME t0;
+ALTER TABLE t0 ENABLE KEYS, INSERT_METHOD NO, RENAME t0;
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(-1);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database17';
+INSERT IGNORE INTO t1(c0) VALUES("*?");
+ALTER TABLE t0 ;
+INSERT INTO t1(c0) VALUES(-1354464079);
+REPLACE INTO t0(c0) VALUES(NULL);
+CHECK TABLE t1, t0 FAST EXTENDED FOR UPGRADE MEDIUM CHANGED QUICK;
+ANALYZE LOCAL TABLE t0 DROP HISTOGRAM ON c0;
+SET SESSION range_alloc_block_size = 5691207000247046715;
+ALTER TABLE t1 DELAY_KEY_WRITE 1, INSERT_METHOD NO, CHECKSUM 1;
+SET SESSION range_alloc_block_size = 2903658391846657642;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES("1631109456");
+INSERT LOW_PRIORITY INTO t1(c0) VALUES('');
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES('?fa');
+INSERT INTO t0(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(-1009526976);
+INSERT IGNORE INTO t1(c0) VALUES("209678122"), ('475976440'), (NULL), (NULL), ('');
+REPLACE INTO t1(c0) VALUES(NULL);
+CREATE INDEX i0 ON t1((CAST((1633054617) >= ((114617610) >= (t1.c0)) AS SIGNED)), (t1.c0)) ALGORITHM COPY;
+CREATE UNIQUE INDEX i49 USING HASH ON t0(c0);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database17';
+SET SESSION max_points_in_geometry = 611310;
+SET SESSION read_rnd_buffer_size = 98216223;
+REPLACE DELAYED INTO t0(c0) VALUES("?	z)fpl");
+REPLACE INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database17';
+DELETE QUICK IGNORE FROM t0;
+ALTER TABLE t0 ENABLE KEYS, RENAME t0, FORCE, INSERT_METHOD FIRST, COMPRESSION 'NONE', ALGORITHM INSTANT, STATS_PERSISTENT 0, ROW_FORMAT DEFAULT, CHECKSUM 1, PACK_KEYS 0;
+ALTER TABLE t0 ENABLE KEYS, STATS_AUTO_RECALC 1, CHECKSUM 0, FORCE, PACK_KEYS 1, DELAY_KEY_WRITE 0, RENAME TO t0, ROW_FORMAT COMPACT, ALGORITHM INSTANT, STATS_PERSISTENT 0, INSERT_METHOD NO;
+ALTER TABLE t1 COMPRESSION 'LZ4', ENABLE KEYS, CHECKSUM 1, FORCE, PACK_KEYS DEFAULT, STATS_PERSISTENT 1, STATS_AUTO_RECALC DEFAULT, ROW_FORMAT DEFAULT, DELAY_KEY_WRITE 1;
+REPLACE DELAYED INTO t1(c0) VALUES("a!qh]");
+INSERT INTO t1(c0) VALUES(1103482958);
+INSERT IGNORE INTO t0(c0) VALUES("T%");
+SELECT * FROM (SELECT DISTINCT SQL_NO_CACHE STRAIGHT_JOIN SQL_BIG_RESULT SQL_SMALL_RESULT t1.c0 AS ref0, t0.c0 AS ref1 FROM t1, t0 WHERE (NOT (((IFNULL(t1.c0, 'T	')) IN (BIT_COUNT(-748888936))) > (t0.c0))) ORDER BY t1.c0 DESC, -1227230686, '986329894' LIMIT 2147483647) as result WHERE result.ref0 IS NULL AND result.ref1 = 0;

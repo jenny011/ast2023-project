@@ -1,0 +1,94 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW STRAIGHT_JOIN SQL_BIG_RESULT SQL_NO_CACHE SQL_SMALL_RESULT t1.c0 AS ref0, t2.c0 AS ref1 FROM t1, t2 WHERE (NOT (((BIT_COUNT(t1.c0)) IS FALSE) < (t2.c0))) ORDER BY  EXISTS (SELECT 1) DESC LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = '-?' AND result.ref1 = 0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/04 01:46:30
+-- Database: database5
+-- Database version: 8.0.33
+-- seed value: 1685824446389
+DROP DATABASE IF EXISTS database5;
+CREATE DATABASE database5;
+USE database5;
+CREATE TABLE t0(c0 MEDIUMTEXT  STORAGE MEMORY) STATS_PERSISTENT = 1, MIN_ROWS = 6425649934456118284;
+CREATE TABLE t1 LIKE t0;
+CREATE TABLE IF NOT EXISTS t2(c0 SMALLINT(90)  PRIMARY KEY NOT NULL) ;
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+SET SESSION histogram_generation_max_mem_size = 1283702257028754211;
+ALTER TABLE t1 RENAME t0, INSERT_METHOD LAST, CHECKSUM 0, DELAY_KEY_WRITE 0, FORCE, PACK_KEYS 1;
+ALTER TABLE t0 CHECKSUM 1, INSERT_METHOD NO, STATS_PERSISTENT DEFAULT, RENAME t4, ALGORITHM INSTANT;
+ALTER TABLE t0 ;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database5';
+SET SESSION rbr_exec_mode = STRICT;
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(947993469);
+REPLACE DELAYED INTO t0(c0) VALUES(-227414702);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database5';
+INSERT IGNORE INTO t2(c0) VALUES(79761392);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE DELAYED INTO t2(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(1);
+DELETE IGNORE FROM t0;
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+INSERT LOW_PRIORITY IGNORE INTO t2(c0) VALUES(2022978141);
+DELETE QUICK FROM t1;
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+ANALYZE  TABLE t2 DROP HISTOGRAM ON c0;
+DELETE LOW_PRIORITY QUICK FROM t0;
+DELETE LOW_PRIORITY QUICK FROM t1 WHERE CAST(CAST((t1.c0) = (-1861212152) AS SIGNED) AS SIGNED);
+SET SESSION range_alloc_block_size = 8527288067321517036;
+INSERT HIGH_PRIORITY INTO t2(c0) VALUES('');
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(NULL), (NULL), ("");
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+REPLACE INTO t2(c0) VALUES("");
+INSERT IGNORE INTO t2(c0) VALUES(-498563364);
+CHECK TABLE t2, t0 FOR UPGRADE MEDIUM EXTENDED QUICK FAST;
+DELETE LOW_PRIORITY QUICK IGNORE FROM t1;
+CHECKSUM TABLE t2, t1, t0;
+REPLACE DELAYED INTO t0(c0) VALUES('fF');
+DELETE FROM t0 WHERE t0.c0;
+ALTER TABLE t1 ;
+CREATE INDEX i80 USING BTREE ON t0(c0(1));
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(NULL), ("-?"), (-1537688216);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database5';
+TRUNCATE TABLE t2;
+INSERT DELAYED IGNORE INTO t1(c0) VALUES(1539007042);
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(-2124761639);
+REPLACE LOW_PRIORITY INTO t2(c0) VALUES('lE]>g'), (NULL), (-1487957056);
+REPLACE INTO t0(c0) VALUES("-1563274636");
+REPLACE INTO t2(c0) VALUES(-1131384933), ('n.?X?'), (-477141603);
+REPLACE DELAYED INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database5';
+REPLACE INTO t0(c0) VALUES(-854778758);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database5';
+INSERT INTO t1(c0) VALUES("1851695297");
+SET SESSION optimizer_prune_level = 0;
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database5';
+CREATE UNIQUE INDEX i0 ON t0(c0(1) ASC) INVISIBLE ALGORITHM= COPY;
+CREATE UNIQUE INDEX i0 ON t0(c0(4));
+INSERT IGNORE INTO t0(c0) VALUES('X~D2?(1');
+DELETE QUICK FROM t2;
+INSERT INTO t2(c0) VALUES(NULL);
+REPLACE INTO t0(c0) VALUES(451767837);
+ALTER TABLE t2 STATS_AUTO_RECALC 1, RENAME t2, STATS_PERSISTENT 0, ALGORITHM INSTANT, CHECKSUM 0, PACK_KEYS 0, ROW_FORMAT DYNAMIC, INSERT_METHOD LAST, DELAY_KEY_WRITE 1, FORCE, COMPRESSION 'NONE', DISABLE KEYS;
+ALTER TABLE t2 ;
+ALTER TABLE t2 ;
+INSERT LOW_PRIORITY INTO t0(c0) VALUES(235390978);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database5';
+INSERT IGNORE INTO t2(c0) VALUES(NULL);
+INSERT INTO t0(c0) VALUES("n");
+SELECT * FROM (SELECT DISTINCTROW STRAIGHT_JOIN SQL_BIG_RESULT SQL_NO_CACHE SQL_SMALL_RESULT t1.c0 AS ref0, t2.c0 AS ref1 FROM t1, t2 WHERE (NOT (((BIT_COUNT(t1.c0)) IS FALSE) < (t2.c0))) ORDER BY  EXISTS (SELECT 1) DESC LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = '-?' AND result.ref1 = 0;

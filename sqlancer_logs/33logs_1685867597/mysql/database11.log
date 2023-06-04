@@ -1,0 +1,49 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW t1.c0 AS ref0, t0.c0 AS ref1, t0.c1 AS ref2 FROM t1, t0 WHERE (t1.c0) >= ((('-942698491') NOT IN (t0.c1)) < ((NOT (t0.c1)))) ORDER BY (t0.c0) XOR ((IF(t0.c0, "qC", NULL)) && ((t0.c1) OR ("D"))) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = 32767 AND result.ref1 IS NULL AND result.ref2 = '-135981632';
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/04 01:58:04
+-- Database: database11
+-- Database version: 8.0.33
+-- seed value: 1685824446405
+DROP DATABASE IF EXISTS database11;
+CREATE DATABASE database11;
+USE database11;
+CREATE TABLE IF NOT EXISTS t0(c0 BIGINT  STORAGE MEMORY, c1 TINYTEXT  COMMENT 'asdf' ) MAX_ROWS = 6337971639706067895, STATS_AUTO_RECALC = 1;
+CREATE TABLE IF NOT EXISTS t1(c0 SMALLINT(192)   UNIQUE KEY COLUMN_FORMAT DEFAULT) ;
+SET SESSION range_alloc_block_size = 482252435567628993;
+INSERT INTO t0(c1) VALUES(NULL);
+SET SESSION optimizer_prune_level = 0;
+SET SESSION show_old_temporals = OFF;
+INSERT INTO t1(c0) VALUES(NULL), (NULL), (NULL), (-1630531000), (NULL);
+REPLACE INTO t0(c1, c0) VALUES(-135981632, NULL);
+REPLACE DELAYED INTO t1(c0) VALUES(NULL), (NULL), ("~	\rlY");
+INSERT INTO t1(c0) VALUES('-1037324929');
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES('1943860449');
+REPLACE LOW_PRIORITY INTO t0(c1, c0) VALUES(NULL, '8}+? 0(z'), ('1165452087', NULL), ('', NULL);
+INSERT LOW_PRIORITY INTO t1(c0) VALUES("_VgDP?t/4");
+INSERT DELAYED INTO t1(c0) VALUES(73939560);
+REPLACE INTO t0(c0) VALUES("1943860449");
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database11';
+CHECKSUM TABLE t1, t0;
+INSERT INTO t0(c1, c0) VALUES("z3'IEP<]", "+x");
+REPLACE INTO t0(c1, c0) VALUES('~K', NULL), ('C', 991439490), ("", "");
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(2122773980);
+INSERT LOW_PRIORITY IGNORE INTO t1(c0) VALUES(NULL);
+SELECT * FROM (SELECT DISTINCTROW t1.c0 AS ref0, t0.c0 AS ref1, t0.c1 AS ref2 FROM t1, t0 WHERE (t1.c0) >= ((('-942698491') NOT IN (t0.c1)) < ((NOT (t0.c1)))) ORDER BY (t0.c0) XOR ((IF(t0.c0, "qC", NULL)) && ((t0.c1) OR ("D"))) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = 32767 AND result.ref1 IS NULL AND result.ref2 = '-135981632';

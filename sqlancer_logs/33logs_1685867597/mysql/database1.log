@@ -1,0 +1,75 @@
+--java.lang.AssertionError: SELECT * FROM (SELECT DISTINCTROW STRAIGHT_JOIN SQL_SMALL_RESULT SQL_BIG_RESULT t0.c0 AS ref0, t2.c0 AS ref1 FROM t0, t2 WHERE (t2.c0) >= (BIT_COUNT(t0.c0)) ORDER BY (! ('')) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = ']>' AND result.ref1 = 0;
+--	at sqlancer.common.query.SQLQueryAdapter.checkException(SQLQueryAdapter.java:111)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:141)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.containsRows(PivotedQuerySynthesisBase.java:67)
+--	at sqlancer.common.oracle.PivotedQuerySynthesisBase.check(PivotedQuerySynthesisBase.java:49)
+--	at sqlancer.ProviderAdapter.generateAndTestDatabase(ProviderAdapter.java:61)
+--	at sqlancer.Main$DBMSExecutor.run(Main.java:364)
+--	at sqlancer.Main$2.run(Main.java:559)
+--	at sqlancer.Main$2.runThread(Main.java:541)
+--	at sqlancer.Main$2.run(Main.java:532)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+--	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+--	at java.base/java.lang.Thread.run(Thread.java:829)
+--Caused by: java.sql.SQLException: Memory capacity exceeded (capacity 8388608 bytes)
+--	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+--	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+--	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200)
+--	at sqlancer.common.query.SQLQueryAdapter.executeAndGet(SQLQueryAdapter.java:131)
+--	... 10 more
+---- Time: 2023/06/04 02:37:34
+-- Database: database1
+-- Database version: 8.0.33
+-- seed value: 1685824446385
+DROP DATABASE IF EXISTS database1;
+CREATE DATABASE database1;
+USE database1;
+CREATE TABLE IF NOT EXISTS t0(c0 VARCHAR(500) ) ;
+CREATE TABLE t1(c0 TINYINT  STORAGE DISK UNIQUE KEY) ;
+INSERT IGNORE INTO t1(c0) VALUES(63702247);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+REPLACE INTO t1(c0) VALUES("");
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(-790577768);
+REPLACE DELAYED INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+REPLACE DELAYED INTO t1(c0) VALUES("eG");
+INSERT IGNORE INTO t0(c0) VALUES(-544783011), (NULL), (NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+SET SESSION query_alloc_block_size = 3484580394;
+INSERT IGNORE INTO t1(c0) VALUES(NULL);
+SET SESSION range_alloc_block_size = 6191383641279083629;
+CHECKSUM TABLE t1, t0 EXTENDED;
+INSERT LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+REPLACE INTO t1(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+INSERT LOW_PRIORITY IGNORE INTO t0(c0) VALUES(-853792893);
+INSERT DELAYED IGNORE INTO t0(c0) VALUES(NULL);
+CREATE UNIQUE INDEX i0 ON t1(c0) INVISIBLE ALGORITHM INPLACE;
+REPLACE INTO t0(c0) VALUES(NULL), ("428944614"), (-1031240518);
+REPLACE DELAYED INTO t0(c0) VALUES(537973434);
+INSERT IGNORE INTO t0(c0) VALUES('U'), ("52"), (897498213);
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES("");
+INSERT INTO t1(c0) VALUES(NULL), (NULL), (-87057176);
+REPLACE INTO t0(c0) VALUES(NULL);
+INSERT HIGH_PRIORITY INTO t0(c0) VALUES(NULL), (NULL), (NULL);
+INSERT INTO t0(c0) VALUES("");
+select TABLE_NAME, ENGINE from information_schema.TABLES where table_schema = 'database1';
+CREATE INDEX i1 ON t0(c0(3) DESC);
+INSERT IGNORE INTO t1(c0) VALUES("R&dk<C2R'");
+INSERT HIGH_PRIORITY INTO t1(c0) VALUES(2005457355);
+REPLACE LOW_PRIORITY INTO t1(c0) VALUES(NULL);
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(541887507);
+REPLACE DELAYED INTO t0(c0) VALUES(237903377);
+INSERT INTO t0(c0) VALUES("");
+ALTER TABLE t1 ROW_FORMAT REDUNDANT, CHECKSUM 0, RENAME AS t2, STATS_PERSISTENT DEFAULT, DELAY_KEY_WRITE 0;
+REPLACE LOW_PRIORITY INTO t0(c0) VALUES(NULL);
+REPLACE INTO t2(c0) VALUES('u?m|o^');
+INSERT HIGH_PRIORITY IGNORE INTO t0(c0) VALUES("E'ix");
+INSERT HIGH_PRIORITY INTO t2(c0) VALUES(243156564);
+REPLACE INTO t0(c0) VALUES(']>');
+SELECT * FROM (SELECT DISTINCTROW STRAIGHT_JOIN SQL_SMALL_RESULT SQL_BIG_RESULT t0.c0 AS ref0, t2.c0 AS ref1 FROM t0, t2 WHERE (t2.c0) >= (BIT_COUNT(t0.c0)) ORDER BY (! ('')) LIMIT 2147483647 OFFSET 0) as result WHERE result.ref0 = ']>' AND result.ref1 = 0;
