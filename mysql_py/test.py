@@ -60,9 +60,12 @@ def execute_ddl(dmls):
                     print(f"Failed {db}")
 
         if errs[0] != errs[1]:
-            raise(Exception)
-        for conn in conns.values():
-            conn.commit()
+            #raise(Exception)
+            for conn in conns.values():
+                conn.rollback()
+        else:
+            for conn in conns.values():
+                conn.commit()
         print("DONE")
 
 def execute_and_compare(cur1, cur2, query):
@@ -117,14 +120,23 @@ def execute_and_compare(cur1, cur2, query):
 def main():
     log_dir = "/home/mysql/sqlancer/target/logs_33_4hour/mysql"
     test_db = "database0"
+    log_name = "logs_33_4hour"
     parser = argparse.ArgumentParser()
     parser.add_argument("--testdb", default=test_db, required=False)
     parser.add_argument("--logdir", default=log_dir, required=False)
+    parser.add_argument("--logname", default=log_name, required=False)
+    parser.add_argument("--cur", type=int, default=0, required=False)
     args = parser.parse_args()
 
     test_db = args.testdb
     log_dir = args.logdir
-    qfile = f"{log_dir}/{test_db}-cur.log" 
+    log_name = args.logname
+    cur = bool(args.cur)
+    if cur:
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        qfile = f"{log_dir}/{test_db}-cur.log" 
+    else:
+        qfile = f"{log_dir}/{test_db}.log"
 
     for db in dbs:
         config_db(db, "root", "", f"548{db}")
@@ -167,7 +179,11 @@ def main():
     print(f"[MSG] diffs -> crash: {ncrash}, len: {nlen}, content: {ncontent}")
     print(f"[MSG] same -> {nsame}")
 
-    with open(f"./result/{test_db}.json", 'w') as out:
+    #outdir="./result_33logs_1685867597"
+    #outdir="./result_logs_33_4hour"
+    #outdir="./result_33logs_1685823328"
+    outdir=f"./result_{log_name}"
+    with open(f"{outdir}/{test_db}.json", 'w') as out:
         json.dump(diff_query_ids, out)
         
 
